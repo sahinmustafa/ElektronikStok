@@ -1,15 +1,76 @@
 package model;
 
+import helper.HbmIslemler;
+import java.util.ArrayList;
+import org.hibernate.HibernateException;
+
 /**
  *
  * @author MustafaSahin
  */
-public class Kategori {
+public class Kategori extends StokObject implements DatabaseI<StokObject>{
     
-    private int kategoriID;
     private String kategoriAdi;
     private String aciklama;
     private Kategori kategori;
     
     public Kategori(){}
+
+        @Override
+    public void ekle() throws HibernateException{
+    
+        HbmIslemler hbm = new HbmIslemler();
+        hbm.ekle(this);
+    }
+    
+    @Override
+    public boolean sil(int stokID){
+        HbmIslemler hbm = new HbmIslemler();
+        return hbm.sil(stokID, this.getClass());
+    }
+    
+    @Override
+    public ArrayList<Kategori> listele(int kategoriID){
+        String hql = "SELECT * FROM kategori WHERE kategori_id ='" + kategoriID + "'";
+        HbmIslemler hbm = new HbmIslemler();
+        return (ArrayList<Kategori>) hbm.list(hql);
+    }
+    
+    @Override
+    public Kategori getir(int kategoriID){
+        HbmIslemler hbm = new HbmIslemler();
+        return (Kategori) hbm.bilgiGetir(kategoriID, this.getClass());
+    }
+
+    @Override
+    public boolean guncelle(int ID, StokObject yeniBilgi) {
+        HbmIslemler hbm = new HbmIslemler();
+        return hbm.guncelle(yeniBilgi);
+    }
+
+    public String getKategoriAdi() {
+        return kategoriAdi;
+    }
+
+    public void setKategoriAdi(String kategoriAdi) {
+        this.kategoriAdi = kategoriAdi;
+    }
+
+    public String getAciklama() {
+        return aciklama;
+    }
+
+    public void setAciklama(String aciklama) {
+        this.aciklama = aciklama;
+    }
+
+    public Kategori getKategori() {
+        return kategori;
+    }
+
+    public void setKategori(Kategori kategori) {
+        this.kategori = kategori;
+    }
+    
+    
 }
