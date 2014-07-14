@@ -24,21 +24,55 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel2" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="txtAra" max="32767" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="btnAra" min="-2" pref="80" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="btnYeni" min="-2" pref="87" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="btnSil" min="-2" pref="83" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="btnGuncelle" min="-2" pref="82" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="btnUrunAl" min="-2" pref="85" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnUrunSat" min="-2" pref="93" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="14" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jPanel2" alignment="0" min="-2" max="-2" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace pref="41" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtAra" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="btnAra" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnUrunSat" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                  <Component id="btnUrunAl" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                  <Component id="btnGuncelle" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                  <Component id="btnSil" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                  <Component id="btnYeni" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -50,15 +84,66 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="245" max="32767" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="btnkondansator" alignment="0" pref="131" max="32767" attributes="0"/>
+                      <Component id="btnPic" alignment="0" max="32767" attributes="0"/>
+                      <Component id="btnDiyot" alignment="0" max="32767" attributes="0"/>
+                      <Component id="btnDirenc" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lblKategoriListesi" alignment="1" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="493" max="32767" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="lblKategoriListesi" min="-2" pref="34" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="btnkondansator" min="-2" pref="43" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="btnPic" min="-2" pref="39" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="btnDiyot" min="-2" pref="39" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="btnDirenc" min="-2" pref="39" max="-2" attributes="0"/>
+                  <EmptySpace pref="193" max="32767" attributes="0"/>
+              </Group>
           </Group>
         </DimensionLayout>
       </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JButton" name="btnPic">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="PIC"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPicActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnDiyot">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="D&#x130;yot"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnkondansator">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Kondansator"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnDirenc">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Direnc"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblKategoriListesi">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Kategori Listesi"/>
+          </Properties>
+        </Component>
+      </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="jPanel2">
 
@@ -66,39 +151,173 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                          <Component id="txtId" min="-2" pref="35" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="txtAdi" min="-2" pref="80" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="lblId" min="-2" pref="24" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="lblAdi" min="-2" pref="80" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="txtAra" min="-2" pref="319" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="txtOzellik" min="-2" pref="80" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="txtMiktar" min="-2" pref="80" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="txtAlisFiyati" min="-2" pref="80" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="txtSatisFiyati" min="-2" pref="80" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="lblOzellik" min="-2" pref="80" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="lblMiktar" min="-2" pref="70" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="lblAlisFiyati" min="-2" pref="71" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="lblSatisFiyati" min="-2" pref="79" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="btnAra" min="-2" pref="65" max="-2" attributes="0"/>
-                  <EmptySpace pref="14" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="txtKritikStok" max="32767" attributes="0"/>
+                      <Component id="lblKritikStok" pref="78" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txtAra" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                      <Component id="btnAra" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="lblId" pref="23" max="32767" attributes="0"/>
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                          <Component id="lblAdi" alignment="3" max="32767" attributes="0"/>
+                          <Component id="lblOzellik" alignment="3" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                          <Component id="lblAlisFiyati" alignment="3" max="32767" attributes="0"/>
+                          <Component id="lblSatisFiyati" alignment="3" max="32767" attributes="0"/>
+                          <Component id="lblMiktar" alignment="3" max="32767" attributes="0"/>
+                      </Group>
+                      <Component id="lblKritikStok" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="442" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="txtKritikStok" pref="342" max="32767" attributes="0"/>
+                      <Component id="txtSatisFiyati" max="32767" attributes="0"/>
+                      <Component id="txtAlisFiyati" max="32767" attributes="0"/>
+                      <Component id="txtMiktar" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtOzellik" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtAdi" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtId" alignment="0" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JTextField" name="txtAra">
+        <Component class="javax.swing.JTextField" name="txtId">
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblId">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Ara"/>
+            <Property name="text" type="java.lang.String" value="ID"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="btnAra">
+        <Component class="javax.swing.JTextField" name="txtAdi">
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblAdi">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Ara"/>
+            <Property name="text" type="java.lang.String" value="Adi"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtOzellik">
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblOzellik">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ozellik"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtMiktar">
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblMiktar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Miktar"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtAlisFiyati">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtAlisFiyatiActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblAlisFiyati">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Alis Fiyati"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtSatisFiyati">
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblSatisFiyati">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Satis Fiyati"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtKritikStok">
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblKritikStok">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="KritikStok"/>
           </Properties>
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JTextField" name="txtAra">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ara"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAra">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ara"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnGuncelle">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Guncelle"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnUrunSat">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Urun Sat"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnUrunAl">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Urun Al"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnSil">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Sil"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnYeni">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Yeni"/>
+      </Properties>
+    </Component>
   </SubComponents>
 </Form>
