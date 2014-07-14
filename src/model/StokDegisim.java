@@ -22,4 +22,5 @@ public class StokDegisim {
     private String aciklama;
     
     public StokDegisim(){}
+    
 }
