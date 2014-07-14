@@ -17,13 +17,25 @@ public class StokDegisim extends StokObject implements DatabaseI<StokObject>{
     private int urunID;
     private int eskiMiktar;
     private int yeniMiktar;
-    private int tutar;
+    private double tutar;
     private String odemeSekli;
     private Date tarih;
     private String aciklama;
     
     public StokDegisim(){}
 
+    public StokDegisim(int urunID, int eskiMiktar, int yeniMiktar, double tutar,String odemeSekli, String aciklama) {
+        this.urunID = urunID;
+        this.eskiMiktar = eskiMiktar;
+        this.yeniMiktar = yeniMiktar;
+        this.odemeSekli = odemeSekli;
+        this.tutar = tutar;
+        //this.tarih = ;
+        this.aciklama = aciklama;
+    }
+
+    
+    
     @Override
     public void ekle() throws HibernateException{
     
@@ -80,11 +92,11 @@ public class StokDegisim extends StokObject implements DatabaseI<StokObject>{
         this.yeniMiktar = yeniMiktar;
     }
 
-    public int getTutar() {
+    public double getTutar() {
         return tutar;
     }
 
-    public void setTutar(int tutar) {
+    public void setTutar(double tutar) {
         this.tutar = tutar;
     }
 
