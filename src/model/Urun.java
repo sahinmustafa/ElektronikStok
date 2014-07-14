@@ -54,6 +54,46 @@ public class Urun extends StokObject implements DatabaseI<StokObject>{
         return hbm.guncelle(yeniBilgi);
     }
 
+    public int satinAl(int urunID, int miktar, String odemeSekli,String aciklama){
+        Urun u = getir(urunID);
+        
+        if(u == null)
+            return Integer.MIN_VALUE;
+        
+        int yeniMiktar = u.getStokMiktar() + miktar;
+        double tutar = miktar * alisFiyati;
+        
+        StokDegisim stokDegisim = new StokDegisim(urunID, 
+                u.getStokMiktar(), yeniMiktar, tutar, odemeSekli, aciklama);
+        stokDegisim.ekle();
+        
+        u.setStokMiktar(yeniMiktar);
+        guncelle(urunID, u);
+        return Integer.MAX_VALUE;
+    }
+    
+    public int sat(int urunID, int miktar, String odemeSekli,String aciklama){
+        Urun u = getir(urunID);
+        
+        if(u == null)
+            return Integer.MIN_VALUE;
+        
+        int yeniMiktar = u.getStokMiktar() - miktar;
+        
+        if(yeniMiktar < 0)
+            return u.getStokMiktar();
+        
+        double tutar = miktar * satisFiyati;
+        StokDegisim stokDegisim = new StokDegisim(urunID, 
+                u.getStokMiktar(), yeniMiktar, tutar, odemeSekli, aciklama);
+        stokDegisim.ekle();
+        
+        u.setStokMiktar(yeniMiktar);
+        guncelle(urunID, u);
+        return Integer.MAX_VALUE;
+    }
+    
+    
     public String getAdi() {
         return adi;
     }
