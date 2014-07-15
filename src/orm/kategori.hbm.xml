@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="model.Kategori" table="KATEGORI"/>
+  
+  <id name="ID" column="KATEGORI_ID">
+      <generator class="increment"/>      
+  </id>
+  <property name="kategoriAdi" column="KATEGORI_ADI" type="string"></property>
+  <property name="aciklama" column="ACIKLAMA" type="string"></property>
+  
+  <many-to-one name="kategori" class="model.Kategori" column="UST_KATEGORI_ID"
+               not-null="true" cascade="all"/> 
+</hibernate-mapping>

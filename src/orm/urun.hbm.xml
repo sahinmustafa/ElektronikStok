@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="model.Urun" table="URUN"/>
+  <id name="ID" column="URUN_ID">
+      <generator class="increment"/>
+  </id>
+  <property name="adi" column="ADI" type="string"></property>
+  <property name="ozellik" column="OZELLIK" type="string"></property>
+  <property name="stokMiktar" column="MIKTAR" type="integer"></property>
+  <property name="alisFiyati" column="ALIS_FIYATI" type="double"></property>
+  <property name="satisFiyati" column="SATIS_FIYATI" type="double"></property>
+  <property name="kritikStokMiktar" column="KRITIK_STOK" type="integer"></property>
+  <property name="aciklama" column="ACIKLAMA" type="string"></property>
+  <property name="raf" column="BULUNDUGU_RAF" type="string"></property>
+  
+  <many-to-one name="kategori" class="model.Kategori" column="KATEGORI_ID"
+        not-null="false" cascade="all"/>
+</hibernate-mapping>

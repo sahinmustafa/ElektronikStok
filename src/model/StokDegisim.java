@@ -14,7 +14,7 @@ public class StokDegisim extends StokObject implements DatabaseI<StokObject>{
     public static final String ODEME_SEKLI_KREDI_KARTI = "krediKarti";
     public static final String ODEME_SEKLI_TAKSIT = "taksit";
     
-    private int urunID;
+    private Urun urun;
     private int eskiMiktar;
     private int yeniMiktar;
     private double tutar;
@@ -24,8 +24,8 @@ public class StokDegisim extends StokObject implements DatabaseI<StokObject>{
     
     public StokDegisim(){}
 
-    public StokDegisim(int urunID, int eskiMiktar, int yeniMiktar, double tutar,String odemeSekli, String aciklama) {
-        this.urunID = urunID;
+    public StokDegisim(Urun urun, int eskiMiktar, int yeniMiktar, double tutar,String odemeSekli, String aciklama) {
+        this.urun = urun;
         this.eskiMiktar = eskiMiktar;
         this.yeniMiktar = yeniMiktar;
         this.odemeSekli = odemeSekli;
@@ -68,12 +68,12 @@ public class StokDegisim extends StokObject implements DatabaseI<StokObject>{
         return hbm.guncelle(yeniBilgi);
     }
 
-    public int getUrunID() {
-        return urunID;
+    public Urun getUrun() {
+        return urun;
     }
 
-    public void setUrunID(int urunID) {
-        this.urunID = urunID;
+    public void setUrun(Urun urun) {
+        this.urun = urun;
     }
 
     public int getEskiMiktar() {
