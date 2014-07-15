@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="model">
+  <class name="model.StokDegisim" table="STOK_DEGISIM"/>
+  <id name="ID" column="DEGISIM_ID">
+      <generator class="increment"/>
+  </id>
+ 
+  <property name="eskiMiktar" column="ESKI_MIKTAR" type="integer"></property>
+  <property name="yeniMiktar" column="YENI_MIKTAR" type="integer"></property>
+  <property name="tutar" column="TUTAR" type="double"></property>
+  <property name="odemeSekli" column="ODEME_SEKLI" type="string"></property>
+  <property name="tarih" column="TARIH" type="date"></property>
+  <property name="aciklama" column="ACIKLAMA" type="string"></property>
+  
+  <many-to-one name="urun" class="model.Urun" column="URUN_ID"
+                not-null="true" cascade="all"/>
+</hibernate-mapping>

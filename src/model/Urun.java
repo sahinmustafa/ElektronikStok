@@ -63,7 +63,7 @@ public class Urun extends StokObject implements DatabaseI<StokObject>{
         int yeniMiktar = u.getStokMiktar() + miktar;
         double tutar = miktar * alisFiyati;
         
-        StokDegisim stokDegisim = new StokDegisim(urunID, 
+        StokDegisim stokDegisim = new StokDegisim(u, 
                 u.getStokMiktar(), yeniMiktar, tutar, odemeSekli, aciklama);
         stokDegisim.ekle();
         
@@ -84,7 +84,7 @@ public class Urun extends StokObject implements DatabaseI<StokObject>{
             return u.getStokMiktar();
         
         double tutar = miktar * satisFiyati;
-        StokDegisim stokDegisim = new StokDegisim(urunID, 
+        StokDegisim stokDegisim = new StokDegisim(u, 
                 u.getStokMiktar(), yeniMiktar, tutar, odemeSekli, aciklama);
         stokDegisim.ekle();
         
