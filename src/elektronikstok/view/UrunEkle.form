@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.JTextField" name="txtUrunKritikStokSeviyesi9">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel2"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextField8">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jTextField8"/>
+      </Properties>
+    </Component>
+  </NonVisualComponents>
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="jPanel1" alignment="1" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="&#xdc;R&#xdc;N EKLE">
+              <Font PropertyName="font" name="Arial" size="18" style="1"/>
+              <Color PropertyName="color" blue="0" green="0" red="0" type="rgb"/>
+            </TitledBorder>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="btnUrunEkle" min="-2" pref="64" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblUrunBulunduguRaf" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblUrunAciklama" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblKategoriId" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblUrunKritikStokSeviyesi" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblUrunSatisFiyati" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblUrunAlisFiyati" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblUrunOzellik" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblUrunMiktar" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblUrunAdi" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblUrunId" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="txtUrunBulunduguRaf" alignment="0" min="-2" pref="117" max="-2" attributes="0"/>
+                              <Component id="txtUrunAciklama" alignment="0" min="-2" pref="117" max="-2" attributes="0"/>
+                              <Component id="txtKategoriId" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtUrunKritikStokSeviyesi" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtUrunSatisFiyati" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtUrunAlisFiyati" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtUrunOzellik" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtUrunMiktar" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtUrunAdi" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtUrunId" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="0" pref="156" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblUrunId" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtUrunId" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblUrunAdi" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtUrunAdi" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblUrunMiktar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtUrunMiktar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblUrunOzellik" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtUrunOzellik" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblUrunAlisFiyati" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtUrunAlisFiyati" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblUrunSatisFiyati" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtUrunSatisFiyati" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblUrunKritikStokSeviyesi" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtUrunKritikStokSeviyesi" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblKategoriId" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtKategoriId" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblUrunAciklama" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtUrunAciklama" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblUrunBulunduguRaf" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtUrunBulunduguRaf" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="btnUrunEkle" pref="34" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="lblUrunId">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="&#xdc;R&#xdc;N ID                       :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblUrunAdi">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="ADI                               :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtUrunId">
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtUrunAdi">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtUrunAdiActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblUrunMiktar">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="M&#x130;KTAR                        :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblUrunOzellik">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="&#xd6;ZELL&#x130;K                        :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblUrunAlisFiyati">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="ALI&#x15e; F&#x130;YATI                  :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblUrunSatisFiyati">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="SATI&#x15e; F&#x130;YATI               :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblUrunKritikStokSeviyesi">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="KR&#x130;T&#x130;K STOK SEV&#x130;YES&#x130;:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblKategoriId">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="KATEGOR&#x130; ID               :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblUrunAciklama">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="A&#xc7;IKLAMA                    :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblUrunBulunduguRaf">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="BULUNDU&#x11e;U RAF         :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtUrunMiktar">
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtUrunOzellik">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtUrunOzellikActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtUrunAlisFiyati">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtUrunAlisFiyatiActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtUrunSatisFiyati">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtUrunSatisFiyatiActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtUrunKritikStokSeviyesi">
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtKategoriId">
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtUrunAciklama">
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtUrunBulunduguRaf">
+        </Component>
+        <Component class="javax.swing.JButton" name="btnUrunEkle">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="EKLE"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
