@@ -68,6 +68,11 @@ public class AnaEkran extends javax.swing.JFrame {
         btnKategoriEkle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/elektronikstok/resimler/add (1).png"))); // NOI18N
 
         btnKategoriSil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/elektronikstok/resimler/edit_delete (2).png"))); // NOI18N
+        btnKategoriSil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKategoriSilActionPerformed(evt);
+            }
+        });
 
         btnKategoriGuncelle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/elektronikstok/resimler/refresh (1).png"))); // NOI18N
 
@@ -189,6 +194,10 @@ public class AnaEkran extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnKategoriSilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKategoriSilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnKategoriSilActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -225,21 +234,21 @@ public class AnaEkran extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAra;
-    private javax.swing.JButton btnGuncelle;
-    private javax.swing.JButton btnKategoriEkle;
-    private javax.swing.JButton btnKategoriGuncelle;
-    private javax.swing.JButton btnKategoriSil;
-    private javax.swing.JButton btnSil;
-    private javax.swing.JButton btnUrunAl;
-    private javax.swing.JButton btnUrunSat;
-    private javax.swing.JButton btnYeni;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    public javax.swing.JButton btnAra;
+    public javax.swing.JButton btnGuncelle;
+    public javax.swing.JButton btnKategoriEkle;
+    public javax.swing.JButton btnKategoriGuncelle;
+    public javax.swing.JButton btnKategoriSil;
+    public javax.swing.JButton btnSil;
+    public javax.swing.JButton btnUrunAl;
+    public javax.swing.JButton btnUrunSat;
+    public javax.swing.JButton btnYeni;
+    public javax.swing.JPanel jPanel1;
+    public javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JList listkategori;
-    private javax.swing.JTable tblUrunOzellik;
-    private javax.swing.JTextField txtAra;
+    public javax.swing.JTable tblUrunOzellik;
+    public javax.swing.JTextField txtAra;
     // End of variables declaration//GEN-END:variables
 }
