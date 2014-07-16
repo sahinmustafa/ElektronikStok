@@ -247,7 +247,7 @@ public class AnaEkran extends javax.swing.JFrame {
     public javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JList listkategori;
+    public javax.swing.JList listkategori;
     public javax.swing.JTable tblUrunOzellik;
     public javax.swing.JTextField txtAra;
     // End of variables declaration//GEN-END:variables
