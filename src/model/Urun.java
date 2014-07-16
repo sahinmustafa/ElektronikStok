@@ -2,7 +2,7 @@ package model;
 
 import helper.HbmIslemler;
 import java.util.ArrayList;
-import org.hibernate.HibernateException;
+import org.hibernate.HibernateException; 
 
 /**
  *

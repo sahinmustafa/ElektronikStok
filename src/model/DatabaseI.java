@@ -5,6 +5,7 @@ import java.util.ArrayList;
 /**
  *
  * @author MustafaSahin
+ * @param <T>
  */
 public interface DatabaseI<T extends StokObject> {
     
