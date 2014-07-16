@@ -121,7 +121,7 @@ public class AnaEkranKontrol implements ActionListener{
         }else if(ae.getSource() == anaEkran.btnUrunSat){
         
         }else if(ae.getSource() == anaEkran.btnYeni){
-        
+            UrunEkleKontrol uek = new UrunEkleKontrol();
         }
     }
 }
