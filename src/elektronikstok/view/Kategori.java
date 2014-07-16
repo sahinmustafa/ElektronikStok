@@ -157,11 +157,11 @@ public class Kategori extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnKategoriEkle;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lblAciklama;
-    private javax.swing.JLabel lblKategoriAdi;
-    private javax.swing.JTextField txtKategoriAciklama;
-    private javax.swing.JTextField txtKategoriAdi;
+    public javax.swing.JButton btnKategoriEkle;
+    public javax.swing.JPanel jPanel1;
+    public javax.swing.JLabel lblAciklama;
+    public javax.swing.JLabel lblKategoriAdi;
+    public javax.swing.JTextField txtKategoriAciklama;
+    public javax.swing.JTextField txtKategoriAdi;
     // End of variables declaration//GEN-END:variables
 }
