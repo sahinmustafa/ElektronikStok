@@ -36,8 +36,8 @@ public class Urun extends StokObject implements DatabaseI<StokObject>{
     }
     
     @Override
-    public ArrayList<Urun> listele(int ururnID){
-        String hql = "SELECT * FROM urun WHERE urun_id ='" + ururnID + "'";  
+    public ArrayList<Urun> listele(int kategoriID){
+        String hql = "SELECT * FROM urun WHERE kategori_id ='" + kategoriID + "'";  
         HbmIslemler hbm = new HbmIslemler();
         return (ArrayList<Urun>) hbm.list(hql);
     }
@@ -93,6 +93,14 @@ public class Urun extends StokObject implements DatabaseI<StokObject>{
         return Integer.MAX_VALUE;
     }
     
+    public ArrayList<Urun> listele(int kategoriID, String aranacakMetin){
+        String hql = "SELECET * FROM URUN " +
+                "WHERE kategori_id = '" + kategoriID +
+                "' AND urun_adi LIKE '%"+aranacakMetin + "%'";
+        
+        HbmIslemler hbm = new HbmIslemler();
+        return  (ArrayList<Urun>) hbm.list(hql);
+    }
     
     public String getAdi() {
         return adi;

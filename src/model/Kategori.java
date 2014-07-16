@@ -31,7 +31,7 @@ public class Kategori extends StokObject implements DatabaseI<StokObject>{
     
     @Override
     public ArrayList<Kategori> listele(int kategoriID){
-        String hql = "SELECT * FROM kategori WHERE kategori_id ='" + kategoriID + "'";
+        String hql = "SELECT * FROM kategori";
         HbmIslemler hbm = new HbmIslemler();
         return (ArrayList<Kategori>) hbm.list(hql);
     }
