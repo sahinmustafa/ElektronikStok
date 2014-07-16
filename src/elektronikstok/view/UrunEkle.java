@@ -273,30 +273,30 @@ public class UrunEkle extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnUrunEkle;
+    public javax.swing.JButton btnUrunEkle;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
+    public javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField8;
-    private javax.swing.JLabel lblKategoriId;
-    private javax.swing.JLabel lblUrunAciklama;
-    private javax.swing.JLabel lblUrunAdi;
-    private javax.swing.JLabel lblUrunAlisFiyati;
-    private javax.swing.JLabel lblUrunBulunduguRaf;
-    private javax.swing.JLabel lblUrunId;
-    private javax.swing.JLabel lblUrunKritikStokSeviyesi;
-    private javax.swing.JLabel lblUrunMiktar;
-    private javax.swing.JLabel lblUrunOzellik;
-    private javax.swing.JLabel lblUrunSatisFiyati;
-    private javax.swing.JTextField txtKategoriId;
-    private javax.swing.JTextField txtUrunAciklama;
-    private javax.swing.JTextField txtUrunAdi;
-    private javax.swing.JTextField txtUrunAlisFiyati;
-    private javax.swing.JTextField txtUrunBulunduguRaf;
-    private javax.swing.JTextField txtUrunId;
-    private javax.swing.JTextField txtUrunKritikStokSeviyesi;
+    public javax.swing.JLabel lblKategoriId;
+    public javax.swing.JLabel lblUrunAciklama;
+    public javax.swing.JLabel lblUrunAdi;
+    public javax.swing.JLabel lblUrunAlisFiyati;
+    public javax.swing.JLabel lblUrunBulunduguRaf;
+    public javax.swing.JLabel lblUrunId;
+    public javax.swing.JLabel lblUrunKritikStokSeviyesi;
+    public javax.swing.JLabel lblUrunMiktar;
+    public javax.swing.JLabel lblUrunOzellik;
+    public javax.swing.JLabel lblUrunSatisFiyati;
+    public javax.swing.JTextField txtKategoriId;
+    public javax.swing.JTextField txtUrunAciklama;
+    public javax.swing.JTextField txtUrunAdi;
+    public javax.swing.JTextField txtUrunAlisFiyati;
+    public javax.swing.JTextField txtUrunBulunduguRaf;
+    public javax.swing.JTextField txtUrunId;
+    public javax.swing.JTextField txtUrunKritikStokSeviyesi;
     private javax.swing.JTextField txtUrunKritikStokSeviyesi9;
-    private javax.swing.JTextField txtUrunMiktar;
-    private javax.swing.JTextField txtUrunOzellik;
-    private javax.swing.JTextField txtUrunSatisFiyati;
+    public javax.swing.JTextField txtUrunMiktar;
+    public javax.swing.JTextField txtUrunOzellik;
+    public javax.swing.JTextField txtUrunSatisFiyati;
     // End of variables declaration//GEN-END:variables
 }
