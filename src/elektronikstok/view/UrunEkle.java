@@ -78,7 +78,7 @@ public class UrunEkle extends javax.swing.JFrame {
         lblUrunMiktar.setText("MİKTAR                        :");
 
         lblUrunOzellik.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblUrunOzellik.setText("ÖZELLİK                        :");
+        lblUrunOzellik.setText("ÖZELLİK                       :");
 
         lblUrunAlisFiyati.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblUrunAlisFiyati.setText("ALIŞ FİYATI                  :");
@@ -123,35 +123,35 @@ public class UrunEkle extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblUrunBulunduguRaf)
+                    .addComponent(lblUrunAciklama)
+                    .addComponent(lblKategoriId)
+                    .addComponent(lblUrunKritikStokSeviyesi)
+                    .addComponent(lblUrunSatisFiyati)
+                    .addComponent(lblUrunAlisFiyati)
+                    .addComponent(lblUrunOzellik)
+                    .addComponent(lblUrunMiktar)
+                    .addComponent(lblUrunAdi)
+                    .addComponent(lblUrunId))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtKategoriId)
+                    .addComponent(txtUrunKritikStokSeviyesi)
+                    .addComponent(txtUrunSatisFiyati)
+                    .addComponent(txtUrunAlisFiyati)
+                    .addComponent(txtUrunOzellik)
+                    .addComponent(txtUrunMiktar)
+                    .addComponent(txtUrunAdi)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnUrunEkle, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblUrunBulunduguRaf)
-                            .addComponent(lblUrunAciklama)
-                            .addComponent(lblKategoriId)
-                            .addComponent(lblUrunKritikStokSeviyesi)
-                            .addComponent(lblUrunSatisFiyati)
-                            .addComponent(lblUrunAlisFiyati)
-                            .addComponent(lblUrunOzellik)
-                            .addComponent(lblUrunMiktar)
-                            .addComponent(lblUrunAdi)
-                            .addComponent(lblUrunId))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtUrunBulunduguRaf, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtUrunAciklama, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtKategoriId)
-                            .addComponent(txtUrunKritikStokSeviyesi)
-                            .addComponent(txtUrunSatisFiyati)
-                            .addComponent(txtUrunAlisFiyati)
-                            .addComponent(txtUrunOzellik)
-                            .addComponent(txtUrunMiktar)
-                            .addComponent(txtUrunAdi)
-                            .addComponent(txtUrunId))))
-                .addGap(0, 156, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnUrunEkle, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtUrunId, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                                .addComponent(txtUrunAciklama)
+                                .addComponent(txtUrunBulunduguRaf)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(55, 55, 55))
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lblKategoriId, lblUrunAciklama, lblUrunAdi, lblUrunAlisFiyati, lblUrunBulunduguRaf, lblUrunId, lblUrunKritikStokSeviyesi, lblUrunMiktar, lblUrunOzellik, lblUrunSatisFiyati});
@@ -211,7 +211,7 @@ public class UrunEkle extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
