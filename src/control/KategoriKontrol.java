@@ -11,6 +11,7 @@ public class KategoriKontrol implements ActionListener{
     public KategoriKontrol() {
         this.kategori = new Kategori();
         actionAta();
+        kategori.show();
     }
 
     public KategoriKontrol(Kategori kategori) {

@@ -24,6 +24,7 @@ public class AnaEkranKontrol implements ActionListener{
         kategorileriListele();
         urunleriGoster();
         actionAta();
+        anaEkran.show();
     }
     
     public AnaEkranKontrol(AnaEkran anaEkran) {
