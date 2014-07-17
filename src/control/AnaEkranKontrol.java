@@ -43,18 +43,23 @@ public class AnaEkranKontrol implements ActionListener{
     }
 
     private void urunleriGoster() {
-        String kategori = anaEkran.listkategori.getSelectedValue().toString();
         String aranan   = anaEkran.txtAra.getText();
-        int kategoriId = new Kategori().kategoriAdindanIdBul(kategori);
+        int kategoriId = -1;
+        ArrayList <Urun> urunler;
         
-        /*
-            !!!
-            Kategori içerisinde kategoriAdindanIdBul fonksiyonu gerekli
-            Bütün kategorideki ürünleri listelemek için bir yöntem belirlemek gerek,
-            Bunun dışında ürün görüntüleme işlemlerine (Arama, kategori ürünlerini gösterde, kategoride arama) cevap verir gibi duruyor.
-            Bir de actionPerformed biraz karişik duruyor sanki
-        */
-        ArrayList <Urun> urunler = new Urun().listele(kategoriId, aranan);
+        //kategori seçili ise isimden kategori id bul, bulunamazsa da kategoriId = -1 olur.
+        if(anaEkran.listkategori.getSelectedIndex() >= 0){
+            String kategori = anaEkran.listkategori.getSelectedValue().toString();
+            kategoriId = new Kategori().kategoriAdindanIdBul(kategori);
+        }
+        
+        //Kategori seçili ise
+        if(kategoriId != -1){
+            urunler = new Urun().listele(kategoriId, aranan);
+        }else {
+            //!!!Tüm ürünleri çek
+            urunler = null;
+        }
         
         DefaultTableModel tableModel = new DefaultTableModel();
         
