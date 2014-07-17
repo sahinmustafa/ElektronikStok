@@ -51,7 +51,7 @@ public class StokDegisim extends StokObject implements DatabaseI<StokObject>{
     
     @Override
     public ArrayList<StokDegisim> listele(int stokID){
-        String hql = "SELECT * FROM StokDegisim WHERE StokDegisim.ID ='" + stokID + "'";
+        String hql = "SELECT * FROM StokDegisim WHERE ID ='" + stokID + "'";
         HbmIslemler hbm = new HbmIslemler();
         return (ArrayList<StokDegisim>) hbm.list(hql);
     }

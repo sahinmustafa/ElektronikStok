@@ -48,7 +48,7 @@ public class Kategori extends StokObject implements DatabaseI<StokObject>{
     }
     
     public int kategoriAdindanIdBul(String kategoriAdi){
-        String hql = "SELECT * FROM Kategori WHERE kategoriAdi ='" + kategoriAdi + "'";
+        String hql = "FROM Kategori WHERE kategoriAdi ='" + kategoriAdi + "'";
         HbmIslemler hbm = new HbmIslemler();
         ArrayList<Kategori> kategoriList = (ArrayList<Kategori>) hbm.list(hql);
         if(kategoriList.isEmpty())
