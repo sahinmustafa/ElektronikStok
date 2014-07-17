@@ -17,7 +17,7 @@ import model.Urun;
  */
 public class AnaEkranKontrol implements ActionListener{
     
-    AnaEkran anaEkran;
+    AnaEkran anaEkran; 
     
     public AnaEkranKontrol() {
         this.anaEkran = new AnaEkran();
