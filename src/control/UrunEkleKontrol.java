@@ -3,6 +3,8 @@ package control;
 import elektronikstok.view.UrunEkle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+import model.Kategori;
 import model.Urun;
 
 public class UrunEkleKontrol implements ActionListener{
@@ -24,35 +26,55 @@ public class UrunEkleKontrol implements ActionListener{
     
 
     private void txtDegerleriAta() {
-        if(urunId == Urun.YENI_URUN){
-            urunEkle.btnUrunEkle.setText("Ekle");
-        }else{
-            Urun urun = new Urun().getir(urunId);
+        try{
+            if(urunId == Urun.YENI_URUN){
+                urunEkle.btnUrunEkle.setText("Ekle");
+            }else{
+                Urun urun = new Urun().getir(urunId);
 
-            urunEkle.txtKategoriId.setText(urun.getKategori().getID()+"");
-            urunEkle.txtUrunAciklama.setText(urun.getAciklama());
-            urunEkle.txtUrunAdi.setText(urun.getAdi());
-            urunEkle.txtUrunAlisFiyati.setText(urun.getAlisFiyati()+"");
-            urunEkle.txtUrunBulunduguRaf.setText(urun.getRaf());
-            urunEkle.txtUrunId.setText(urun.getID()+"");
-            urunEkle.txtUrunKritikStokSeviyesi.setText(urun.getStokMiktar()+"");
-            urunEkle.txtUrunMiktar.setText(urun.getKritikStokMiktar()+"");
-            urunEkle.txtUrunOzellik.setText(urun.getOzellik());
-            urunEkle.txtUrunSatisFiyati.setText(urun.getSatisFiyati()+"");
-            
-            urunEkle.btnUrunEkle.setText("Güncelle");
+                urunEkle.txtKategoriId.setText(urun.getKategori().getID()+"");
+                urunEkle.txtUrunAciklama.setText(urun.getAciklama());
+                urunEkle.txtUrunAdi.setText(urun.getAdi());
+                urunEkle.txtUrunAlisFiyati.setText(urun.getAlisFiyati()+"");
+                urunEkle.txtUrunBulunduguRaf.setText(urun.getRaf());
+                urunEkle.txtUrunId.setText(urun.getID()+"");
+                urunEkle.txtUrunKritikStokSeviyesi.setText(urun.getStokMiktar()+"");
+                urunEkle.txtUrunMiktar.setText(urun.getKritikStokMiktar()+"");
+                urunEkle.txtUrunOzellik.setText(urun.getOzellik());
+                urunEkle.txtUrunSatisFiyati.setText(urun.getSatisFiyati()+"");
+
+                urunEkle.btnUrunEkle.setText("Güncelle");
+            }
+        }catch(Exception e){
+            uyariMesaji("actionAta", e.getMessage());
         }
     }
+    
 
     private void actionAta() {
-        urunEkle.btnUrunEkle.addActionListener(this);
+        try{
+            urunEkle.btnUrunEkle.addActionListener(this);
+        }catch(Exception e){
+            uyariMesaji("actionAta", e.getMessage());
+        }
+    }
+    
+    /* Araci fonksiyon ile çağrildiklari için try catch gerektirmeyenler */
+    private void uyariMesaji(String baslik, String mesaj){
+        JOptionPane.showConfirmDialog(urunEkle, baslik, mesaj, JOptionPane.OK_OPTION);
     }
     
     @Override
     public void actionPerformed(ActionEvent ae) {
         if(ae.getSource() == urunEkle.btnUrunEkle){
+            urunEkleVeyaGuncelle();
+        }
+    }
+
+    private void urunEkleVeyaGuncelle() {
+        try{
             Urun u = new Urun();
-            
+
             u.setAciklama(urunEkle.txtUrunAciklama.getText());
             u.setAdi(urunEkle.txtUrunAdi.getText());
             u.setAlisFiyati(Integer.parseInt(urunEkle.txtUrunAlisFiyati.getText()));
@@ -62,15 +84,18 @@ public class UrunEkleKontrol implements ActionListener{
             u.setRaf(urunEkle.txtUrunBulunduguRaf.getText());
             u.setSatisFiyati(Integer.parseInt(urunEkle.txtUrunSatisFiyati.getText()));
             u.setStokMiktar(Integer.parseInt(urunEkle.txtUrunMiktar.getText()));
-            
-            //!!! içerisindeki kategori id'ye txt den gelen id yi atadım
-            u.getKategori().setID(Integer.parseInt(urunEkle.txtKategoriId.getText()));
-            
+
+            //id den kategor nesnesi çekilerek ataniyor
+            int kategoriId = Integer.parseInt(urunEkle.txtKategoriId.getText());
+            u.setKategori(new Kategori().getir(kategoriId));
+
             if(urunId == Urun.YENI_URUN){
                 u.ekle();
             }else{
                 u.guncelle(urunId, u);
             }
+        }catch(Exception e){
+            uyariMesaji("urunEkleVeyaGuncelle", e.getMessage());
         }
     }
 }
