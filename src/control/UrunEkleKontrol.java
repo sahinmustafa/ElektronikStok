@@ -17,6 +17,7 @@ public class UrunEkleKontrol implements ActionListener{
         this.urunId = urunId;
         txtDegerleriAta();
         actionAta();
+        urunEkle.show();
     }
     
     public UrunEkleKontrol(UrunEkle urunEkle) {
