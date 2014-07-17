@@ -190,7 +190,7 @@ public class AnaEkranKontrol implements ActionListener{
     }
     
     private void uyariMesaji(String baslik, String mesaj){
-        JOptionPane.showConfirmDialog(anaEkran, baslik, mesaj, JOptionPane.OK_OPTION);
+        JOptionPane.showConfirmDialog(anaEkran, mesaj, baslik, JOptionPane.OK_OPTION);
     }
     
     @Override
