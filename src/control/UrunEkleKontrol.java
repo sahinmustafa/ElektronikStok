@@ -28,7 +28,7 @@ public class UrunEkleKontrol implements ActionListener{
     private void txtDegerleriAta() {
         try{
             if(urunId == Urun.YENI_URUN){
-                urunEkle.btnUrunEkle.setText("Ekle");
+                urunEkle.btnUrunkaydet.setText("Ekle");
             }else{
                 Urun urun = new Urun().getir(urunId);
 
@@ -43,7 +43,7 @@ public class UrunEkleKontrol implements ActionListener{
                 urunEkle.txtUrunOzellik.setText(urun.getOzellik());
                 urunEkle.txtUrunSatisFiyati.setText(urun.getSatisFiyati()+"");
 
-                urunEkle.btnUrunEkle.setText("Güncelle");
+                urunEkle.btnUrunkaydet.setText("Güncelle");
             }
         }catch(Exception e){
             uyariMesaji("actionAta", e.getMessage());
@@ -53,7 +53,7 @@ public class UrunEkleKontrol implements ActionListener{
 
     private void actionAta() {
         try{
-            urunEkle.btnUrunEkle.addActionListener(this);
+            urunEkle.btnUrunkaydet.addActionListener(this);
         }catch(Exception e){
             uyariMesaji("actionAta", e.getMessage());
         }
@@ -61,13 +61,15 @@ public class UrunEkleKontrol implements ActionListener{
     
     /* Araci fonksiyon ile çağrildiklari için try catch gerektirmeyenler */
     private void uyariMesaji(String baslik, String mesaj){
-        JOptionPane.showConfirmDialog(urunEkle, baslik, mesaj, JOptionPane.OK_OPTION);
+        JOptionPane.showConfirmDialog(urunEkle, mesaj, baslik, JOptionPane.OK_OPTION);
     }
     
     @Override
     public void actionPerformed(ActionEvent ae) {
-        if(ae.getSource() == urunEkle.btnUrunEkle){
+        if(ae.getSource() == urunEkle.btnUrunkaydet){
             urunEkleVeyaGuncelle();
+        }else if(ae.getSource() == urunEkle.btnUrunVazgec){
+            urunEkle.hide();
         }
     }
 

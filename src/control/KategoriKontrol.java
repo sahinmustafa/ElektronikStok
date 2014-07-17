@@ -41,7 +41,7 @@ public class KategoriKontrol implements ActionListener{
     
     /* Araci fonksiyon ile çağrildiklari için try catch gerektirmeyenler */
     private void uyariMesaji(String baslik, String mesaj){
-        JOptionPane.showConfirmDialog(kategori, baslik, mesaj, JOptionPane.OK_OPTION);
+        JOptionPane.showConfirmDialog(kategori, mesaj, baslik, JOptionPane.OK_OPTION);
     }
     
     @Override
