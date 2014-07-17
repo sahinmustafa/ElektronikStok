@@ -10,7 +10,6 @@ import org.hibernate.HibernateException;
  */
 public class Kategori extends StokObject implements DatabaseI<StokObject>{
     
-    private int ID;
     private String kategoriAdi;
     private String aciklama;
     
@@ -31,7 +30,7 @@ public class Kategori extends StokObject implements DatabaseI<StokObject>{
     
     @Override
     public ArrayList<Kategori> listele(int kategoriID){
-        String hql = "SELECT * FROM Kategori";
+        String hql = "FROM Kategori";
         HbmIslemler hbm = new HbmIslemler();
         return (ArrayList<Kategori>) hbm.list(hql);
     }
