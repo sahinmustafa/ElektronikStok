@@ -47,6 +47,15 @@ public class Kategori extends StokObject implements DatabaseI<StokObject>{
         HbmIslemler hbm = new HbmIslemler();
         return hbm.guncelle(yeniBilgi);
     }
+    
+    public int kategoriAdindanIdBul(String kategoriAdi){
+        String hql = "SELECT * FROM kategori WHERE kategori_adi ='" + kategoriAdi + "'";
+        HbmIslemler hbm = new HbmIslemler();
+        ArrayList<Kategori> kategoriList = (ArrayList<Kategori>) hbm.list(hql);
+        if(kategoriList.isEmpty())
+            return -1;
+        return kategoriList.get(0).getID();
+    }
 
     public String getKategoriAdi() {
         return kategoriAdi;
