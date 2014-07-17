@@ -6,6 +6,7 @@
     <property name="hibernate.connection.driver_class">org.apache.derby.jdbc.ClientDriver</property>
     <property name="hibernate.connection.url">jdbc:derby://localhost:1527/ElektronikStok</property>
     <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.default_schema">APP</property>
     <mapping resource="orm/kategori.hbm.xml"/>
     <mapping resource="orm/urun.hbm.xml"/>
     <mapping resource="orm/stokdegisim.hbm.xml"/>

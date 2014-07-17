@@ -10,9 +10,9 @@ import org.hibernate.HibernateException;
  */
 public class Kategori extends StokObject implements DatabaseI<StokObject>{
     
+    private int ID;
     private String kategoriAdi;
     private String aciklama;
-    private Kategori kategori;
     
     public Kategori(){}
 
@@ -31,7 +31,7 @@ public class Kategori extends StokObject implements DatabaseI<StokObject>{
     
     @Override
     public ArrayList<Kategori> listele(int kategoriID){
-        String hql = "SELECT * FROM kategori";
+        String hql = "SELECT * FROM Kategori";
         HbmIslemler hbm = new HbmIslemler();
         return (ArrayList<Kategori>) hbm.list(hql);
     }
@@ -49,7 +49,7 @@ public class Kategori extends StokObject implements DatabaseI<StokObject>{
     }
     
     public int kategoriAdindanIdBul(String kategoriAdi){
-        String hql = "SELECT * FROM kategori WHERE kategori_adi ='" + kategoriAdi + "'";
+        String hql = "SELECT * FROM Kategori WHERE kategoriAdi ='" + kategoriAdi + "'";
         HbmIslemler hbm = new HbmIslemler();
         ArrayList<Kategori> kategoriList = (ArrayList<Kategori>) hbm.list(hql);
         if(kategoriList.isEmpty())
@@ -71,15 +71,5 @@ public class Kategori extends StokObject implements DatabaseI<StokObject>{
 
     public void setAciklama(String aciklama) {
         this.aciklama = aciklama;
-    }
-
-    public Kategori getKategori() {
-        return kategori;
-    }
-
-    public void setKategori(Kategori kategori) {
-        this.kategori = kategori;
-    }
-    
-    
+    }    
 }

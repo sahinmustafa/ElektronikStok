@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-  <class name="model.Urun" table="URUN"/>
+  <class name="model.Urun" table="URUN">
   <id name="ID" column="URUN_ID">
       <generator class="increment"/>
   </id>
@@ -14,6 +14,6 @@
   <property name="aciklama" column="ACIKLAMA" type="string"></property>
   <property name="raf" column="BULUNDUGU_RAF" type="string"></property>
   
-  <many-to-one name="kategori" class="model.Kategori" column="KATEGORI_ID"
-        not-null="false" cascade="all"/>
+  <many-to-one name="kategori" class="model.Kategori" cascade="delete"/>
+  </class>
 </hibernate-mapping>
