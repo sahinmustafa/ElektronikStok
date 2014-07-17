@@ -25,27 +25,9 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <Component id="pnlKategoriListesi" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="btnYeni" linkSize="3" min="-2" pref="87" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnGuncelle" linkSize="3" min="-2" pref="82" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnSil" linkSize="3" min="-2" pref="83" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnUrunAl" linkSize="3" min="-2" pref="85" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnUrunSat" linkSize="3" min="-2" pref="93" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="txtAra" min="-2" pref="379" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnAra" min="-2" pref="80" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="jPanel2" alignment="0" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <Component id="pnlUrunBilgileri" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -55,23 +37,8 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtAra" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                          <Component id="btnAra" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jPanel2" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnYeni" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                          <Component id="btnGuncelle" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                          <Component id="btnSil" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                          <Component id="btnUrunAl" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                          <Component id="btnUrunSat" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Component id="jPanel1" max="32767" attributes="0"/>
+                  <Component id="pnlKategoriListesi" max="32767" attributes="0"/>
+                  <Component id="pnlUrunBilgileri" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -79,63 +46,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JTextField" name="txtAra">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Ara"/>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnAra">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Ara"/>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnGuncelle">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Guncelle"/>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnUrunSat">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Urun Sat"/>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnUrunAl">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Urun Al"/>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnSil">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Sil"/>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnYeni">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Yeni"/>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-      </AuxValues>
-    </Component>
-    <Container class="javax.swing.JPanel" name="jPanel1">
+    <Container class="javax.swing.JPanel" name="pnlKategoriListesi">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -169,12 +80,12 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" max="32767" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="btnKategoriGuncelle" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnKategoriEkle" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnKategoriSil" min="-2" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" pref="347" max="32767" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="btnKategoriGuncelle" max="32767" attributes="0"/>
+                      <Component id="btnKategoriSil" max="32767" attributes="0"/>
+                      <Component id="btnKategoriEkle" alignment="1" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -204,7 +115,7 @@
         <Component class="javax.swing.JButton" name="btnKategoriEkle">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/elektronikstok/resimler/add (1).png"/>
+              <Image iconType="3" name="/elektronikstok/view/add (1).png"/>
             </Property>
           </Properties>
           <AuxValues>
@@ -214,7 +125,7 @@
         <Component class="javax.swing.JButton" name="btnKategoriSil">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/elektronikstok/resimler/edit_delete (2).png"/>
+              <Image iconType="3" name="/elektronikstok/view/refresh (1).png"/>
             </Property>
           </Properties>
           <Events>
@@ -227,7 +138,7 @@
         <Component class="javax.swing.JButton" name="btnKategoriGuncelle">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/elektronikstok/resimler/refresh (1).png"/>
+              <Image iconType="3" name="/elektronikstok/view/edit_delete (2).png"/>
             </Property>
           </Properties>
           <AuxValues>
@@ -236,7 +147,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="jPanel2">
+    <Container class="javax.swing.JPanel" name="pnlUrunBilgileri">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -254,23 +165,52 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="531" max="32767" attributes="0"/>
-              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jScrollPane2" min="-2" pref="523" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="8" max="32767" attributes="0"/>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="jScrollPane2" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="txtAra" min="-2" pref="379" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="btnAra" min="-2" pref="80" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="btnYeni" linkSize="3" min="-2" pref="87" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="btnGuncelle" linkSize="3" min="-2" pref="82" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="btnSil" linkSize="3" min="-2" pref="83" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="btnUrunAl" linkSize="3" min="-2" pref="85" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="btnUrunSat" linkSize="3" min="-2" pref="93" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="358" max="32767" attributes="0"/>
-              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jScrollPane2" min="-2" pref="347" max="-2" attributes="0"/>
-                      <EmptySpace min="0" max="32767" attributes="0"/>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txtAra" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="btnAra" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                   </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="jScrollPane2" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btnYeni" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="btnGuncelle" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="btnSil" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="btnUrunAl" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="btnUrunSat" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -306,6 +246,65 @@
             </Component>
           </SubComponents>
         </Container>
+        <Component class="javax.swing.JButton" name="btnYeni">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Yeni"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnGuncelle">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="G&#xfc;ncelle"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnSil">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Sil"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnUrunAl">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#xdc;r&#xfc;n Al"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnUrunSat">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#xdc;r&#xfc;n Sat"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUrunSatActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtAra">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ara"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnAra">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ara"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>
