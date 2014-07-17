@@ -53,13 +53,7 @@ public class AnaEkranKontrol implements ActionListener{
             kategoriId = new Kategori().kategoriAdindanIdBul(kategori);
         }
         
-        //Kategori seçili ise
-        if(kategoriId != -1){
-            urunler = new Urun().listele(kategoriId, aranan);
-        }else {
-            //!!!Tüm ürünleri çek
-            urunler = null;
-        }
+        urunler = new Urun().listele(kategoriId, aranan);
         
         DefaultTableModel tableModel = new DefaultTableModel();
         
