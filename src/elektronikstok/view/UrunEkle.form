@@ -40,7 +40,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="12" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -92,13 +92,15 @@
                       <Component id="txtUrunMiktar" alignment="0" max="32767" attributes="0"/>
                       <Component id="txtUrunAdi" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="btnUrunEkle" min="-2" pref="64" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="txtUrunId" pref="218" max="32767" attributes="0"/>
-                                  <Component id="txtUrunAciklama" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtUrunBulunduguRaf" alignment="0" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="btnUrunkaydet" linkSize="2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="btnUrunVazgec" linkSize="2" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <Component id="txtUrunId" alignment="0" pref="223" max="32767" attributes="0"/>
+                              <Component id="txtUrunAciklama" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtUrunBulunduguRaf" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
@@ -161,7 +163,10 @@
                       <Component id="txtUrunBulunduguRaf" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btnUrunEkle" pref="34" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btnUrunVazgec" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnUrunkaydet" linkSize="3" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -340,10 +345,24 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="btnUrunEkle">
+        <Component class="javax.swing.JButton" name="btnUrunkaydet">
           <Properties>
-            <Property name="text" type="java.lang.String" value="EKLE"/>
+            <Property name="text" type="java.lang.String" value="Kaydet"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUrunkaydetActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnUrunVazgec">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Vazge&#xe7;"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUrunVazgecActionPerformed"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>

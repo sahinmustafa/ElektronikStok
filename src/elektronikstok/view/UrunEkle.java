@@ -52,7 +52,8 @@ public class UrunEkle extends javax.swing.JFrame {
         txtKategoriId = new javax.swing.JTextField();
         txtUrunAciklama = new javax.swing.JTextField();
         txtUrunBulunduguRaf = new javax.swing.JTextField();
-        btnUrunEkle = new javax.swing.JButton();
+        btnUrunkaydet = new javax.swing.JButton();
+        btnUrunVazgec = new javax.swing.JButton();
 
         jLabel2.setText("jLabel2");
 
@@ -116,7 +117,19 @@ public class UrunEkle extends javax.swing.JFrame {
             }
         });
 
-        btnUrunEkle.setText("EKLE");
+        btnUrunkaydet.setText("Kaydet");
+        btnUrunkaydet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUrunkaydetActionPerformed(evt);
+            }
+        });
+
+        btnUrunVazgec.setText("Vazgeç");
+        btnUrunVazgec.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUrunVazgecActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -144,17 +157,21 @@ public class UrunEkle extends javax.swing.JFrame {
                     .addComponent(txtUrunMiktar)
                     .addComponent(txtUrunAdi)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnUrunEkle, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtUrunId, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
-                                .addComponent(txtUrunAciklama)
-                                .addComponent(txtUrunBulunduguRaf)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnUrunkaydet)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnUrunVazgec))
+                            .addComponent(txtUrunId, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
+                            .addComponent(txtUrunAciklama, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtUrunBulunduguRaf, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(55, 55, 55))
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lblKategoriId, lblUrunAciklama, lblUrunAdi, lblUrunAlisFiyati, lblUrunBulunduguRaf, lblUrunId, lblUrunKritikStokSeviyesi, lblUrunMiktar, lblUrunOzellik, lblUrunSatisFiyati});
+
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnUrunVazgec, btnUrunkaydet});
 
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,9 +217,13 @@ public class UrunEkle extends javax.swing.JFrame {
                     .addComponent(lblUrunBulunduguRaf)
                     .addComponent(txtUrunBulunduguRaf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(btnUrunEkle, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnUrunVazgec)
+                    .addComponent(btnUrunkaydet, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
+
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnUrunVazgec, btnUrunkaydet});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -211,7 +232,7 @@ public class UrunEkle extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -236,6 +257,14 @@ public class UrunEkle extends javax.swing.JFrame {
     private void txtUrunSatisFiyatiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUrunSatisFiyatiActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUrunSatisFiyatiActionPerformed
+
+    private void btnUrunkaydetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUrunkaydetActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnUrunkaydetActionPerformed
+
+    private void btnUrunVazgecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUrunVazgecActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnUrunVazgecActionPerformed
 
     /**
      * @param args the command line arguments
@@ -273,7 +302,8 @@ public class UrunEkle extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnUrunEkle;
+    public javax.swing.JButton btnUrunVazgec;
+    public javax.swing.JButton btnUrunkaydet;
     private javax.swing.JLabel jLabel2;
     public javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField8;
