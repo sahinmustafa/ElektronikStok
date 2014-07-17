@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 import model.Kategori;
 import model.Urun;
@@ -134,7 +136,16 @@ public class AnaEkranKontrol implements ActionListener{
 
             for (JButton buton : butonlar) {
                 buton.addActionListener(this);
-            }    
+            } 
+            
+            ListSelectionListener listSelectionListener = new ListSelectionListener() {
+                @Override
+                public void valueChanged(ListSelectionEvent lse) {
+                    urunleriGoster();
+                }
+             };
+             anaEkran.listkategori.addListSelectionListener(listSelectionListener);
+        
         }catch(Exception e){
             uyariMesaji("actionAta", e);
         }
