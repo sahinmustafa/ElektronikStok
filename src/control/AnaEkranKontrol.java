@@ -42,7 +42,7 @@ public class AnaEkranKontrol implements ActionListener{
 
             anaEkran.listkategori.setModel(listModel);
         }catch(Exception e){
-            uyariMesaji("kategorileriListele", e.getMessage());
+            uyariMesaji("kategorileriListele", e);
         }
     }
     
@@ -60,7 +60,7 @@ public class AnaEkranKontrol implements ActionListener{
                     silinecekKategori.sil(kategoriId);
             }
         }catch(Exception e){
-            uyariMesaji("kategoriSil", e.getMessage());
+            uyariMesaji("kategoriSil", e);
         }
     }
 
@@ -110,7 +110,7 @@ public class AnaEkranKontrol implements ActionListener{
 
             anaEkran.tblUrunOzellik.setModel(tableModel);
         }catch(Exception e){
-            uyariMesaji("urunleriGoster", e.getMessage());
+            uyariMesaji("urunleriGoster", e);
         }
     }
 
@@ -135,7 +135,7 @@ public class AnaEkranKontrol implements ActionListener{
                 buton.addActionListener(this);
             }    
         }catch(Exception e){
-            uyariMesaji("actionAta", e.getMessage());
+            uyariMesaji("actionAta", e);
         }
     }
     
@@ -147,7 +147,7 @@ public class AnaEkranKontrol implements ActionListener{
                 UrunEkleKontrol uek = new UrunEkleKontrol(urunId);
             }
         }catch(Exception e){
-            uyariMesaji("urunGuncelleEkraniAc", e.getMessage());
+            uyariMesaji("urunGuncelleEkraniAc", e);
         }
     }
   
@@ -155,7 +155,7 @@ public class AnaEkranKontrol implements ActionListener{
         try{
             UrunEkleKontrol uek = new UrunEkleKontrol(Urun.YENI_URUN);
         }catch(Exception e){
-            uyariMesaji("urunEkleEkraniGoster", e.getMessage());
+            uyariMesaji("urunEkleEkraniGoster", e);
         }
     }
 
@@ -164,7 +164,7 @@ public class AnaEkranKontrol implements ActionListener{
         try{
             KategoriKontrol kk = new KategoriKontrol();
         }catch(Exception e){
-            uyariMesaji("kategoriEkleEkraniGoster", e.getMessage());
+            uyariMesaji("kategoriEkleEkraniGoster", e);
         }
     }
     
@@ -180,7 +180,7 @@ public class AnaEkranKontrol implements ActionListener{
                     new Urun().sil(urunId);
             }
         }catch(Exception e){
-            uyariMesaji("urunSil", e.getMessage());
+            uyariMesaji("urunSil", e);
         }
     }
     
@@ -189,8 +189,9 @@ public class AnaEkranKontrol implements ActionListener{
         return JOptionPane.showConfirmDialog(anaEkran, baslik, mesaj, JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION;
     }
     
-    private void uyariMesaji(String baslik, String mesaj){
-        JOptionPane.showConfirmDialog(anaEkran, mesaj, baslik, JOptionPane.OK_OPTION);
+    private void uyariMesaji(String baslik, Exception e){
+        JOptionPane.showConfirmDialog(anaEkran, e.getMessage(), baslik, JOptionPane.OK_OPTION);
+        e.getSuppressed();
     }
     
     @Override

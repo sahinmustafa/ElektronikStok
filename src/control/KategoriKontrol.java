@@ -22,7 +22,7 @@ public class KategoriKontrol implements ActionListener{
         try{
             kategori.btnKategoriEkle.addActionListener(this);
         }catch(Exception e){
-            uyariMesaji("kategorileriListele", e.getMessage());
+            uyariMesaji("kategorileriListele", e);
         }
     }
     
@@ -35,13 +35,14 @@ public class KategoriKontrol implements ActionListener{
 
             k.ekle();
         }catch(Exception e){
-            uyariMesaji("kategoriEkle", e.getMessage());
+            uyariMesaji("kategoriEkle", e);
         }
     }
     
     /* Araci fonksiyon ile çağrildiklari için try catch gerektirmeyenler */
-    private void uyariMesaji(String baslik, String mesaj){
-        JOptionPane.showConfirmDialog(kategori, mesaj, baslik, JOptionPane.OK_OPTION);
+    private void uyariMesaji(String baslik, Exception e){
+        JOptionPane.showConfirmDialog(kategori, e.toString(), baslik, JOptionPane.OK_OPTION);
+        e.getSuppressed();
     }
     
     @Override
