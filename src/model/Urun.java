@@ -96,9 +96,9 @@ public class Urun extends StokObject implements DatabaseI<StokObject>{
     }
     
     public ArrayList<Urun> listele(int kategoriID, String aranacakMetin){
-        String hql = "SELECET * FROM URUN " +
-                "WHERE kategori_id = '" + kategoriID +
-                "' AND urun_adi LIKE '%"+aranacakMetin + "%'";
+        String hql = "SELECET * FROM URUN urun_adi LIKE '%"+aranacakMetin + "%'";
+        if(kategoriID != -1)
+            hql += " AND WHERE kategori_id = '" + kategoriID + "'";
         
         HbmIslemler hbm = new HbmIslemler();
         return  (ArrayList<Urun>) hbm.list(hql);
