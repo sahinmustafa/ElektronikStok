@@ -46,7 +46,7 @@ public class UrunEkleKontrol implements ActionListener{
                 urunEkle.btnUrunkaydet.setText("Güncelle");
             }
         }catch(Exception e){
-            uyariMesaji("actionAta", e.getMessage());
+            uyariMesaji("actionAta", e);
         }
     }
     
@@ -55,24 +55,17 @@ public class UrunEkleKontrol implements ActionListener{
         try{
             urunEkle.btnUrunkaydet.addActionListener(this);
         }catch(Exception e){
-            uyariMesaji("actionAta", e.getMessage());
+            uyariMesaji("actionAta", e);
         }
     }
     
     /* Araci fonksiyon ile çağrildiklari için try catch gerektirmeyenler */
-    private void uyariMesaji(String baslik, String mesaj){
-        JOptionPane.showConfirmDialog(urunEkle, mesaj, baslik, JOptionPane.OK_OPTION);
+    private void uyariMesaji(String baslik, Exception e){
+        JOptionPane.showConfirmDialog(urunEkle, e.toString(), baslik, JOptionPane.OK_OPTION);
+        e.getSuppressed();
     }
     
-    @Override
-    public void actionPerformed(ActionEvent ae) {
-        if(ae.getSource() == urunEkle.btnUrunkaydet){
-            urunEkleVeyaGuncelle();
-        }else if(ae.getSource() == urunEkle.btnUrunVazgec){
-            urunEkle.hide();
-        }
-    }
-
+   
     private void urunEkleVeyaGuncelle() {
         try{
             Urun u = new Urun();
@@ -97,7 +90,17 @@ public class UrunEkleKontrol implements ActionListener{
                 u.guncelle(urunId, u);
             }
         }catch(Exception e){
-            uyariMesaji("urunEkleVeyaGuncelle", e.getMessage());
+            uyariMesaji("urunEkleVeyaGuncelle", e);
         }
     }
+    
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        if(ae.getSource() == urunEkle.btnUrunkaydet){
+            urunEkleVeyaGuncelle();
+        }else if(ae.getSource() == urunEkle.btnUrunVazgec){
+            urunEkle.hide();
+        }
+    }
+
 }
