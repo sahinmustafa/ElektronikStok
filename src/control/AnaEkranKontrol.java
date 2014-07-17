@@ -21,8 +21,8 @@ public class AnaEkranKontrol implements ActionListener{
     
     public AnaEkranKontrol() {
         this.anaEkran = new AnaEkran();
-        KategorileriListele();
-        UrunleriGoster();
+        kategorileriListele();
+        urunleriGoster();
         actionAta();
     }
     
@@ -30,7 +30,7 @@ public class AnaEkranKontrol implements ActionListener{
         this.anaEkran = anaEkran;
     }
 
-    private void KategorileriListele() {
+    private void kategorileriListele() {
         DefaultListModel listModel = new DefaultListModel();
         
         ArrayList <Kategori> kategoriler = new Kategori().listele(0);
@@ -42,7 +42,7 @@ public class AnaEkranKontrol implements ActionListener{
         anaEkran.listkategori.setModel(listModel);
     }
 
-    private void UrunleriGoster() {
+    private void urunleriGoster() {
         String kategori = anaEkran.listkategori.getSelectedValue().toString();
         String aranan   = anaEkran.txtAra.getText();
         

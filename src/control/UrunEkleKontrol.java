@@ -12,7 +12,7 @@ public class UrunEkleKontrol implements ActionListener{
     
     public UrunEkleKontrol() {
         this.urunEkle = new UrunEkle();
-        txtDegerleriAta();
+        txtDegerleriAta(0);
         actionAta();
     }
     
@@ -22,8 +22,8 @@ public class UrunEkleKontrol implements ActionListener{
 
     
 
-    private void txtDegerleriAta() {
-        int urunId = 0;
+    private void txtDegerleriAta(int urunId) {
+
         Urun urun = new Urun().getir(urunId);
         
         urunEkle.txtKategoriId.setText(urun.getKategori().getID()+"");
@@ -46,7 +46,7 @@ public class UrunEkleKontrol implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent ae) {
         if(ae.getSource() == urunEkle.btnUrunEkle){
-        
+            
         }
     }
 }
