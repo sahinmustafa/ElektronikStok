@@ -10,6 +10,8 @@ import org.hibernate.HibernateException;
  */
 public class Urun extends StokObject implements DatabaseI<StokObject>{
     
+    public static int YENI_URUN = Integer.MAX_VALUE;
+
     private String adi;
     private String ozellik;
     private int stokMiktar;

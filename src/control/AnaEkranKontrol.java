@@ -1,4 +1,3 @@
-
 package control;
 
 import elektronikstok.view.AnaEkran;
@@ -7,13 +6,14 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.Kategori;
 import model.Urun;
 
 /**
  *
- * @author haye
+ * Sorunlu yerler !!! ile işaretlenmiştir
  */
 public class AnaEkranKontrol implements ActionListener{
     
@@ -45,8 +45,16 @@ public class AnaEkranKontrol implements ActionListener{
     private void urunleriGoster() {
         String kategori = anaEkran.listkategori.getSelectedValue().toString();
         String aranan   = anaEkran.txtAra.getText();
+        int kategoriId = new Kategori().kategoriAdindanIdBul(kategori);
         
-        ArrayList <Urun> urunler = new Urun().listele(0);
+        /*
+            !!!
+            Kategori içerisinde kategoriAdindanIdBul fonksiyonu gerekli
+            Bütün kategorideki ürünleri listelemek için bir yöntem belirlemek gerek,
+            Bunun dışında ürün görüntüleme işlemlerine (Arama, kategori ürünlerini gösterde, kategoride arama) cevap verir gibi duruyor.
+            Bir de actionPerformed biraz karişik duruyor sanki
+        */
+        ArrayList <Urun> urunler = new Urun().listele(kategoriId, aranan);
         
         DefaultTableModel tableModel = new DefaultTableModel();
         
@@ -82,7 +90,7 @@ public class AnaEkranKontrol implements ActionListener{
     }
 
     
-    
+   
 
     private void actionAta() {
         //Ana Ekrandaki Butonlara Action Listener Ekleme 
@@ -98,30 +106,55 @@ public class AnaEkranKontrol implements ActionListener{
                             };
         
         for (JButton buton : butonlar) {
-            buton.addActionListener(new AnaEkranKontrol(anaEkran));
+            buton.addActionListener(this);
         }    
+    }
+    
+     private void urunGuncelleEkraniAc(){
+        if(anaEkran.tblUrunOzellik.getSelectedRow()>=0){
+            //Seçili satirin id'sini al 
+            int urunId = (int) anaEkran.tblUrunOzellik.getValueAt(anaEkran.tblUrunOzellik.getSelectedRow(), 0);
+            UrunEkleKontrol uek = new UrunEkleKontrol(urunId);
+        }
+    }
+  
+    private void urunSil(){
+        if(anaEkran.tblUrunOzellik.getSelectedRow()>=0){
+            //Seçili satirin id'sini al 
+            int urunId = (int) anaEkran.tblUrunOzellik.getValueAt(anaEkran.tblUrunOzellik.getSelectedRow(), 0);
+            
+            //emin misin sorusu sor; eminse sil değilse bir şey yapma 
+            if(onayIstegi("Silme Onayı", urunId+" numaralı ürün kalıcı olarak silinecektir. Silmek istediğinize emin misiniz ?"))
+                new Urun().sil(urunId);
+        }
+    }
+    
+    private boolean onayIstegi(String baslik, String mesaj){
+        return JOptionPane.showConfirmDialog(anaEkran, baslik, mesaj, JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION;
     }
     
     @Override
     public void actionPerformed(ActionEvent ae) {
         if(ae.getSource() == anaEkran.btnAra){
-            
+            urunleriGoster();
         }else if(ae.getSource() == anaEkran.btnGuncelle){
-        
+            urunGuncelleEkraniAc();
         }else if(ae.getSource() == anaEkran.btnKategoriEkle){
-        
+            KategoriKontrol kk = new KategoriKontrol();
         }else if(ae.getSource() == anaEkran.btnKategoriGuncelle){
-        
+            //!!!Kategori View in değişmesi gerek
         }else if(ae.getSource() == anaEkran.btnKategoriSil){
-        
+            String kategoriAdi = anaEkran.listkategori.getSelectedValue().toString();
         }else if(ae.getSource() == anaEkran.btnSil){
-        
+            urunSil();
         }else if(ae.getSource() == anaEkran.btnUrunAl){
-        
+            //!!!Urun viewi gerek
         }else if(ae.getSource() == anaEkran.btnUrunSat){
-        
+            //!!!Urun viewi gerek
         }else if(ae.getSource() == anaEkran.btnYeni){
-            UrunEkleKontrol uek = new UrunEkleKontrol();
+            UrunEkleKontrol uek = new UrunEkleKontrol(Urun.YENI_URUN);
         }
     }
+    
+   
 }
