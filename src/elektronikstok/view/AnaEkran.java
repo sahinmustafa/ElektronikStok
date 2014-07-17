@@ -28,60 +28,46 @@ public class AnaEkran extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtAra = new javax.swing.JTextField();
-        btnAra = new javax.swing.JButton();
-        btnGuncelle = new javax.swing.JButton();
-        btnUrunSat = new javax.swing.JButton();
-        btnUrunAl = new javax.swing.JButton();
-        btnSil = new javax.swing.JButton();
-        btnYeni = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        pnlKategoriListesi = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         listkategori = new javax.swing.JList();
         btnKategoriEkle = new javax.swing.JButton();
         btnKategoriSil = new javax.swing.JButton();
         btnKategoriGuncelle = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        pnlUrunBilgileri = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblUrunOzellik = new javax.swing.JTable();
+        btnYeni = new javax.swing.JButton();
+        btnGuncelle = new javax.swing.JButton();
+        btnSil = new javax.swing.JButton();
+        btnUrunAl = new javax.swing.JButton();
+        btnUrunSat = new javax.swing.JButton();
+        txtAra = new javax.swing.JTextField();
+        btnAra = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        txtAra.setText("Ara");
-
-        btnAra.setText("Ara");
-
-        btnGuncelle.setText("Guncelle");
-
-        btnUrunSat.setText("Urun Sat");
-
-        btnUrunAl.setText("Urun Al");
-
-        btnSil.setText("Sil");
-
-        btnYeni.setText("Yeni");
-
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Kategori Listesi", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 18), new java.awt.Color(0, 0, 0))); // NOI18N
+        pnlKategoriListesi.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Kategori Listesi", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 18), new java.awt.Color(0, 0, 0))); // NOI18N
 
         jScrollPane1.setViewportView(listkategori);
 
-        btnKategoriEkle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/elektronikstok/resimler/add (1).png"))); // NOI18N
+        btnKategoriEkle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/elektronikstok/view/add (1).png"))); // NOI18N
 
-        btnKategoriSil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/elektronikstok/resimler/edit_delete (2).png"))); // NOI18N
+        btnKategoriSil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/elektronikstok/view/refresh (1).png"))); // NOI18N
         btnKategoriSil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnKategoriSilActionPerformed(evt);
             }
         });
 
-        btnKategoriGuncelle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/elektronikstok/resimler/refresh (1).png"))); // NOI18N
+        btnKategoriGuncelle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/elektronikstok/view/edit_delete (2).png"))); // NOI18N
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout pnlKategoriListesiLayout = new javax.swing.GroupLayout(pnlKategoriListesi);
+        pnlKategoriListesi.setLayout(pnlKategoriListesiLayout);
+        pnlKategoriListesiLayout.setHorizontalGroup(
+            pnlKategoriListesiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(pnlKategoriListesiLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnKategoriEkle, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -91,22 +77,22 @@ public class AnaEkran extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnKategoriEkle, btnKategoriGuncelle, btnKategoriSil});
+        pnlKategoriListesiLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnKategoriEkle, btnKategoriGuncelle, btnKategoriSil});
 
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        pnlKategoriListesiLayout.setVerticalGroup(
+            pnlKategoriListesiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlKategoriListesiLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnKategoriGuncelle)
-                    .addComponent(btnKategoriEkle)
-                    .addComponent(btnKategoriSil))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 347, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlKategoriListesiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btnKategoriGuncelle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnKategoriSil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnKategoriEkle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ürün Bilgileri", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 18), new java.awt.Color(0, 0, 0))); // NOI18N
+        pnlUrunBilgileri.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ürün Bilgileri", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 18), new java.awt.Color(0, 0, 0))); // NOI18N
 
         tblUrunOzellik.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -121,35 +107,40 @@ public class AnaEkran extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(tblUrunOzellik);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 531, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 523, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 8, Short.MAX_VALUE)))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 358, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
+        btnYeni.setText("Yeni");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+        btnGuncelle.setText("Güncelle");
+
+        btnSil.setText("Sil");
+
+        btnUrunAl.setText("Ürün Al");
+
+        btnUrunSat.setText("Ürün Sat");
+        btnUrunSat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUrunSatActionPerformed(evt);
+            }
+        });
+
+        txtAra.setText("Ara");
+
+        btnAra.setText("Ara");
+
+        javax.swing.GroupLayout pnlUrunBilgileriLayout = new javax.swing.GroupLayout(pnlUrunBilgileri);
+        pnlUrunBilgileri.setLayout(pnlUrunBilgileriLayout);
+        pnlUrunBilgileriLayout.setHorizontalGroup(
+            pnlUrunBilgileriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlUrunBilgileriLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(pnlUrunBilgileriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(pnlUrunBilgileriLayout.createSequentialGroup()
+                        .addComponent(jScrollPane2)
+                        .addContainerGap())
+                    .addGroup(pnlUrunBilgileriLayout.createSequentialGroup()
+                        .addComponent(txtAra, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36)
+                        .addComponent(btnAra, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlUrunBilgileriLayout.createSequentialGroup()
                         .addComponent(btnYeni, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnGuncelle, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -158,36 +149,48 @@ public class AnaEkran extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(btnUrunAl, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnUrunSat, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(txtAra, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnAra, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(btnUrunSat, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnGuncelle, btnSil, btnUrunAl, btnUrunSat, btnYeni});
+        pnlUrunBilgileriLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnGuncelle, btnSil, btnUrunAl, btnUrunSat, btnYeni});
 
+        pnlUrunBilgileriLayout.setVerticalGroup(
+            pnlUrunBilgileriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlUrunBilgileriLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlUrunBilgileriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtAra, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAra, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(pnlUrunBilgileriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnYeni, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnGuncelle, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSil, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnUrunAl, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnUrunSat, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(pnlKategoriListesi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(pnlUrunBilgileri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtAra, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnAra, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnYeni, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnGuncelle, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnSil, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnUrunAl, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnUrunSat, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(pnlKategoriListesi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pnlUrunBilgileri, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -197,6 +200,10 @@ public class AnaEkran extends javax.swing.JFrame {
     private void btnKategoriSilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKategoriSilActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnKategoriSilActionPerformed
+
+    private void btnUrunSatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUrunSatActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnUrunSatActionPerformed
 
     /**
      * @param args the command line arguments
@@ -243,11 +250,11 @@ public class AnaEkran extends javax.swing.JFrame {
     public javax.swing.JButton btnUrunAl;
     public javax.swing.JButton btnUrunSat;
     public javax.swing.JButton btnYeni;
-    public javax.swing.JPanel jPanel1;
-    public javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JList listkategori;
+    public javax.swing.JPanel pnlKategoriListesi;
+    public javax.swing.JPanel pnlUrunBilgileri;
     public javax.swing.JTable tblUrunOzellik;
     public javax.swing.JTextField txtAra;
     // End of variables declaration//GEN-END:variables
