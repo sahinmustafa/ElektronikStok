@@ -1,6 +1,7 @@
 package control;
 
 import elektronikstok.view.AnaEkran;
+import elektronikstok.view.UrunSatis;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ import model.Urun;
  *
  * Sorunlu yerler !!! ile işaretlenmiştir
  */
-public class AnaEkranKontrol implements ActionListener{
+public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
     
     AnaEkran anaEkran;  
     
@@ -45,7 +46,7 @@ public class AnaEkranKontrol implements ActionListener{
 
             anaEkran.listkategori.setModel(listModel);
         }catch(Exception e){
-            uyariMesaji("kategorileriListele", e);
+            exceptionGoster("kategorileriListele", e);
         }
     }
     
@@ -63,7 +64,7 @@ public class AnaEkranKontrol implements ActionListener{
                     silinecekKategori.sil(kategoriId);
             }
         }catch(Exception e){
-            uyariMesaji("kategoriSil", e);
+            exceptionGoster("kategoriSil", e);
         }
     }
 
@@ -113,7 +114,7 @@ public class AnaEkranKontrol implements ActionListener{
 
             anaEkran.tblUrunOzellik.setModel(tableModel);
         }catch(Exception e){
-            uyariMesaji("urunleriGoster", e);
+            exceptionGoster("urunleriGoster", e);
         }
     }
 
@@ -147,7 +148,7 @@ public class AnaEkranKontrol implements ActionListener{
              anaEkran.listkategori.addListSelectionListener(listSelectionListener);
         
         }catch(Exception e){
-            uyariMesaji("actionAta", e);
+            exceptionGoster("actionAta", e);
         }
     }
     
@@ -159,7 +160,7 @@ public class AnaEkranKontrol implements ActionListener{
                 UrunEkleKontrol uek = new UrunEkleKontrol(urunId);
             }
         }catch(Exception e){
-            uyariMesaji("urunGuncelleEkraniAc", e);
+            exceptionGoster("urunGuncelleEkraniAc", e);
         }
     }
   
@@ -167,20 +168,46 @@ public class AnaEkranKontrol implements ActionListener{
         try{
             UrunEkleKontrol uek = new UrunEkleKontrol(Urun.YENI_URUN);
         }catch(Exception e){
-            uyariMesaji("urunEkleEkraniGoster", e);
+            exceptionGoster("urunEkleEkraniGoster", e);
         }
     }
 
     
     private void kategoriEkleEkraniGoster() {
         try{
-            KategoriKontrol kk = new KategoriKontrol();
+            KategoriKontrol kk = new KategoriKontrol(model.Kategori.YENI_KATEGORI);
         }catch(Exception e){
-            uyariMesaji("kategoriEkleEkraniGoster", e);
+            exceptionGoster("kategoriEkleEkraniGoster", e);
         }
     }
     
     
+    private void kategoriGuncelleEkraniGoster() {
+        try{
+             if(anaEkran.listkategori.getSelectedIndex() >= 0){
+                String kategori = anaEkran.listkategori.getSelectedValue().toString();
+                int kategoriId = new Kategori().kategoriAdindanIdBul(kategori);
+                KategoriKontrol kk = new KategoriKontrol(kategoriId);
+            }else{
+                uyariMesaji("Kategori Seçmediniz !","Lütfen Güncellemek istediğiniz kategorinin adını seçili hale getiriniz !");
+            }
+        }catch(Exception e){
+            exceptionGoster("kategoriGuncelleEkraniGoster", e);
+        }
+    }
+    
+    private void urunSatisEkraniGoster(String alVeyaSat) {
+        try{
+            if(anaEkran.tblUrunOzellik.getSelectedRow()>=0){
+                //Seçili satirin id'sini al 
+                int urunId = (int) anaEkran.tblUrunOzellik.getValueAt(anaEkran.tblUrunOzellik.getSelectedRow(), 0);            
+                UrunSatisKontrol usk = new UrunSatisKontrol(urunId,alVeyaSat);
+            }
+        }catch(Exception e){
+            exceptionGoster("urunSatisEkraniGoster", e);
+        }
+    }
+
     private void urunSil(){
         try{
             if(anaEkran.tblUrunOzellik.getSelectedRow()>=0){
@@ -192,19 +219,11 @@ public class AnaEkranKontrol implements ActionListener{
                     new Urun().sil(urunId);
             }
         }catch(Exception e){
-            uyariMesaji("urunSil", e);
+            exceptionGoster("urunSil", e);
         }
     }
     
-    /* Araci fonksiyon ile çağrildiklari için try catch gerektirmeyenler */
-    private boolean onayIstegi(String baslik, String mesaj){
-        return JOptionPane.showConfirmDialog(anaEkran, baslik, mesaj, JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION;
-    }
-    
-    private void uyariMesaji(String baslik, Exception e){
-        JOptionPane.showConfirmDialog(anaEkran, e.getMessage(), baslik, JOptionPane.OK_OPTION);
-        e.getSuppressed();
-    }
+   
     
     @Override
     public void actionPerformed(ActionEvent ae) {
@@ -215,21 +234,17 @@ public class AnaEkranKontrol implements ActionListener{
         }else if(ae.getSource() == anaEkran.btnKategoriEkle){
             kategoriEkleEkraniGoster();
         }else if(ae.getSource() == anaEkran.btnKategoriGuncelle){
-            //!!!Kategori View in değişmesi gerek
+            kategoriGuncelleEkraniGoster();
         }else if(ae.getSource() == anaEkran.btnKategoriSil){
             kategoriSil();
         }else if(ae.getSource() == anaEkran.btnSil){
             urunSil();
         }else if(ae.getSource() == anaEkran.btnUrunAl){
-            //!!!Urun viewi gerek
+            urunSatisEkraniGoster("Al");
         }else if(ae.getSource() == anaEkran.btnUrunSat){
-            //!!!Urun viewi gerek
+            urunSatisEkraniGoster("Sat");
         }else if(ae.getSource() == anaEkran.btnYeni){
             urunEkleEkraniGoster();
         }
-    }
-
- 
-    
-   
+    }   
 }

@@ -5,11 +5,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
-public class KategoriKontrol implements ActionListener{
+public class KategoriKontrol extends GenelKontrol implements ActionListener{
     Kategori kategori;
+    int kategoriId;
     
-    public KategoriKontrol() {
+    public KategoriKontrol(int kategoriId) {
         this.kategori = new Kategori();
+        this.kategoriId = kategoriId;
+        txtDegerleriAta();
         actionAta();
         kategori.show();
     }
@@ -19,39 +22,56 @@ public class KategoriKontrol implements ActionListener{
     }
     
 
+    private void txtDegerleriAta() {
+        try{
+            if(kategoriId == model.Kategori.YENI_KATEGORI){
+                kategori.btnKategoriEkle.setText("Ekle");
+            }else{
+                model.Kategori k = new model.Kategori().getir(kategoriId);
+                
+                kategori.btnKategoriEkle.setText("Güncelle");
+                kategori.txtKategoriAdi.setText(k.getKategoriAdi());
+                kategori.txtKategoriAciklama.setText(k.getAciklama());
+            }
+        }catch(Exception e){
+            exceptionGoster("txtDegerleriAta", e);
+        }
+    }
+    
+    
     private void actionAta() {
         try{
             kategori.btnKategoriEkle.addActionListener(this);
         }catch(Exception e){
-            uyariMesaji("kategorileriListele", e);
+            exceptionGoster("kategorileriListele", e);
         }
     }
     
-    private void kategoriEkle() {
+    private void kategoriEkleVeyaGuncelle() {
         try{
             model.Kategori k = new model.Kategori();
 
             k.setKategoriAdi(kategori.txtKategoriAdi.getText());
             k.setAciklama(kategori.txtKategoriAciklama.getText());
 
-            k.ekle();
+            if(kategoriId == model.Kategori.YENI_KATEGORI)
+                k.ekle();
+            else
+                k.guncelle(kategoriId, k);
+               
         }catch(Exception e){
-            uyariMesaji("kategoriEkle", e);
+            exceptionGoster("kategoriEkle", e);
         }
     }
     
-    /* Araci fonksiyon ile çağrildiklari için try catch gerektirmeyenler */
-    private void uyariMesaji(String baslik, Exception e){
-        JOptionPane.showConfirmDialog(kategori, e.toString(), baslik, JOptionPane.OK_OPTION);
-        e.getSuppressed();
-    }
-    
+  
     @Override
     public void actionPerformed(ActionEvent ae) {
         if(ae.getSource() == kategori.btnKategoriEkle){
-            kategoriEkle();
+            kategoriEkleVeyaGuncelle();
         }
     }
+
 
     
     

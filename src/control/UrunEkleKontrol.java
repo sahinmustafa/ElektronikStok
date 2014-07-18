@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 import model.Kategori;
 import model.Urun;
 
-public class UrunEkleKontrol implements ActionListener{
+public class UrunEkleKontrol extends GenelKontrol implements ActionListener{
     
     UrunEkle urunEkle;
     int urunId;
@@ -47,7 +47,7 @@ public class UrunEkleKontrol implements ActionListener{
                 urunEkle.btnUrunkaydet.setText("Güncelle");
             }
         }catch(Exception e){
-            uyariMesaji("actionAta", e);
+            exceptionGoster("actionAta", e);
         }
     }
     
@@ -56,16 +56,11 @@ public class UrunEkleKontrol implements ActionListener{
         try{
             urunEkle.btnUrunkaydet.addActionListener(this);
         }catch(Exception e){
-            uyariMesaji("actionAta", e);
+            exceptionGoster("actionAta", e);
         }
     }
     
-    /* Araci fonksiyon ile çağrildiklari için try catch gerektirmeyenler */
-    private void uyariMesaji(String baslik, Exception e){
-        JOptionPane.showConfirmDialog(urunEkle, e.toString(), baslik, JOptionPane.OK_OPTION);
-        e.getSuppressed();
-    }
-    
+   
    
     private void urunEkleVeyaGuncelle() {
         try{
@@ -91,7 +86,7 @@ public class UrunEkleKontrol implements ActionListener{
                 u.guncelle(urunId, u);
             }
         }catch(Exception e){
-            uyariMesaji("urunEkleVeyaGuncelle", e);
+            exceptionGoster("urunEkleVeyaGuncelle", e);
         }
     }
     
