@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 
 public class GenelKontrol {
-     /* Araci fonksiyon ile çağrildiklari için try catch gerektirmeyenler */
+
     public boolean onayIstegi(String baslik, String mesaj){
         return JOptionPane.showConfirmDialog(null, mesaj, baslik, JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION;
     }
