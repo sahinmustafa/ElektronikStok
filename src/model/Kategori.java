@@ -10,6 +10,8 @@ import org.hibernate.HibernateException;
  */
 public class Kategori extends StokObject implements DatabaseI<StokObject>{
     
+    public static final int YENI_KATEGORI = Integer.MAX_VALUE;
+    
     private String kategoriAdi;
     private String aciklama;
     

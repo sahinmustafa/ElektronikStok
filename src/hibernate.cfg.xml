@@ -4,9 +4,11 @@
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.DerbyDialect</property>
     <property name="hibernate.connection.driver_class">org.apache.derby.jdbc.ClientDriver</property>
-    <property name="hibernate.connection.url">jdbc:derby://localhost:1527/ElektronikStok</property>
+    <property name="hibernate.connection.url">jdbc:derby://localhost:1527/ElektronikStok;create=true</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.default_schema">APP</property>
+    <property name="hibernate.hbm2ddl.auto">update</property>
+    <property name="hibernate.show_sql">true</property>
     <mapping resource="orm/kategori.hbm.xml"/>
     <mapping resource="orm/urun.hbm.xml"/>
     <mapping resource="orm/stokdegisim.hbm.xml"/>

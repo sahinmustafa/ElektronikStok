@@ -96,10 +96,10 @@ public class Urun extends StokObject implements DatabaseI<StokObject>{
     }
     
     public ArrayList<Urun> listele(int kategoriID, String aranacakMetin){
-        System.out.println("ARanacak Metin : " + aranacakMetin + " KAtegori :" + kategoriID);
+        System.out.println("ARanacak Metin : " + aranacakMetin + " Kategori :" + kategoriID);
         String hql = "FROM Urun WHERE adi LIKE '%"+aranacakMetin + "%'";
         if(kategoriID != -1)
-            hql += " AND ID = '" + kategoriID + "'";
+            hql += " AND kategori=" + kategoriID;
         
         HbmIslemler hbm = new HbmIslemler();
         return  (ArrayList<Urun>) hbm.list(hql);
