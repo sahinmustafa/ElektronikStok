@@ -41,6 +41,7 @@ public class KategoriKontrol extends GenelKontrol implements ActionListener{
     
     private void actionAta() {
         try{
+            kategori.setDefaultCloseOperation(kategori.HIDE_ON_CLOSE);
             kategori.btnKategoriEkle.addActionListener(this);
         }catch(Exception e){
             exceptionGoster("kategorileriListele", e);
@@ -59,6 +60,7 @@ public class KategoriKontrol extends GenelKontrol implements ActionListener{
             else
                 k.guncelle(kategoriId, k);
                
+            kategori.hide();
         }catch(Exception e){
             exceptionGoster("kategoriEkle", e);
         }

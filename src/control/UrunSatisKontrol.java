@@ -46,6 +46,7 @@ public class UrunSatisKontrol extends GenelKontrol implements ActionListener{
 
     private void actionAta() {
         try{
+            urunSatis.setDefaultCloseOperation(urunSatis.HIDE_ON_CLOSE);
             urunSatis.btnSatisSat.addActionListener(this);
             urunSatis.btnSatisVazgec.addActionListener(this);
         }catch(Exception e){

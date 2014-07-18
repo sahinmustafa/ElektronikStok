@@ -1,13 +1,15 @@
 package control;
 
 import elektronikstok.view.AnaEkran;
-import elektronikstok.view.UrunSatis;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
-import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
@@ -24,6 +26,8 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
     
     public AnaEkranKontrol() {
         this.anaEkran = new AnaEkran();
+        /*Açilişta da KategorileriListele ve urunleriGoster WindowActivate eventinde tekrar çağriliyor 
+        ancak yapilandiricaki fonksiyonlar silindiğinde pencere açildiktan sonra listeleme yapiyor*/
         kategorileriListele();
         urunleriGoster();
         actionAta();
@@ -40,11 +44,18 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
 
             ArrayList <Kategori> kategoriler = new Kategori().listele(0);
 
+            listModel.addElement("Tüm Ürünleri Gör");
+            
             for(int i=0; i<kategoriler.size();i++){
                 listModel.addElement(kategoriler.get(i).getKategoriAdi());
             }
-
+            
             anaEkran.listkategori.setModel(listModel);
+            
+            //!!! ilk oluşturulduğu için daima seçili index olmaz ?
+            if(anaEkran.listkategori.getSelectedIndex() < 0)
+                anaEkran.listkategori.setSelectedIndex(0);
+
         }catch(Exception e){
             exceptionGoster("kategorileriListele", e);
         }
@@ -70,7 +81,7 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
 
     private void urunleriGoster() {
         try{
-            String aranan   = anaEkran.txtAra.getText();
+            String aranan  = anaEkran.txtAra.getText();
             int kategoriId = -1;
             ArrayList <Urun> urunler;
 
@@ -142,11 +153,46 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
             ListSelectionListener listSelectionListener = new ListSelectionListener() {
                 @Override
                 public void valueChanged(ListSelectionEvent lse) {
+                    anaEkran.txtAra.setText("");
                     urunleriGoster();
                 }
              };
              anaEkran.listkategori.addListSelectionListener(listSelectionListener);
         
+             
+             anaEkran.addWindowListener(new WindowListener() {
+
+                @Override
+                public void windowOpened(WindowEvent we) {
+                }
+
+                @Override
+                public void windowClosing(WindowEvent we) {
+                    anaEkran.dispose();
+                }
+
+                @Override
+                public void windowClosed(WindowEvent we) {
+                    anaEkran.dispose();
+                }
+
+                @Override
+                public void windowIconified(WindowEvent we) {
+                }
+
+                @Override
+                public void windowDeiconified(WindowEvent we) {
+                }
+
+                @Override
+                public void windowActivated(WindowEvent we) {
+                    kategorileriListele();
+                }
+
+                @Override
+                public void windowDeactivated(WindowEvent we) {
+                }
+            });
         }catch(Exception e){
             exceptionGoster("actionAta", e);
         }
@@ -167,6 +213,7 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
     private void urunEkleEkraniGoster() {
         try{
             UrunEkleKontrol uek = new UrunEkleKontrol(Urun.YENI_URUN);
+            uek.urunEkle.txtKategoriId.setText(new Kategori().kategoriAdindanIdBul(anaEkran.listkategori.getSelectedValue().toString())+"");
         }catch(Exception e){
             exceptionGoster("urunEkleEkraniGoster", e);
         }
@@ -184,7 +231,7 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
     
     private void kategoriGuncelleEkraniGoster() {
         try{
-             if(anaEkran.listkategori.getSelectedIndex() >= 0){
+             if(anaEkran.listkategori.getSelectedIndex() > 0){
                 String kategori = anaEkran.listkategori.getSelectedValue().toString();
                 int kategoriId = new Kategori().kategoriAdindanIdBul(kategori);
                 KategoriKontrol kk = new KategoriKontrol(kategoriId);
@@ -217,6 +264,7 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
                 //emin misin sorusu sor; eminse sil değilse bir şey yapma 
                 if(onayIstegi("Silme Onayı", urunId+" numaralı ürün kalıcı olarak silinecektir. Silmek istediğinize emin misiniz ?"))
                     new Urun().sil(urunId);
+                
             }
         }catch(Exception e){
             exceptionGoster("urunSil", e);

@@ -1,7 +1,7 @@
 package control;
 
 import elektronikstok.view.UrunEkle;
-import java.awt.event.ActionEvent;
+import java.awt.event.ActionEvent; 
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import model.Kategori;
@@ -54,6 +54,7 @@ public class UrunEkleKontrol extends GenelKontrol implements ActionListener{
 
     private void actionAta() {
         try{
+            urunEkle.setDefaultCloseOperation(urunEkle.HIDE_ON_CLOSE);
             urunEkle.btnUrunkaydet.addActionListener(this);
         }catch(Exception e){
             exceptionGoster("actionAta", e);
@@ -85,6 +86,7 @@ public class UrunEkleKontrol extends GenelKontrol implements ActionListener{
             }else{
                 u.guncelle(urunId, u);
             }
+            urunEkle.hide();
         }catch(Exception e){
             exceptionGoster("urunEkleVeyaGuncelle", e);
         }
