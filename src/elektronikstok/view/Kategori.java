@@ -32,10 +32,9 @@ public class Kategori extends javax.swing.JFrame {
         lblKategoriAdi = new javax.swing.JLabel();
         lblAciklama = new javax.swing.JLabel();
         txtKategoriAdi = new javax.swing.JTextField();
-        txtKategoriAciklama = new javax.swing.JTextField();
         btnKategoriEkle = new javax.swing.JButton();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtKategoriAciklama = new javax.swing.JTextArea();
 
         pnlKategori.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Kategori", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 18), new java.awt.Color(0, 0, 0))); // NOI18N
 
@@ -51,29 +50,29 @@ public class Kategori extends javax.swing.JFrame {
             }
         });
 
-        txtKategoriAciklama.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtKategoriAciklamaActionPerformed(evt);
-            }
-        });
-
         btnKategoriEkle.setText("Ekle");
+
+        txtKategoriAciklama.setColumns(20);
+        txtKategoriAciklama.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        txtKategoriAciklama.setRows(5);
+        jScrollPane1.setViewportView(txtKategoriAciklama);
 
         javax.swing.GroupLayout pnlKategoriLayout = new javax.swing.GroupLayout(pnlKategori);
         pnlKategori.setLayout(pnlKategoriLayout);
         pnlKategoriLayout.setHorizontalGroup(
             pnlKategoriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlKategoriLayout.createSequentialGroup()
-                .addGroup(pnlKategoriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblKategoriAdi, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblAciklama))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlKategoriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(pnlKategoriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txtKategoriAdi, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-                        .addComponent(txtKategoriAciklama))
-                    .addComponent(btnKategoriEkle, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 71, Short.MAX_VALUE))
+                    .addComponent(btnKategoriEkle, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pnlKategoriLayout.createSequentialGroup()
+                        .addGroup(pnlKategoriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblKategoriAdi, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblAciklama))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnlKategoriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtKategoriAdi, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 36, Short.MAX_VALUE))
         );
         pnlKategoriLayout.setVerticalGroup(
             pnlKategoriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -85,12 +84,10 @@ public class Kategori extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(pnlKategoriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblAciklama, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(pnlKategoriLayout.createSequentialGroup()
-                        .addGap(7, 7, 7)
-                        .addComponent(txtKategoriAciklama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnKategoriEkle, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -116,10 +113,6 @@ public class Kategori extends javax.swing.JFrame {
     private void txtKategoriAdiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKategoriAdiActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtKategoriAdiActionPerformed
-
-    private void txtKategoriAciklamaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKategoriAciklamaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtKategoriAciklamaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,10 +151,11 @@ public class Kategori extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnKategoriEkle;
+    private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JLabel lblAciklama;
     public javax.swing.JLabel lblKategoriAdi;
     public javax.swing.JPanel pnlKategori;
-    public javax.swing.JTextField txtKategoriAciklama;
+    public javax.swing.JTextArea txtKategoriAciklama;
     public javax.swing.JTextField txtKategoriAdi;
     // End of variables declaration//GEN-END:variables
 }
