@@ -32,8 +32,8 @@ public class AnaEkran extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         listkategori = new javax.swing.JList();
         btnKategoriEkle = new javax.swing.JButton();
-        btnKategoriSil = new javax.swing.JButton();
         btnKategoriGuncelle = new javax.swing.JButton();
+        btnKategoriSil = new javax.swing.JButton();
         pnlUrunBilgileri = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblUrunOzellik = new javax.swing.JTable();
@@ -53,14 +53,14 @@ public class AnaEkran extends javax.swing.JFrame {
 
         btnKategoriEkle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/elektronikstok/view/add (1).png"))); // NOI18N
 
-        btnKategoriSil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/elektronikstok/view/refresh (1).png"))); // NOI18N
-        btnKategoriSil.addActionListener(new java.awt.event.ActionListener() {
+        btnKategoriGuncelle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/elektronikstok/view/refresh (1).png"))); // NOI18N
+        btnKategoriGuncelle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnKategoriSilActionPerformed(evt);
+                btnKategoriGuncelleActionPerformed(evt);
             }
         });
 
-        btnKategoriGuncelle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/elektronikstok/view/edit_delete (2).png"))); // NOI18N
+        btnKategoriSil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/elektronikstok/view/edit_delete (2).png"))); // NOI18N
 
         javax.swing.GroupLayout pnlKategoriListesiLayout = new javax.swing.GroupLayout(pnlKategoriListesi);
         pnlKategoriListesi.setLayout(pnlKategoriListesiLayout);
@@ -71,9 +71,9 @@ public class AnaEkran extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnKategoriEkle, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnKategoriSil, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnKategoriGuncelle, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnKategoriGuncelle, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnKategoriSil, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -87,8 +87,8 @@ public class AnaEkran extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlKategoriListesiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnKategoriEkle)
-                    .addComponent(btnKategoriSil)
-                    .addComponent(btnKategoriGuncelle))
+                    .addComponent(btnKategoriGuncelle)
+                    .addComponent(btnKategoriSil))
                 .addContainerGap())
         );
 
@@ -205,9 +205,9 @@ public class AnaEkran extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnKategoriSilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKategoriSilActionPerformed
+    private void btnKategoriGuncelleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKategoriGuncelleActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnKategoriSilActionPerformed
+    }//GEN-LAST:event_btnKategoriGuncelleActionPerformed
 
     private void btnUrunSatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUrunSatActionPerformed
         // TODO add your handling code here:

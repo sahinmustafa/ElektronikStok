@@ -69,9 +69,9 @@
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="btnKategoriEkle" linkSize="2" min="-2" pref="69" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btnKategoriSil" linkSize="2" min="-2" pref="73" max="-2" attributes="0"/>
+                  <Component id="btnKategoriGuncelle" linkSize="2" min="-2" pref="73" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="btnKategoriGuncelle" linkSize="2" min="-2" pref="69" max="-2" attributes="0"/>
+                  <Component id="btnKategoriSil" linkSize="2" min="-2" pref="69" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -84,8 +84,8 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="btnKategoriEkle" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnKategoriSil" min="-2" max="-2" attributes="0"/>
                       <Component id="btnKategoriGuncelle" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnKategoriSil" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -122,20 +122,20 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="btnKategoriSil">
+        <Component class="javax.swing.JButton" name="btnKategoriGuncelle">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/elektronikstok/view/refresh (1).png"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnKategoriSilActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnKategoriGuncelleActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="btnKategoriGuncelle">
+        <Component class="javax.swing.JButton" name="btnKategoriSil">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/elektronikstok/view/edit_delete (2).png"/>
@@ -241,6 +241,7 @@
                 </Property>
               </Properties>
               <AuxValues>
+                <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="AnaEkran_tblUrunOzellik"/>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
