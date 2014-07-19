@@ -104,8 +104,15 @@ public class AnaEkran extends javax.swing.JFrame {
             new String [] {
                 "ÜRÜN ID", "ADI", "ÖZELLİK", "MİKTAR", "ALIŞ FİYATI", "SATIŞ FİYATI", "KRİTİK STOK SEVİYESİ", "KATEGORİ ID", "AÇIKLAMA", "BULUNDUĞU RAF"
             }
-        ));
-        tblUrunOzellik.setEnabled(false);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane2.setViewportView(tblUrunOzellik);
 
         btnYeni.setText("Yeni");
