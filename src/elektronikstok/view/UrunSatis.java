@@ -37,15 +37,14 @@ public class UrunSatis extends javax.swing.JFrame {
         lblOdemeSekli = new javax.swing.JLabel();
         txtOdemeSekli = new javax.swing.JTextField();
         lblSatisAciklama = new javax.swing.JLabel();
-        txtSatisAciklama = new javax.swing.JTextField();
         btnSatisVazgec = new javax.swing.JButton();
         btnSatisSat = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtSatisAciklama = new javax.swing.JTextArea();
         lblSatUrunSatisFiyati = new javax.swing.JLabel();
         txtSatUrunAlisFiyati = new javax.swing.JTextField();
         txtSatUrunAdi = new javax.swing.JTextField();
         txtSatUrunSatisFiyati = new javax.swing.JTextField();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         pnlUrunSatis.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ürün Satış", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 18), new java.awt.Color(0, 0, 0))); // NOI18N
 
@@ -78,12 +77,6 @@ public class UrunSatis extends javax.swing.JFrame {
         lblSatisAciklama.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblSatisAciklama.setText("AÇIKLAMA                             :");
 
-        txtSatisAciklama.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSatisAciklamaActionPerformed(evt);
-            }
-        });
-
         btnSatisVazgec.setText("Vazgeç");
         btnSatisVazgec.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,27 +91,32 @@ public class UrunSatis extends javax.swing.JFrame {
             }
         });
 
+        txtSatisAciklama.setColumns(20);
+        txtSatisAciklama.setRows(5);
+        jScrollPane1.setViewportView(txtSatisAciklama);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(lblSatisAciklama, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblOdemeSekli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblSatmakİstediginizMiktar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtSatmakİstediginizMiktar)
-                    .addComponent(txtOdemeSekli)
-                    .addComponent(txtSatisAciklama, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE))
-                .addContainerGap(43, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSatisSat, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnSatisVazgec)
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(lblSatisAciklama, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblOdemeSekli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblSatmakİstediginizMiktar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtSatmakİstediginizMiktar)
+                            .addComponent(txtOdemeSekli)
+                            .addComponent(jScrollPane1)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnSatisSat, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnSatisVazgec)))
                 .addGap(35, 35, 35))
         );
 
@@ -138,12 +136,12 @@ public class UrunSatis extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblSatisAciklama, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtSatisAciklama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSatisSat, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSatisVazgec, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSatisVazgec, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSatisSat, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnSatisSat, btnSatisVazgec});
@@ -151,18 +149,21 @@ public class UrunSatis extends javax.swing.JFrame {
         lblSatUrunSatisFiyati.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblSatUrunSatisFiyati.setText("SATIŞ FİYATI                          :");
 
+        txtSatUrunAlisFiyati.setEditable(false);
         txtSatUrunAlisFiyati.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSatUrunAlisFiyatiActionPerformed(evt);
             }
         });
 
+        txtSatUrunAdi.setEditable(false);
         txtSatUrunAdi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSatUrunAdiActionPerformed(evt);
             }
         });
 
+        txtSatUrunSatisFiyati.setEditable(false);
         txtSatUrunSatisFiyati.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSatUrunSatisFiyatiActionPerformed(evt);
@@ -211,8 +212,7 @@ public class UrunSatis extends javax.swing.JFrame {
                     .addComponent(lblSatUrunSatisFiyati)
                     .addComponent(txtSatUrunSatisFiyati, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(52, 52, 52)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -242,10 +242,6 @@ public class UrunSatis extends javax.swing.JFrame {
     private void txtOdemeSekliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOdemeSekliActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtOdemeSekliActionPerformed
-
-    private void txtSatisAciklamaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSatisAciklamaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtSatisAciklamaActionPerformed
 
     private void btnSatisVazgecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSatisVazgecActionPerformed
         // TODO add your handling code here:
@@ -306,6 +302,7 @@ public class UrunSatis extends javax.swing.JFrame {
     public javax.swing.JButton btnSatisSat;
     public javax.swing.JButton btnSatisVazgec;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JLabel lblOdemeSekli;
     public javax.swing.JLabel lblSatUrunAdi;
     public javax.swing.JLabel lblSatUrunAlisFiyatı;
@@ -317,7 +314,7 @@ public class UrunSatis extends javax.swing.JFrame {
     public javax.swing.JTextField txtSatUrunAdi;
     public javax.swing.JTextField txtSatUrunAlisFiyati;
     public javax.swing.JTextField txtSatUrunSatisFiyati;
-    public javax.swing.JTextField txtSatisAciklama;
+    public javax.swing.JTextArea txtSatisAciklama;
     public javax.swing.JTextField txtSatmakİstediginizMiktar;
     // End of variables declaration//GEN-END:variables
 }
