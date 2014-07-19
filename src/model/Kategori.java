@@ -45,6 +45,8 @@ public class Kategori extends StokObject implements DatabaseI<StokObject>{
 
     @Override
     public boolean guncelle(int ID, StokObject yeniBilgi) {
+        System.out.println("ID : "  + ID);
+        yeniBilgi.setID(ID);
         HbmIslemler hbm = new HbmIslemler();
         return hbm.guncelle(yeniBilgi);
     }
