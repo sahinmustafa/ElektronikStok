@@ -7,6 +7,8 @@
     <property name="hibernate.connection.url">jdbc:derby://localhost:1527/ElektronikStok;create=true</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.default_schema">APP</property>
+    <property name="current_session_context_class">thread</property>
+    <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
     <property name="hibernate.hbm2ddl.auto">update</property>
     <property name="hibernate.show_sql">true</property>
     <mapping resource="orm/kategori.hbm.xml"/>
