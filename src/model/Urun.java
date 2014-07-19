@@ -34,7 +34,7 @@ public class Urun extends StokObject implements DatabaseI<StokObject>{
     public boolean sil(int urunID){
         HbmIslemler hbm = new HbmIslemler();
         
-        return hbm.sil(urunID, this.getClass());
+        return hbm.sil(urunID, Urun.class);
     }
     
     @Override

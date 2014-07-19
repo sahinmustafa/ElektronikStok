@@ -13,7 +13,7 @@
   <property name="tarih" column="TARIH" type="date"></property>
   <property name="aciklama" column="ACIKLAMA" type="string"></property>
   
-  <many-to-one name="urun" class="model.Urun" cascade="delete"/>
+  <many-to-one name="urun" class="model.Urun"/>
   
   </class>
 </hibernate-mapping>
