@@ -66,15 +66,15 @@ public class AnaEkran extends javax.swing.JFrame {
         pnlKategoriListesi.setLayout(pnlKategoriListesiLayout);
         pnlKategoriListesiLayout.setHorizontalGroup(
             pnlKategoriListesiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)
+            .addComponent(jScrollPane1)
             .addGroup(pnlKategoriListesiLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnKategoriEkle, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnKategoriGuncelle, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnKategoriSil, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnKategoriGuncelle, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pnlKategoriListesiLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnKategoriEkle, btnKategoriGuncelle, btnKategoriSil});
@@ -85,10 +85,10 @@ public class AnaEkran extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 347, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlKategoriListesiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btnKategoriGuncelle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnKategoriSil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnKategoriEkle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(pnlKategoriListesiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnKategoriEkle)
+                    .addComponent(btnKategoriSil)
+                    .addComponent(btnKategoriGuncelle))
                 .addContainerGap())
         );
 
@@ -105,6 +105,7 @@ public class AnaEkran extends javax.swing.JFrame {
                 "ÜRÜN ID", "ADI", "ÖZELLİK", "MİKTAR", "ALIŞ FİYATI", "SATIŞ FİYATI", "KRİTİK STOK SEVİYESİ", "KATEGORİ ID", "AÇIKLAMA", "BULUNDUĞU RAF"
             }
         ));
+        tblUrunOzellik.setEnabled(false);
         jScrollPane2.setViewportView(tblUrunOzellik);
 
         btnYeni.setText("Yeni");

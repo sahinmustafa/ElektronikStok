@@ -64,15 +64,15 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jScrollPane1" pref="267" max="32767" attributes="0"/>
-              <Group type="102" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
+              <Component id="jScrollPane1" max="32767" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="btnKategoriEkle" linkSize="2" min="-2" pref="69" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btnKategoriGuncelle" linkSize="2" min="-2" pref="69" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="btnKategoriSil" linkSize="2" min="-2" pref="73" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="btnKategoriGuncelle" linkSize="2" min="-2" pref="69" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -82,10 +82,10 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jScrollPane1" pref="347" max="32767" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="btnKategoriGuncelle" max="32767" attributes="0"/>
-                      <Component id="btnKategoriSil" max="32767" attributes="0"/>
-                      <Component id="btnKategoriEkle" alignment="1" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="btnKategoriEkle" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnKategoriSil" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnKategoriGuncelle" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -239,6 +239,7 @@
                     <Column editable="true" title="BULUNDU&#x11e;U RAF" type="java.lang.Object"/>
                   </Table>
                 </Property>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
