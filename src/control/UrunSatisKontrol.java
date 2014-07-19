@@ -28,7 +28,10 @@ public class UrunSatisKontrol extends GenelKontrol implements ActionListener{
         try{
             Urun u = new Urun().getir(urunId);
 
-            urunSatis.txtOdemeSekli.setText("Nakit");
+            urunSatis.cmbxOdemeSekli.addItem("Nakit");
+            urunSatis.cmbxOdemeSekli.addItem("Kredi Karti");
+            urunSatis.cmbxOdemeSekli.addItem("Borç");
+            
             urunSatis.txtSatUrunAdi.setText(u.getAdi());
             urunSatis.txtSatUrunAlisFiyati.setText(u.getAlisFiyati()+"");
             urunSatis.txtSatUrunSatisFiyati.setText(u.getSatisFiyati()+"");
@@ -56,7 +59,7 @@ public class UrunSatisKontrol extends GenelKontrol implements ActionListener{
     
     private void urunAlVeyaSat() {
         try {
-            String odemeSekli = urunSatis.txtOdemeSekli.getText();
+            String odemeSekli = urunSatis.cmbxOdemeSekli.getSelectedItem().toString();
             String satisAciklama = urunSatis.txtSatisAciklama.getText();
             int miktar = Integer.parseInt(urunSatis.txtSatmakİstediginizMiktar.getText());
 
