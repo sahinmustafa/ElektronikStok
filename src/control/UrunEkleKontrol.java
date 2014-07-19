@@ -29,23 +29,26 @@ public class UrunEkleKontrol extends GenelKontrol implements ActionListener{
 
     private void txtDegerleriAta() {
         try{
+            ArrayList <Kategori> kategoriler = new Kategori().listele(0);
+            //Kategori değerleri olutşuruluyor
+            for(Kategori kategori : kategoriler){
+                urunEkle.cmbxKategoriId.addItem(kategori.getKategoriAdi());
+            }   
+            
             if(urunId == Urun.YENI_URUN){
                 urunEkle.btnUrunkaydet.setText("Ekle");
             }else{
                 Urun urun = new Urun().getir(urunId);
-
-                ArrayList <Kategori> kategoriler = new Kategori().listele(0);
-                for(Kategori kategori : kategoriler){
-                    urunEkle.cmbxKategoriId.addItem(urun.getKategori().getKategoriAdi());
-                }               
                 
+                //urunEkle.cmbxKategoriId.setSelectedItem(urun.getKategori().getKategoriAdi());
+              
                 urunEkle.txtUrunAciklama.setText(urun.getAciklama());
                 urunEkle.txtUrunAdi.setText(urun.getAdi());
                 urunEkle.txtUrunAlisFiyati.setText(urun.getAlisFiyati()+"");
                 urunEkle.txtUrunBulunduguRaf.setText(urun.getRaf());
                 urunEkle.txtUrunId.setText(urun.getID()+"");
-                urunEkle.txtUrunKritikStokSeviyesi.setText(urun.getStokMiktar()+"");
-                urunEkle.txtUrunMiktar.setText(urun.getKritikStokMiktar()+"");
+                urunEkle.txtUrunKritikStokSeviyesi.setText(urun.getKritikStokMiktar()+"");
+                urunEkle.txtUrunMiktar.setText(urun.getStokMiktar()+"");
                 urunEkle.txtUrunOzellik.setText(urun.getOzellik());
                 urunEkle.txtUrunSatisFiyati.setText(urun.getSatisFiyati()+"");
 
