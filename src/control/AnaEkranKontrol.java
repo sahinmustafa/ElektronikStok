@@ -213,7 +213,7 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
     private void urunEkleEkraniGoster() {
         try{
             UrunEkleKontrol uek = new UrunEkleKontrol(Urun.YENI_URUN);
-            uek.urunEkle.txtKategoriId.setText(new Kategori().kategoriAdindanIdBul(anaEkran.listkategori.getSelectedValue().toString())+"");
+            uek.urunEkle.cmbxKategoriId.setSelectedItem(anaEkran.listkategori.getSelectedValue().toString());
         }catch(Exception e){
             exceptionGoster("urunEkleEkraniGoster", e);
         }

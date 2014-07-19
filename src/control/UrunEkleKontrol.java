@@ -3,6 +3,7 @@ package control;
 import elektronikstok.view.UrunEkle;
 import java.awt.event.ActionEvent; 
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import model.Kategori;
 import model.Urun;
@@ -33,7 +34,11 @@ public class UrunEkleKontrol extends GenelKontrol implements ActionListener{
             }else{
                 Urun urun = new Urun().getir(urunId);
 
-                urunEkle.txtKategoriId.setText(urun.getKategori().getID()+"");
+                ArrayList <Kategori> kategoriler = new Kategori().listele(0);
+                for(Kategori kategori : kategoriler){
+                    urunEkle.cmbxKategoriId.addItem(urun.getKategori().getKategoriAdi());
+                }               
+                
                 urunEkle.txtUrunAciklama.setText(urun.getAciklama());
                 urunEkle.txtUrunAdi.setText(urun.getAdi());
                 urunEkle.txtUrunAlisFiyati.setText(urun.getAlisFiyati()+"");
@@ -78,7 +83,7 @@ public class UrunEkleKontrol extends GenelKontrol implements ActionListener{
             u.setStokMiktar(Integer.parseInt(urunEkle.txtUrunMiktar.getText()));
 
             //id den kategor nesnesi çekilerek ataniyor
-            int kategoriId = Integer.parseInt(urunEkle.txtKategoriId.getText());
+            int kategoriId = new Kategori().kategoriAdindanIdBul(urunEkle.cmbxKategoriId.getSelectedItem().toString());
             u.setKategori(new Kategori().getir(kategoriId));
 
             if(urunId == Urun.YENI_URUN){
