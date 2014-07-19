@@ -338,7 +338,7 @@ public class UrunEkle extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnUrunVazgec;
     public javax.swing.JButton btnUrunkaydet;
-    private javax.swing.JComboBox cmbxKategoriId;
+    public javax.swing.JComboBox cmbxKategoriId;
     private javax.swing.JLabel jLabel2;
     public javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
