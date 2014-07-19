@@ -42,32 +42,36 @@ public class UrunEkle extends javax.swing.JFrame {
         lblUrunSatisFiyati = new javax.swing.JLabel();
         lblUrunKritikStokSeviyesi = new javax.swing.JLabel();
         lblKategoriId = new javax.swing.JLabel();
-        lblUrunAciklama = new javax.swing.JLabel();
+        lblBulunduguRaf = new javax.swing.JLabel();
         lblUrunBulunduguRaf = new javax.swing.JLabel();
         txtUrunMiktar = new javax.swing.JTextField();
         txtUrunOzellik = new javax.swing.JTextField();
         txtUrunAlisFiyati = new javax.swing.JTextField();
         txtUrunSatisFiyati = new javax.swing.JTextField();
         txtUrunKritikStokSeviyesi = new javax.swing.JTextField();
-        txtKategoriId = new javax.swing.JTextField();
-        txtUrunAciklama = new javax.swing.JTextField();
         txtUrunBulunduguRaf = new javax.swing.JTextField();
         btnUrunkaydet = new javax.swing.JButton();
         btnUrunVazgec = new javax.swing.JButton();
+        lblUrunAciklama = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtUrunAciklama = new javax.swing.JTextArea();
+        cmbxKategoriId = new javax.swing.JComboBox();
 
         jLabel2.setText("jLabel2");
 
         jTextField8.setText("jTextField8");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ÜRÜN EKLE", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 18), new java.awt.Color(0, 0, 0))); // NOI18N
+        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         lblUrunId.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblUrunId.setText("ÜRÜN ID                       :");
+        lblUrunId.setText("ÜRÜN ID                        :");
 
         lblUrunAdi.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblUrunAdi.setText("ADI                               :");
+        lblUrunAdi.setText("ADI                                :");
+
+        txtUrunId.setEditable(false);
+        txtUrunId.setEnabled(false);
 
         txtUrunAdi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,28 +80,27 @@ public class UrunEkle extends javax.swing.JFrame {
         });
 
         lblUrunMiktar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblUrunMiktar.setText("MİKTAR                        :");
+        lblUrunMiktar.setText("MİKTAR                         :");
 
         lblUrunOzellik.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblUrunOzellik.setText("ÖZELLİK                       :");
+        lblUrunOzellik.setText("ÖZELLİK                        :");
 
         lblUrunAlisFiyati.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblUrunAlisFiyati.setText("ALIŞ FİYATI                  :");
+        lblUrunAlisFiyati.setText("ALIŞ FİYATI                    :");
 
         lblUrunSatisFiyati.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblUrunSatisFiyati.setText("SATIŞ FİYATI               :");
+        lblUrunSatisFiyati.setText("SATIŞ FİYATI                 :");
 
         lblUrunKritikStokSeviyesi.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblUrunKritikStokSeviyesi.setText("KRİTİK STOK SEVİYESİ:");
+        lblUrunKritikStokSeviyesi.setText("KRİTİK STOK SEVİYESİ  :");
 
         lblKategoriId.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblKategoriId.setText("KATEGORİ ID               :");
+        lblKategoriId.setText("KATEGORİ ID                 :");
 
-        lblUrunAciklama.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblUrunAciklama.setText("AÇIKLAMA                    :");
+        lblBulunduguRaf.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblBulunduguRaf.setText("BULUNDUĞU RAF          :");
 
         lblUrunBulunduguRaf.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblUrunBulunduguRaf.setText("BULUNDUĞU RAF         :");
 
         txtUrunOzellik.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,45 +134,64 @@ public class UrunEkle extends javax.swing.JFrame {
             }
         });
 
+        lblUrunAciklama.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblUrunAciklama.setText("AÇIKLAMA                     :");
+
+        txtUrunAciklama.setColumns(20);
+        txtUrunAciklama.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        txtUrunAciklama.setRows(5);
+        jScrollPane1.setViewportView(txtUrunAciklama);
+
+        cmbxKategoriId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbxKategoriIdActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblUrunBulunduguRaf)
-                    .addComponent(lblUrunAciklama)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(lblUrunBulunduguRaf))
+                    .addComponent(lblBulunduguRaf)
                     .addComponent(lblKategoriId)
-                    .addComponent(lblUrunKritikStokSeviyesi)
                     .addComponent(lblUrunSatisFiyati)
                     .addComponent(lblUrunAlisFiyati)
                     .addComponent(lblUrunOzellik)
                     .addComponent(lblUrunMiktar)
                     .addComponent(lblUrunAdi)
-                    .addComponent(lblUrunId))
+                    .addComponent(lblUrunId)
+                    .addComponent(lblUrunAciklama, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblUrunKritikStokSeviyesi))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtKategoriId)
                     .addComponent(txtUrunKritikStokSeviyesi)
                     .addComponent(txtUrunSatisFiyati)
                     .addComponent(txtUrunAlisFiyati)
                     .addComponent(txtUrunOzellik)
                     .addComponent(txtUrunMiktar)
                     .addComponent(txtUrunAdi)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnUrunkaydet)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnUrunVazgec))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btnUrunkaydet)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnUrunVazgec))
-                            .addComponent(txtUrunId, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
-                            .addComponent(txtUrunAciklama, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtUrunBulunduguRaf, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtUrunId, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
+                                .addComponent(txtUrunBulunduguRaf, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(cmbxKategoriId, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(55, 55, 55))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lblKategoriId, lblUrunAciklama, lblUrunAdi, lblUrunAlisFiyati, lblUrunBulunduguRaf, lblUrunId, lblUrunKritikStokSeviyesi, lblUrunMiktar, lblUrunOzellik, lblUrunSatisFiyati});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lblBulunduguRaf, lblKategoriId, lblUrunAciklama, lblUrunAdi, lblUrunAlisFiyati, lblUrunBulunduguRaf, lblUrunId, lblUrunKritikStokSeviyesi, lblUrunMiktar, lblUrunOzellik, lblUrunSatisFiyati});
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnUrunVazgec, btnUrunkaydet});
 
@@ -207,20 +229,26 @@ public class UrunEkle extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblKategoriId)
-                    .addComponent(txtKategoriId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbxKategoriId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblUrunAciklama)
-                    .addComponent(txtUrunAciklama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblUrunBulunduguRaf)
+                    .addComponent(lblBulunduguRaf)
                     .addComponent(txtUrunBulunduguRaf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnUrunVazgec)
-                    .addComponent(btnUrunkaydet, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnUrunVazgec)
+                            .addComponent(btnUrunkaydet, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(lblUrunAciklama, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblUrunBulunduguRaf)
+                        .addContainerGap(92, Short.MAX_VALUE))))
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnUrunVazgec, btnUrunkaydet});
@@ -231,12 +259,14 @@ public class UrunEkle extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 499, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -265,6 +295,10 @@ public class UrunEkle extends javax.swing.JFrame {
     private void btnUrunVazgecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUrunVazgecActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnUrunVazgecActionPerformed
+
+    private void cmbxKategoriIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbxKategoriIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbxKategoriIdActionPerformed
 
     /**
      * @param args the command line arguments
@@ -304,9 +338,12 @@ public class UrunEkle extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnUrunVazgec;
     public javax.swing.JButton btnUrunkaydet;
+    private javax.swing.JComboBox cmbxKategoriId;
     private javax.swing.JLabel jLabel2;
     public javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField8;
+    public javax.swing.JLabel lblBulunduguRaf;
     public javax.swing.JLabel lblKategoriId;
     public javax.swing.JLabel lblUrunAciklama;
     public javax.swing.JLabel lblUrunAdi;
@@ -317,8 +354,7 @@ public class UrunEkle extends javax.swing.JFrame {
     public javax.swing.JLabel lblUrunMiktar;
     public javax.swing.JLabel lblUrunOzellik;
     public javax.swing.JLabel lblUrunSatisFiyati;
-    public javax.swing.JTextField txtKategoriId;
-    public javax.swing.JTextField txtUrunAciklama;
+    public javax.swing.JTextArea txtUrunAciklama;
     public javax.swing.JTextField txtUrunAdi;
     public javax.swing.JTextField txtUrunAlisFiyati;
     public javax.swing.JTextField txtUrunBulunduguRaf;
