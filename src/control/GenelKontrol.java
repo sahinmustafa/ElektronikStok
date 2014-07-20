@@ -15,7 +15,7 @@ public class GenelKontrol {
     }
     
     public void uyariMesaji(String baslik, String mesaj){
-        JOptionPane.showConfirmDialog(null, mesaj, baslik, JOptionPane.OK_OPTION);
+        JOptionPane.showMessageDialog(null, mesaj, baslik, JOptionPane.ERROR_MESSAGE);
     }
     
     public double doubleKontrol(String ifade){

@@ -64,6 +64,7 @@ public class UrunEkleKontrol extends GenelKontrol implements ActionListener{
     private void actionAta() {
         try{
             urunEkle.btnUrunkaydet.addActionListener(this);
+            urunEkle.btnUrunVazgec.addActionListener(this);
         }catch(Exception e){
             exceptionGoster("actionAta", e);
         }

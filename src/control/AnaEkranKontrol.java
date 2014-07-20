@@ -61,7 +61,7 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
     
     private void kategoriSil(){
         try{    
-            if(anaEkran.listkategori.getSelectedIndex() >= 0 ){
+            if(anaEkran.listkategori.getSelectedIndex() > 0 ){
                 String kategoriAdi = anaEkran.listkategori.getSelectedValue().toString();
                 
                 //Seçili satirin id'sini al 
@@ -71,6 +71,8 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
                 //emin misin sorusu sor; eminse sil değilse bir şey yapma 
                 if(onayIstegi("Silme Onayı", "\""+silinecekKategori.getKategoriAdi()+"\" adlı kategori kalıcı olarak silinecektir. Silmek istediğinize emin misiniz ?"))
                     silinecekKategori.sil(kategoriId);
+            }else{
+                uyariMesaji("Kategori Seçmediniz !","Lütfen silmek istediğiniz kategoriyi seçili hale getiriniz !");
             }
         }catch(Exception e){
             exceptionGoster("kategoriSil", e);
@@ -202,6 +204,8 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
                 //Seçili satirin id'sini al 
                 int urunId = (int) anaEkran.tblUrunOzellik.getValueAt(anaEkran.tblUrunOzellik.getSelectedRow(), 0);
                 UrunEkleKontrol uek = new UrunEkleKontrol(urunId);
+            }else{
+                uyariMesaji("Ürün Seçmediniz !","Lütfen Güncellemek istediğiniz ürünü seçili hale getiriniz !");
             }
         }catch(Exception e){
             exceptionGoster("urunGuncelleEkraniAc", e);
@@ -247,6 +251,8 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
                 //Seçili satirin id'sini al 
                 int urunId = (int) anaEkran.tblUrunOzellik.getValueAt(anaEkran.tblUrunOzellik.getSelectedRow(), 0);            
                 UrunSatisKontrol usk = new UrunSatisKontrol(urunId,alVeyaSat);
+            }else{
+                uyariMesaji("Ürün Seçmediniz !","Lütfen "+alVeyaSat+"mak istediğiniz ürünü seçili hale getiriniz !");
             }
         }catch(Exception e){
             exceptionGoster("urunSatisEkraniGoster", e);
@@ -263,6 +269,8 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
                 if(onayIstegi("Silme Onayı", urunId+" numaralı ürün kalıcı olarak silinecektir. Silmek istediğinize emin misiniz ?"))
                     new Urun().sil(urunId);
                 
+            }else{
+                uyariMesaji("Ürün Seçmediniz !","Lütfen silmek istediğiniz ürünü seçili hale getiriniz !");
             }
         }catch(Exception e){
             exceptionGoster("urunSil", e);
