@@ -37,9 +37,10 @@ public class UrunSatisKontrol extends GenelKontrol implements ActionListener{
             urunSatis.txtSatisAciklama.setText("");
             urunSatis.txtSatmakİstediginizMiktar.setText("");
 
-            if("Al".equals(alVeyaSat))
+            if("Al".equals(alVeyaSat)){
                 urunSatis.btnSatisSat.setText("Al");
-            else
+                urunSatis.lblSatmakİstediginizMiktar.setText("ALMAK İSTEDİĞİNİZ MİKTAR:");
+            }else
                 urunSatis.btnSatisSat.setText("Sat");
         }catch(Exception e){
             exceptionGoster("txtDegerleriAta", e);
