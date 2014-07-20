@@ -1,8 +1,11 @@
 package control;
 
 import elektronikstok.view.UrunSatis;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.BorderFactory;
+import javax.swing.border.TitledBorder;
 import model.Urun;
 
 public class UrunSatisKontrol extends GenelKontrol implements ActionListener{
@@ -40,6 +43,7 @@ public class UrunSatisKontrol extends GenelKontrol implements ActionListener{
             if("Al".equals(alVeyaSat)){
                 urunSatis.btnSatisSat.setText("Al");
                 urunSatis.lblSatmakİstediginizMiktar.setText("ALMAK İSTEDİĞİNİZ MİKTAR:");
+                urunSatis.pnlUrunSatis.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ürün Alış", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 18), new java.awt.Color(0, 0, 0))); // NOI18N
             }else
                 urunSatis.btnSatisSat.setText("Sat");
         }catch(Exception e){
