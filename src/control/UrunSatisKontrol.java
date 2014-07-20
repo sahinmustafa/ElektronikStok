@@ -64,18 +64,20 @@ public class UrunSatisKontrol extends GenelKontrol implements ActionListener{
         try {
             String odemeSekli = urunSatis.cmbxOdemeSekli.getSelectedItem().toString();
             String satisAciklama = urunSatis.txtSatisAciklama.getText();
-            int miktar = Integer.parseInt(urunSatis.txtSatmakİstediginizMiktar.getText());
+            int miktar = intKontrol(urunSatis.txtSatmakİstediginizMiktar.getText());
 
             if("Al".equals(alVeyaSat)){
-                if(new Urun().satinAl(urunId, miktar, odemeSekli, satisAciklama) == Integer.MAX_VALUE)
-                    uyariMesaji("BAŞARILI","Ürün Alım İşlemi Başarıyla Gerçekleşti");
-                else
+                if(new Urun().satinAl(urunId, miktar, odemeSekli, satisAciklama) == Integer.MAX_VALUE){
+                    urunSatis.hide();
+                    basariMesaji("BAŞARILI", miktar + " adet ürün başarıyla alindi");
+                }else
                     uyariMesaji("HATA","Ürün Bulunamadı");
             }else{
                 int sonuc = new Urun().sat(urunId, miktar, odemeSekli, satisAciklama);
-                if(sonuc == Integer.MAX_VALUE)
-                    uyariMesaji("BAŞARILI","Ürün Satım İşlemi Başarıyla Gerçekleşti");
-                else if(sonuc == Integer.MIN_VALUE )
+                if(sonuc == Integer.MAX_VALUE){
+                    basariMesaji("BAŞARILI", miktar + " adet ürün başarıyla satildi");
+                    urunSatis.hide();
+                }else if(sonuc == Integer.MIN_VALUE )
                     uyariMesaji("HATA","Ürün Bulunamadı");
                 else{
                     uyariMesaji("HATA","Seçili Üründen Sadece "+ sonuc +" Adet Bulunmaktadır");

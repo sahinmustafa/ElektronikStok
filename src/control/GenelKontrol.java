@@ -10,7 +10,7 @@ public class GenelKontrol {
     }
     
     public void exceptionGoster(String baslik, Exception e){
-        JOptionPane.showConfirmDialog(null, e.getMessage(), baslik, JOptionPane.OK_OPTION);
+        JOptionPane.showMessageDialog(null, e.getMessage(), baslik, JOptionPane.ERROR_MESSAGE);
         e.getSuppressed();
     }
     
@@ -18,21 +18,25 @@ public class GenelKontrol {
         JOptionPane.showMessageDialog(null, mesaj, baslik, JOptionPane.ERROR_MESSAGE);
     }
     
+    public void basariMesaji(String baslik, String mesaj){
+        JOptionPane.showMessageDialog(null, mesaj, baslik, JOptionPane.INFORMATION_MESSAGE);
+    }
+    
     public double doubleKontrol(String ifade){
         try{
-            return Double.parseDouble(ifade);
+            return Math.abs(Double.parseDouble(ifade));
         }catch(Exception e){
             //exceptionGoster("doubleKontrol", e);
-            return -1;
+            return 0;
         }
     }
     
       public int intKontrol(String ifade){
         try{
-            return Integer.parseInt(ifade);
+            return Math.abs(Integer.parseInt(ifade));
         }catch(Exception e){
             //exceptionGoster("doubleKontrol", e);
-            return -1;
+            return 0;
         }
     }
 }
