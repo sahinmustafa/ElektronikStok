@@ -8,5 +8,6 @@
   </id>
   <property name="kategoriAdi" column="KATEGORI_ADI" type="string"></property>
   <property name="aciklama" column="ACIKLAMA" type="string"></property>
+  <property name="silinmis" column="SILINMIS" type="integer"></property>
   </class>
 </hibernate-mapping>

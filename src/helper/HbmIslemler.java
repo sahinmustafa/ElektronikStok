@@ -2,6 +2,7 @@
 package helper;
 
 import java.util.List;
+import model.StokObject;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -34,7 +35,7 @@ public class HbmIslemler {
     }
     
     
-    public boolean sil(int id, Class clas)throws HibernateException{
+    public boolean tamamenSil(int id, Class clas)throws HibernateException{
         
         Session sesion = SessionFactory.getSessionFactory()
                 .openSession();
@@ -54,7 +55,7 @@ public class HbmIslemler {
             tr.rollback();
             throw ex;
         }finally{
-            sesion.close();
+            //sesion.close();
         }
     }
     
@@ -99,13 +100,13 @@ public class HbmIslemler {
     }
     
     @SuppressWarnings("rawtypes")
-	public Object bilgiGetir(int id, Class clas){
-        
+    public Object bilgiGetir(int id, Class clas){
+
         Session sesion = SessionFactory.getSessionFactory()
                 .openSession();
-        
+
         Transaction tr = sesion.beginTransaction();
-        
+
         try {            
             Object obj = sesion.get(clas, id);
             tr.commit();
@@ -117,6 +118,22 @@ public class HbmIslemler {
             //sesion.close();
         }
     }
-        
+    
+    public boolean sil(int ID, Class clas){
+        Session sesion = SessionFactory.getSessionFactory()
+                .openSession();
+        Transaction tr = sesion.beginTransaction();
+        try {
+            String sql = "UPDATE " + clas.getName() + " SET silinmis=" + StokObject.SILINMIS + " WHERE ID =" + ID;
+            int result = sesion.createQuery(sql).executeUpdate();
+            tr.commit();
+            return result > -1;            
+        } catch (HibernateException ex) {
+            tr.rollback();
+            throw ex;
+        }finally{
+            sesion.close();
+        }
+    }
 }
 

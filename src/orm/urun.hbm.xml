@@ -13,7 +13,7 @@
   <property name="kritikStokMiktar" column="KRITIK_STOK" type="integer"></property>
   <property name="aciklama" column="ACIKLAMA" type="string"></property>
   <property name="raf" column="BULUNDUGU_RAF" type="string"></property>
-  
+  <property name="silinmis" column="SILINMIS" type="integer"></property>
   <many-to-one name="kategori" class="model.Kategori" column="KATEGORI_ID"/>
   </class>
 </hibernate-mapping>

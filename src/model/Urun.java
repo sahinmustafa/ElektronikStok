@@ -10,7 +10,8 @@ import org.hibernate.HibernateException;
  */
 public class Urun extends StokObject implements DatabaseI<StokObject>{
     
-    public static int YENI_URUN = Integer.MAX_VALUE;
+    public static final int YENI_URUN = Integer.MAX_VALUE;
+    
 
     private String adi;
     private String ozellik;
@@ -24,7 +25,7 @@ public class Urun extends StokObject implements DatabaseI<StokObject>{
     
     public Urun(){}
     
-        @Override
+    @Override
     public void ekle() throws HibernateException{
         HbmIslemler hbm = new HbmIslemler();
         hbm.ekle(this);
@@ -32,14 +33,14 @@ public class Urun extends StokObject implements DatabaseI<StokObject>{
     
     @Override
     public boolean sil(int urunID){
-        HbmIslemler hbm = new HbmIslemler();
-        
+        String sql = "update Urun SET silinmis= " + SILINMIS + " WHERE ID=" + urunID;        
+        HbmIslemler hbm = new HbmIslemler();        
         return hbm.sil(urunID, Urun.class);
     }
     
     @Override
     public ArrayList<Urun> listele(int kategoriID){
-        String hql = "FROM Urun WHERE ID ='" + kategoriID + "'";  
+        String hql = "FROM Urun WHERE ID ='" + kategoriID + "' AND SILINMIS =" + SILINMEMIS;  
         HbmIslemler hbm = new HbmIslemler();
         return (ArrayList<Urun>) hbm.list(hql);
     }
@@ -96,8 +97,7 @@ public class Urun extends StokObject implements DatabaseI<StokObject>{
     }
     
     public ArrayList<Urun> listele(int kategoriID, String aranacakMetin){
-        System.out.println("ARanacak Metin : " + aranacakMetin + " Kategori :" + kategoriID);
-        String hql = "FROM Urun WHERE adi LIKE '%"+aranacakMetin + "%'";
+        String hql = "FROM Urun WHERE adi LIKE '%"+aranacakMetin + "%' AND SILINMIS = "+ SILINMEMIS;
         if(kategoriID != -1)
             hql += " AND kategori=" + kategoriID;
         

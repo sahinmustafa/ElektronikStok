@@ -2,6 +2,7 @@ package model;
 
 import helper.HbmIslemler;
 import java.util.ArrayList;
+import static model.StokObject.SILINMIS;
 import org.hibernate.HibernateException;
 
 /**
@@ -25,14 +26,14 @@ public class Kategori extends StokObject implements DatabaseI<StokObject>{
     }
     
     @Override
-    public boolean sil(int stokID){
-        HbmIslemler hbm = new HbmIslemler();
-        return hbm.sil(stokID, this.getClass());
+    public boolean sil(int kategoriID){
+        HbmIslemler hbm = new HbmIslemler();        
+        return hbm.sil(kategoriID, Kategori.class);
     }
     
     @Override
     public ArrayList<Kategori> listele(int kategoriID){
-        String hql = "FROM Kategori";
+        String hql = "FROM Kategori WHERE SILINMIS = "+ SILINMEMIS;
         HbmIslemler hbm = new HbmIslemler();
         return (ArrayList<Kategori>) hbm.list(hql);
     }

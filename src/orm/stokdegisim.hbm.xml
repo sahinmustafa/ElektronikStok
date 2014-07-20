@@ -12,7 +12,7 @@
   <property name="odemeSekli" column="ODEME_SEKLI" type="string"></property>
   <property name="tarih" column="TARIH" type="date"></property>
   <property name="aciklama" column="ACIKLAMA" type="string"></property>
-  
+  <property name="silinmis" column="SILINMIS" type="integer"></property>
   <many-to-one name="urun" class="model.Urun"/>
   
   </class>
