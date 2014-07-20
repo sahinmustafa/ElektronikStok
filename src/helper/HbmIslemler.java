@@ -13,15 +13,13 @@ import org.hibernate.Transaction;
  * @author MustafaS
  */
 public class HbmIslemler {
-    
-    
+        
     public void ekle(Object o) throws HibernateException{
         
         Session sesion = SessionFactory.getSessionFactory()
                 .openSession();
         
-        Transaction tr = sesion.beginTransaction();
-        
+        Transaction tr = sesion.beginTransaction();        
         try{
             sesion.save(o);
             tr.commit();
@@ -30,21 +28,17 @@ public class HbmIslemler {
             throw ex;
         }finally{
             sesion.close();
-        }
-    
+        }    
     }
-    
-    
+       
     public boolean tamamenSil(int id, Class clas)throws HibernateException{
         
         Session sesion = SessionFactory.getSessionFactory()
                 .openSession();
         
-        Transaction tr = sesion.beginTransaction();
-        
+        Transaction tr = sesion.beginTransaction();        
         try{
             Object obj = sesion.get(clas, id);
-            
             if(obj != null){
                 sesion.delete(obj);
                 tr.commit();
@@ -64,20 +58,17 @@ public class HbmIslemler {
         Session sesion = SessionFactory.getSessionFactory()
                 .openSession();
         
-        Transaction tr = sesion.beginTransaction();
-        
+        Transaction tr = sesion.beginTransaction();        
         try{
             List list = sesion.createQuery(hql).list();
             tr.commit();
-            return list;
-            
+            return list;            
         }catch(HibernateException ex){
             tr.rollback();
             throw ex;
         }finally{
             sesion.close();
-        }
-        
+        }        
     }
     
     public boolean guncelle(Object obj) throws HibernateException{
@@ -85,8 +76,7 @@ public class HbmIslemler {
         Session sesion = SessionFactory.getSessionFactory()
                 .openSession();
         
-        Transaction tr = sesion.beginTransaction();
-        
+        Transaction tr = sesion.beginTransaction();        
         try{
             sesion.update(obj);
             tr.commit();
@@ -106,7 +96,6 @@ public class HbmIslemler {
                 .openSession();
 
         Transaction tr = sesion.beginTransaction();
-
         try {            
             Object obj = sesion.get(clas, id);
             tr.commit();
@@ -120,11 +109,15 @@ public class HbmIslemler {
     }
     
     public boolean sil(int ID, Class clas){
+        String sql = "UPDATE " + clas.getName() + " SET silinmis=" + StokObject.SILINMIS + " WHERE ID =" + ID;        
+        return sorguCalistir(sql);
+    }
+    
+    public boolean sorguCalistir(String sql){
         Session sesion = SessionFactory.getSessionFactory()
                 .openSession();
         Transaction tr = sesion.beginTransaction();
-        try {
-            String sql = "UPDATE " + clas.getName() + " SET silinmis=" + StokObject.SILINMIS + " WHERE ID =" + ID;
+        try {           
             int result = sesion.createQuery(sql).executeUpdate();
             tr.commit();
             return result > -1;            

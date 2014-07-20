@@ -28,7 +28,9 @@ public class Kategori extends StokObject implements DatabaseI<StokObject>{
     @Override
     public boolean sil(int kategoriID){
         HbmIslemler hbm = new HbmIslemler();        
-        return hbm.sil(kategoriID, Kategori.class);
+        if(hbm.sil(kategoriID, Kategori.class))
+            new Urun().kategoridekiUrunleriSil(kategoriID);
+        return false;
     }
     
     @Override

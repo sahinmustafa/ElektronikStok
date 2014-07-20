@@ -33,7 +33,6 @@ public class Urun extends StokObject implements DatabaseI<StokObject>{
     
     @Override
     public boolean sil(int urunID){
-        String sql = "update Urun SET silinmis= " + SILINMIS + " WHERE ID=" + urunID;        
         HbmIslemler hbm = new HbmIslemler();        
         return hbm.sil(urunID, Urun.class);
     }
@@ -103,6 +102,12 @@ public class Urun extends StokObject implements DatabaseI<StokObject>{
         
         HbmIslemler hbm = new HbmIslemler();
         return  (ArrayList<Urun>) hbm.list(hql);
+    }
+    
+    public boolean kategoridekiUrunleriSil(int kategoriID){
+        String sql = "UPDATE Urun SET silinmis=" + StokObject.SILINMIS + " WHERE kategori =" + kategoriID;
+        HbmIslemler hbm = new HbmIslemler();
+        return hbm.sorguCalistir(sql);
     }
     
     public String getAdi() {
