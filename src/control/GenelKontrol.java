@@ -17,4 +17,22 @@ public class GenelKontrol {
     public void uyariMesaji(String baslik, String mesaj){
         JOptionPane.showConfirmDialog(null, mesaj, baslik, JOptionPane.OK_OPTION);
     }
+    
+    public double doubleKontrol(String ifade){
+        try{
+            return Double.parseDouble(ifade);
+        }catch(Exception e){
+            //exceptionGoster("doubleKontrol", e);
+            return -1;
+        }
+    }
+    
+      public int intKontrol(String ifade){
+        try{
+            return Integer.parseInt(ifade);
+        }catch(Exception e){
+            //exceptionGoster("doubleKontrol", e);
+            return -1;
+        }
+    }
 }

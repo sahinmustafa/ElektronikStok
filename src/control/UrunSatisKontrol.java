@@ -3,7 +3,6 @@ package control;
 import elektronikstok.view.UrunSatis;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import model.StokDegisim;
 import model.Urun;
 
 public class UrunSatisKontrol extends GenelKontrol implements ActionListener{
@@ -49,7 +48,6 @@ public class UrunSatisKontrol extends GenelKontrol implements ActionListener{
 
     private void actionAta() {
         try{
-            urunSatis.setDefaultCloseOperation(urunSatis.HIDE_ON_CLOSE);
             urunSatis.btnSatisSat.addActionListener(this);
             urunSatis.btnSatisVazgec.addActionListener(this);
         }catch(Exception e){

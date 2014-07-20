@@ -3,7 +3,6 @@ package control;
 import elektronikstok.view.Kategori;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JOptionPane;
 
 public class KategoriKontrol extends GenelKontrol implements ActionListener{
     Kategori kategori;
@@ -41,7 +40,6 @@ public class KategoriKontrol extends GenelKontrol implements ActionListener{
     
     private void actionAta() {
         try{
-            kategori.setDefaultCloseOperation(kategori.HIDE_ON_CLOSE);
             kategori.btnKategoriEkle.addActionListener(this);
         }catch(Exception e){
             exceptionGoster("kategorileriListele", e);

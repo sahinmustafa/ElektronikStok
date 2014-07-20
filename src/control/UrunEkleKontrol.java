@@ -4,7 +4,6 @@ import elektronikstok.view.UrunEkle;
 import java.awt.event.ActionEvent; 
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 import model.Kategori;
 import model.Urun;
 
@@ -36,6 +35,7 @@ public class UrunEkleKontrol extends GenelKontrol implements ActionListener{
             }   
             
             if(urunId == Urun.YENI_URUN){
+                urunEkle.txtUrunId.setText("0");
                 urunEkle.btnUrunkaydet.setText("Ekle");
             }else{
                 Urun urun = new Urun().getir(urunId);
@@ -63,7 +63,6 @@ public class UrunEkleKontrol extends GenelKontrol implements ActionListener{
 
     private void actionAta() {
         try{
-            urunEkle.setDefaultCloseOperation(urunEkle.HIDE_ON_CLOSE);
             urunEkle.btnUrunkaydet.addActionListener(this);
         }catch(Exception e){
             exceptionGoster("actionAta", e);
@@ -78,13 +77,13 @@ public class UrunEkleKontrol extends GenelKontrol implements ActionListener{
 
             u.setAciklama(urunEkle.txtUrunAciklama.getText());
             u.setAdi(urunEkle.txtUrunAdi.getText());
-            u.setAlisFiyati(Integer.parseInt(urunEkle.txtUrunAlisFiyati.getText()));
-            u.setID(Integer.parseInt(urunEkle.txtUrunId.getText()));            
-            u.setKritikStokMiktar(Integer.parseInt(urunEkle.txtUrunKritikStokSeviyesi.getText()));
+            u.setAlisFiyati(doubleKontrol(urunEkle.txtUrunAlisFiyati.getText()));
+            u.setID(intKontrol(urunEkle.txtUrunId.getText()));            
+            u.setKritikStokMiktar(intKontrol(urunEkle.txtUrunKritikStokSeviyesi.getText()));
             u.setOzellik(urunEkle.txtUrunOzellik.getText());
             u.setRaf(urunEkle.txtUrunBulunduguRaf.getText());
-            u.setSatisFiyati(Integer.parseInt(urunEkle.txtUrunSatisFiyati.getText()));
-            u.setStokMiktar(Integer.parseInt(urunEkle.txtUrunMiktar.getText()));
+            u.setSatisFiyati(doubleKontrol(urunEkle.txtUrunSatisFiyati.getText()));
+            u.setStokMiktar(intKontrol(urunEkle.txtUrunMiktar.getText()));
 
             //id den kategor nesnesi çekilerek ataniyor
             int kategoriId = new Kategori().kategoriAdindanIdBul(urunEkle.cmbxKategoriId.getSelectedItem().toString());
