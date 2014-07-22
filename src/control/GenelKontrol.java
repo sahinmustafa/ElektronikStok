@@ -24,7 +24,7 @@ public class GenelKontrol {
     
     public double doubleKontrol(String ifade){
         try{
-            return Math.abs(Double.parseDouble(ifade));
+            return Double.parseDouble(ifade);
         }catch(Exception e){
             //exceptionGoster("doubleKontrol", e);
             return 0;
@@ -33,7 +33,7 @@ public class GenelKontrol {
     
       public int intKontrol(String ifade){
         try{
-            return Math.abs(Integer.parseInt(ifade));
+            return Integer.parseInt(ifade);
         }catch(Exception e){
             //exceptionGoster("doubleKontrol", e);
             return 0;

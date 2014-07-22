@@ -65,30 +65,46 @@ public class UrunSatisKontrol extends GenelKontrol implements ActionListener{
             String odemeSekli = urunSatis.cmbxOdemeSekli.getSelectedItem().toString();
             String satisAciklama = urunSatis.txtSatisAciklama.getText();
             int miktar = intKontrol(urunSatis.txtSatmakİstediginizMiktar.getText());
-
-            if("Al".equals(alVeyaSat)){
-                if(new Urun().satinAl(urunId, miktar, odemeSekli, satisAciklama) == Integer.MAX_VALUE){
-                    urunSatis.hide();
-                    basariMesaji("BAŞARILI", miktar + " adet ürün başarıyla alindi");
-                }else
-                    uyariMesaji("HATA","Ürün Bulunamadı");
-            }else{
-                int sonuc = new Urun().sat(urunId, miktar, odemeSekli, satisAciklama);
-                if(sonuc == Integer.MAX_VALUE){
-                    basariMesaji("BAŞARILI", miktar + " adet ürün başarıyla satildi");
-                    urunSatis.hide();
-                }else if(sonuc == Integer.MIN_VALUE )
-                    uyariMesaji("HATA","Ürün Bulunamadı");
-                else{
-                    uyariMesaji("HATA","Seçili Üründen Sadece "+ sonuc +" Adet Bulunmaktadır");
-                    //!!! bu kadarıyla satmak ister misin diye sor
+            
+            String hata = zorunluAlanKontrol(miktar);
+            
+            if("".equals(hata)){
+                if("Al".equals(alVeyaSat)){
+                    if(new Urun().satinAl(urunId, miktar, odemeSekli, satisAciklama) == Integer.MAX_VALUE){
+                        urunSatis.hide();
+                        basariMesaji("BAŞARILI", miktar + " adet ürün başarıyla alındı");
+                    }else
+                        uyariMesaji("HATA","Ürün Bulunamadı");
+                }else{
+                    int sonuc = new Urun().sat(urunId, miktar, odemeSekli, satisAciklama);
+                    if(sonuc == Integer.MAX_VALUE){
+                        basariMesaji("BAŞARILI", miktar + " adet ürün başarıyla satıldı");
+                        urunSatis.hide();
+                    }else if(sonuc == Integer.MIN_VALUE )
+                        uyariMesaji("HATA","Ürün Bulunamadı");
+                    else{
+                        uyariMesaji("HATA","Seçili Üründen Sadece "+ sonuc +" Adet Bulunmaktadır");
+                        //!!! bu kadarıyla satmak ister misin diye sor
+                    }
                 }
+            }else {
+                uyariMesaji("Hatalı Alan(lar) Girildi !", hata);
             }
         }catch(Exception e){
             exceptionGoster("urunAlVeyaSat", e);
         }
     }
     
+    private String zorunluAlanKontrol(int miktar) {
+        String hata = "";
+        
+        if(miktar == 0)
+            hata += "Miktar Girmediniz !\n";
+        if(miktar < 0)
+            hata += "Miktar Negatif Olamaz !\n";
+    
+        return hata;
+    }
     
     @Override
     public void actionPerformed(ActionEvent ae) {
