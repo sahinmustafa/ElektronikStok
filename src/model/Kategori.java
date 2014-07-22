@@ -91,6 +91,7 @@ public class Kategori extends StokObject implements DatabaseI<StokObject>{
         ex.close();
     }
     
+    
     public String getKategoriAdi() {
         return kategoriAdi;
     }
