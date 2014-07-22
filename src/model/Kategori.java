@@ -1,7 +1,12 @@
 package model;
 
+import helper.ExcelIslmeler;
 import helper.HbmIslemler;
+import java.io.IOException;
 import java.util.ArrayList;
+import jxl.read.biff.BiffException;
+import jxl.write.Label;
+import jxl.write.WriteException;
 import static model.StokObject.SILINMIS;
 import org.hibernate.HibernateException;
 
@@ -63,6 +68,29 @@ public class Kategori extends StokObject implements DatabaseI<StokObject>{
         return kategoriList.get(0).getID();
     }
 
+    public void kategoriYedekle() throws WriteException, IOException, BiffException{
+        ArrayList<Kategori> kategoriList = (ArrayList<Kategori>) new HbmIslemler().list("FROM Kategori");
+        Label[] list = new Label[4];
+        ExcelIslmeler ex = new ExcelIslmeler();
+        
+        list[0] = new Label(0, 0, "ID");
+        list[1] = new Label(1, 0, "SILINMIS");
+        list[2] = new Label(2, 0, "KATEGORIADI");
+        list[3] = new Label(3, 0, "ACIKLAMA");
+            
+        ex.yaz("Kategori", list);
+        
+        for(int i = 0 ; i < kategoriList.size();  i ++){
+            list[0] = new Label(0, i, kategoriList.get(i).getID()+"");
+            list[1] = new Label(1, i, kategoriList.get(i).getSilinmis()+"");
+            list[2] = new Label(2, i, kategoriList.get(i).getKategoriAdi()+"");
+            list[3] = new Label(3, i, kategoriList.get(i).getAciklama()+"");
+            
+            ex.yaz("Kategori", list);
+        }
+        ex.close();
+    }
+    
     public String getKategoriAdi() {
         return kategoriAdi;
     }
