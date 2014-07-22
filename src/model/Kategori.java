@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import jxl.read.biff.BiffException;
 import jxl.write.Label;
 import jxl.write.WriteException;
-import static model.StokObject.SILINMIS;
 import org.hibernate.HibernateException;
 
 /**
