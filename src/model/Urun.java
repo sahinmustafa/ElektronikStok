@@ -1,7 +1,12 @@
 package model;
 
+import helper.ExcelIslmeler;
 import helper.HbmIslemler;
+import java.io.IOException;
 import java.util.ArrayList;
+import jxl.read.biff.BiffException;
+import jxl.write.Label;
+import jxl.write.WriteException;
 import org.hibernate.HibernateException; 
 
 /**
@@ -108,6 +113,42 @@ public class Urun extends StokObject implements DatabaseI<StokObject>{
         String sql = "UPDATE Urun SET silinmis=" + StokObject.SILINMIS + " WHERE kategori =" + kategoriID;
         HbmIslemler hbm = new HbmIslemler();
         return hbm.sorguCalistir(sql);
+    }
+    
+    public void kategoriYedekle() throws WriteException, IOException, BiffException{
+        ArrayList<Urun> kategoriList = (ArrayList<Urun>) new HbmIslemler().list("FROM Urun");
+        Label[] list = new Label[4];
+        ExcelIslmeler ex = new ExcelIslmeler();
+        
+        list[0] = new Label(0, 0, "ID");
+        list[1] = new Label(1, 0, "SILINMIS");
+        list[2] = new Label(2, 0, "URUN_ADI");
+        list[3] = new Label(3, 0, "OZELLIK");
+        list[3] = new Label(4, 0, "MIKTAR");
+        list[3] = new Label(5, 0, "ALIS_FIYATI");
+        list[3] = new Label(6, 0, "SATIS_FIYATI");
+        list[3] = new Label(7, 0, "KRITIK_STOK");
+        list[3] = new Label(8, 0, "ACIKLAMA");
+        list[3] = new Label(9, 0, "KATEGORI_ID");
+        
+        ex.yaz("Urun", list);
+        
+        for(int i = 0 ; i < kategoriList.size();  i ++){
+            list[0] = new Label(0, i+1, kategoriList.get(i).getID()+"");
+            list[1] = new Label(1, i+1, kategoriList.get(i).getSilinmis()+"");
+            list[2] = new Label(2, i+1, kategoriList.get(i).getAdi()+"");
+            list[3] = new Label(3, i+1, kategoriList.get(i).getOzellik()+"");
+            list[4] = new Label(4, i+1, kategoriList.get(i).getStokMiktar()+"");
+            list[5] = new Label(5, i+1, kategoriList.get(i).getAlisFiyati()+"");
+            list[6] = new Label(6, i+1, kategoriList.get(i).getSatisFiyati()+"");
+            list[7] = new Label(7, i+1, kategoriList.get(i).getKritikStokMiktar()+"");
+            list[8] = new Label(8, i+1, kategoriList.get(i).getAciklama()+"");
+            list[9] = new Label(9, i+1, kategoriList.get(i).getKategori().getID()+"");
+            
+            
+            ex.yaz("Urun", list);
+        }
+        ex.close();
     }
     
     public String getAdi() {

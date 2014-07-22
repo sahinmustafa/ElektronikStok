@@ -81,10 +81,10 @@ public class Kategori extends StokObject implements DatabaseI<StokObject>{
         ex.yaz("Kategori", list);
         
         for(int i = 0 ; i < kategoriList.size();  i ++){
-            list[0] = new Label(0, i, kategoriList.get(i).getID()+"");
-            list[1] = new Label(1, i, kategoriList.get(i).getSilinmis()+"");
-            list[2] = new Label(2, i, kategoriList.get(i).getKategoriAdi()+"");
-            list[3] = new Label(3, i, kategoriList.get(i).getAciklama()+"");
+            list[0] = new Label(0, i+1, kategoriList.get(i).getID()+"");
+            list[1] = new Label(1, i+1, kategoriList.get(i).getSilinmis()+"");
+            list[2] = new Label(2, i+1, kategoriList.get(i).getKategoriAdi()+"");
+            list[3] = new Label(3, i+1, kategoriList.get(i).getAciklama()+"");
             
             ex.yaz("Kategori", list);
         }
