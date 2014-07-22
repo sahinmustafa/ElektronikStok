@@ -1,6 +1,8 @@
 package control;
 
+import control.extra.TableRenderer;
 import elektronikstok.view.AnaEkran;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
@@ -121,9 +123,12 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
                 data[i][8] = urunler.get(i).getRaf();
             }
 
+            
             tableModel.setDataVector(data, kolonAdlari);
 
             anaEkran.tblUrunOzellik.setModel(tableModel);
+
+            anaEkran.tblUrunOzellik.setDefaultRenderer(Object.class, new TableRenderer());
         }catch(Exception e){
             exceptionGoster("urunleriGoster", e);
         }
