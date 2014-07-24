@@ -1,7 +1,7 @@
 package control;
 
 import control.extra.TableRenderer;
-import elektronikstok.view.AnaEkran;
+import view.AnaEkran;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
