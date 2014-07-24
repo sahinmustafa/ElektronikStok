@@ -5,19 +5,22 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class KategoriKontrol extends GenelKontrol implements ActionListener{
+    AnaEkranKontrol aek;
     Kategori kategori;
     int kategoriId;
     
-    public KategoriKontrol(int kategoriId) {
+    public KategoriKontrol(int kategoriId,AnaEkranKontrol aek) {
         this.kategori = new Kategori();
         this.kategoriId = kategoriId;
+        this.aek = aek;
         txtDegerleriAta();
         actionAta();
         kategori.show();
     }
 
-    public KategoriKontrol(Kategori kategori) {
+    public KategoriKontrol(Kategori kategori, AnaEkranKontrol aek) {
         this.kategori = kategori;
+        this.aek = aek;
     }
     
 
@@ -58,6 +61,9 @@ public class KategoriKontrol extends GenelKontrol implements ActionListener{
             else
                 k.guncelle(kategoriId, k);
                
+            aek.kategorileriListele();
+            
+            //k.kategoriYedekle();
             kategori.hide();
         }catch(Exception e){
             exceptionGoster("kategoriEkle", e);

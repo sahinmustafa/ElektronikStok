@@ -9,19 +9,22 @@ import model.Urun;
 
 public class UrunEkleKontrol extends GenelKontrol implements ActionListener{
     
+    AnaEkranKontrol aek;
     UrunEkle urunEkle;
     int urunId;
     
-    public UrunEkleKontrol(int urunId) {
+    public UrunEkleKontrol(int urunId,AnaEkranKontrol aek) {
         this.urunEkle = new UrunEkle();
         this.urunId = urunId;
+        this.aek = aek;
         txtDegerleriAta();
         actionAta();
         urunEkle.show();
     }
     
-    public UrunEkleKontrol(UrunEkle urunEkle) {
+    public UrunEkleKontrol(UrunEkle urunEkle,AnaEkranKontrol aek) {
         this.urunEkle = urunEkle;
+        this.aek = aek;
     }
 
     
@@ -40,8 +43,7 @@ public class UrunEkleKontrol extends GenelKontrol implements ActionListener{
             }else{
                 Urun urun = new Urun().getir(urunId);
                 
-                //urunEkle.cmbxKategoriId.setSelectedItem(urun.getKategori().getKategoriAdi());
-                System.out.println(urun.getKategori());
+                urunEkle.cmbxKategoriId.setSelectedItem(urun.getKategori().getKategoriAdi());
                 
                 urunEkle.txtUrunAciklama.setText(urun.getAciklama());
                 urunEkle.txtUrunAdi.setText(urun.getAdi());
@@ -104,6 +106,8 @@ public class UrunEkleKontrol extends GenelKontrol implements ActionListener{
                 }else{
                     u.guncelle(urunId, u);
                 }
+                
+                aek.kategorileriListele();
                 urunEkle.hide();
             }else {
                 uyariMesaji("Hatalı Değer(ler) Girildi", hata);
