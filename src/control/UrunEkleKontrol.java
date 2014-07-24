@@ -40,7 +40,8 @@ public class UrunEkleKontrol extends GenelKontrol implements ActionListener{
             }else{
                 Urun urun = new Urun().getir(urunId);
                 
-                urunEkle.cmbxKategoriId.setSelectedItem(urun.getKategori().getKategoriAdi());
+                //urunEkle.cmbxKategoriId.setSelectedItem(urun.getKategori().getKategoriAdi());
+                System.out.println(urun.getKategori());
                 
                 urunEkle.txtUrunAciklama.setText(urun.getAciklama());
                 urunEkle.txtUrunAdi.setText(urun.getAdi());

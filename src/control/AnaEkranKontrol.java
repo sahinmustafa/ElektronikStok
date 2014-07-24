@@ -29,6 +29,7 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
         /*Açilişta da KategorileriListele ve urunleriGoster WindowActivate eventinde tekrar çağriliyor 
         ancak yapilandiricaki fonksiyonlar silindiğinde pencere açildiktan sonra listeleme yapiyor*/
         kategorileriListele();
+        urunleriGoster();
         actionAta();
         anaEkran.show();
     }
