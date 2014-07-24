@@ -3,6 +3,9 @@ package control;
 import elektronikstok.view.Kategori;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import javax.swing.JList;
+import javax.swing.ListModel;
 
 public class KategoriKontrol extends GenelKontrol implements ActionListener{
     AnaEkranKontrol aek;
@@ -52,22 +55,40 @@ public class KategoriKontrol extends GenelKontrol implements ActionListener{
     private void kategoriEkleVeyaGuncelle() {
         try{
             model.Kategori k = new model.Kategori();
+            String hata = kategoriAdiKontrol();
+            if("".equals(hata)){
+                k.setKategoriAdi(kategori.txtKategoriAdi.getText());
+                k.setAciklama(kategori.txtKategoriAciklama.getText());
 
-            k.setKategoriAdi(kategori.txtKategoriAdi.getText());
-            k.setAciklama(kategori.txtKategoriAciklama.getText());
+                if(kategoriId == model.Kategori.YENI_KATEGORI)
+                    k.ekle();
+                else
+                    k.guncelle(kategoriId, k);
 
-            if(kategoriId == model.Kategori.YENI_KATEGORI)
-                k.ekle();
-            else
-                k.guncelle(kategoriId, k);
-               
-            aek.kategorileriListele();
-            
-            //k.kategoriYedekle();
-            kategori.hide();
+                aek.kategorileriListele();
+
+                //k.kategoriYedekle();
+                kategori.hide();
+            }else{
+                uyariMesaji("HATALI DEĞER", hata);
+            }
         }catch(Exception e){
             exceptionGoster("kategoriEkle", e);
         }
+    }
+    
+    private String kategoriAdiKontrol(){
+        String yeniKategoriAdi = kategori.txtKategoriAdi.getText();
+        if(!"".equals(yeniKategoriAdi)){
+            ListModel kategoriModel = aek.anaEkran.listkategori.getModel();
+            for(int i=0; i<kategoriModel.getSize(); i++){
+                if(yeniKategoriAdi.equals(kategoriModel.getElementAt(i).toString()))
+                    return "Kategori Adı Mevcut";
+            }
+        }else{
+            return "Kategori Adı Boş Olamaz";
+        }
+        return "";
     }
     
   

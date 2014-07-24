@@ -75,6 +75,7 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
             }else{
                 uyariMesaji("Kategori Seçmediniz !","Lütfen silmek istediğiniz kategoriyi seçili hale getiriniz !");
             }
+             kategorileriListele();
         }catch(Exception e){
             exceptionGoster("kategoriSil", e);
         }
@@ -251,6 +252,7 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
             }else{
                 uyariMesaji("Ürün Seçmediniz !","Lütfen silmek istediğiniz ürünü seçili hale getiriniz !");
             }
+            kategorileriListele();
         }catch(Exception e){
             exceptionGoster("urunSil", e);
         }
