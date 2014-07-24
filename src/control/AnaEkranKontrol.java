@@ -1,10 +1,12 @@
 package control;
 
 import control.extra.TableRenderer;
-import elektronikstok.view.AnaEkran;
+import view.AnaEkran;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.util.ArrayList;
@@ -29,6 +31,7 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
         /*Açilişta da KategorileriListele ve urunleriGoster WindowActivate eventinde tekrar çağriliyor 
         ancak yapilandiricaki fonksiyonlar silindiğinde pencere açildiktan sonra listeleme yapiyor*/
         kategorileriListele();
+        urunleriGoster("");
         actionAta();
         anaEkran.show();
     }
@@ -83,15 +86,14 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
     
     
     private void urunleriAra() {
-        urunleriGoster();
+        urunleriGoster(anaEkran.txtAra.getText());
         if(anaEkran.tblUrunOzellik.getModel().getRowCount() == 0)
             uyariMesaji("Ürün Bulunamadı", "Arama Kriterlerine Uygun Ürün Bulunamadı");
     }
     
     
-    private void urunleriGoster() {
+    private void urunleriGoster(String aranan) {
         try{
-            String aranan  = anaEkran.txtAra.getText();
             int kategoriId = -1;
             ArrayList <Urun> urunler;
 
@@ -167,12 +169,31 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
             ListSelectionListener listSelectionListener = new ListSelectionListener() {
                 @Override
                 public void valueChanged(ListSelectionEvent lse) {
-                    anaEkran.txtAra.setText("");
-                    urunleriGoster();
+                    anaEkran.txtAra.setText("Ara");
+                    urunleriGoster("");
                 }
              };
              anaEkran.listkategori.addListSelectionListener(listSelectionListener);
         
+             
+             anaEkran.txtAra.addFocusListener(new FocusListener() {
+
+                @Override
+                public void focusGained(FocusEvent e) {
+                    if("Ara".equals(anaEkran.txtAra.getText())){
+                        anaEkran.txtAra.setText("");
+                        //anaEkran.txtAra.setForeground(Color.gray);
+                    }
+                }
+
+                @Override
+                public void focusLost(FocusEvent e) {
+                    if("".equals(anaEkran.txtAra.getText())){
+                        anaEkran.txtAra.setText("Ara");
+                        //anaEkran.txtAra.setForeground(Color.black);
+                    }
+                }
+            });
         }catch(Exception e){
             exceptionGoster("actionAta", e);
         }
