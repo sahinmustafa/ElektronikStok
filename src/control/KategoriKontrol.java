@@ -58,7 +58,6 @@ public class KategoriKontrol extends GenelKontrol implements ActionListener{
             else
                 k.guncelle(kategoriId, k);
                
-            k.kategoriYedekle();
             kategori.hide();
         }catch(Exception e){
             exceptionGoster("kategoriEkle", e);
