@@ -67,7 +67,7 @@ public class KategoriKontrol extends GenelKontrol implements ActionListener{
 
                 aek.kategorileriListele();
 
-                //k.kategoriYedekle();
+                k.kategoriYedekle();
                 kategori.hide();
             }else{
                 uyariMesaji("HATALI DEĞER", hata);
