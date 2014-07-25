@@ -10,20 +10,23 @@ import model.Urun;
 
 public class UrunSatisKontrol extends GenelKontrol implements ActionListener{
     UrunSatis urunSatis;
+    AnaEkranKontrol aek;
     int urunId;
     String alVeyaSat;
     
-    public UrunSatisKontrol(int urunId, String alVeyaSat) {
+    public UrunSatisKontrol(int urunId, String alVeyaSat,AnaEkranKontrol aek) {
         this.urunSatis = new UrunSatis();
         this.urunId = urunId;
         this.alVeyaSat = alVeyaSat;
+        this.aek = aek;
         txtDegerleriAta();
         actionAta();
         urunSatis.show();
     }
     
-    public UrunSatisKontrol(UrunSatis urunSatis) {
+    public UrunSatisKontrol(UrunSatis urunSatis, AnaEkranKontrol aek) {
         this.urunSatis = urunSatis;
+        this.aek = aek;
     }
 
     private void txtDegerleriAta() {
@@ -87,6 +90,7 @@ public class UrunSatisKontrol extends GenelKontrol implements ActionListener{
                         //!!! bu kadarıyla satmak ister misin diye sor
                     }
                 }
+                aek.kategorileriListele();
             }else {
                 uyariMesaji("Hatalı Alan(lar) Girildi !", hata);
             }

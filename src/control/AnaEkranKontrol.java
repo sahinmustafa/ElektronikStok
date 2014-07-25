@@ -5,6 +5,8 @@ import view.AnaEkran;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.util.ArrayList;
@@ -29,7 +31,7 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
         /*Açilişta da KategorileriListele ve urunleriGoster WindowActivate eventinde tekrar çağriliyor 
         ancak yapilandiricaki fonksiyonlar silindiğinde pencere açildiktan sonra listeleme yapiyor*/
         kategorileriListele();
-        urunleriGoster();
+        urunleriGoster("");
         actionAta();
         anaEkran.show();
     }
@@ -38,7 +40,7 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
         this.anaEkran = anaEkran;
     }
 
-    private void kategorileriListele() {
+    public void kategorileriListele() {
         try{
             DefaultListModel listModel = new DefaultListModel();
 
@@ -76,14 +78,22 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
             }else{
                 uyariMesaji("Kategori Seçmediniz !","Lütfen silmek istediğiniz kategoriyi seçili hale getiriniz !");
             }
+             kategorileriListele();
         }catch(Exception e){
             exceptionGoster("kategoriSil", e);
         }
     }
-
-    private void urunleriGoster() {
+    
+    
+    private void urunleriAra() {
+        urunleriGoster(anaEkran.txtAra.getText());
+        if(anaEkran.tblUrunOzellik.getModel().getRowCount() == 0)
+            uyariMesaji("Ürün Bulunamadı", "Arama Kriterlerine Uygun Ürün Bulunamadı");
+    }
+    
+    
+    private void urunleriGoster(String aranan) {
         try{
-            String aranan  = anaEkran.txtAra.getText();
             int kategoriId = -1;
             ArrayList <Urun> urunler;
 
@@ -129,6 +139,7 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
             anaEkran.tblUrunOzellik.setModel(tableModel);
 
             anaEkran.tblUrunOzellik.setDefaultRenderer(Object.class, new TableRenderer());
+           
         }catch(Exception e){
             exceptionGoster("urunleriGoster", e);
         }
@@ -158,44 +169,29 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
             ListSelectionListener listSelectionListener = new ListSelectionListener() {
                 @Override
                 public void valueChanged(ListSelectionEvent lse) {
-                    anaEkran.txtAra.setText("");
-                    urunleriGoster();
+                    anaEkran.txtAra.setText("Ara");
+                    urunleriGoster("");
                 }
              };
              anaEkran.listkategori.addListSelectionListener(listSelectionListener);
         
              
-             anaEkran.addWindowListener(new WindowListener() {
+             anaEkran.txtAra.addFocusListener(new FocusListener() {
 
                 @Override
-                public void windowOpened(WindowEvent we) {
+                public void focusGained(FocusEvent e) {
+                    if("Ara".equals(anaEkran.txtAra.getText())){
+                        anaEkran.txtAra.setText("");
+                        //anaEkran.txtAra.setForeground(Color.gray);
+                    }
                 }
 
                 @Override
-                public void windowClosing(WindowEvent we) {
-                    anaEkran.dispose();
-                }
-
-                @Override
-                public void windowClosed(WindowEvent we) {
-                    anaEkran.dispose();
-                }
-
-                @Override
-                public void windowIconified(WindowEvent we) {
-                }
-
-                @Override
-                public void windowDeiconified(WindowEvent we) {
-                }
-
-                @Override
-                public void windowActivated(WindowEvent we) {
-                    kategorileriListele();
-                }
-
-                @Override
-                public void windowDeactivated(WindowEvent we) {
+                public void focusLost(FocusEvent e) {
+                    if("".equals(anaEkran.txtAra.getText())){
+                        anaEkran.txtAra.setText("Ara");
+                        //anaEkran.txtAra.setForeground(Color.black);
+                    }
                 }
             });
         }catch(Exception e){
@@ -208,7 +204,7 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
             if(anaEkran.tblUrunOzellik.getSelectedRow()>=0){
                 //Seçili satirin id'sini al 
                 int urunId = (int) anaEkran.tblUrunOzellik.getValueAt(anaEkran.tblUrunOzellik.getSelectedRow(), 0);
-                UrunEkleKontrol uek = new UrunEkleKontrol(urunId);
+                UrunEkleKontrol uek = new UrunEkleKontrol(urunId,this);
             }else{
                 uyariMesaji("Ürün Seçmediniz !","Lütfen Güncellemek istediğiniz ürünü seçili hale getiriniz !");
             }
@@ -219,7 +215,7 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
   
     private void urunEkleEkraniGoster() {
         try{
-            UrunEkleKontrol uek = new UrunEkleKontrol(Urun.YENI_URUN);
+            UrunEkleKontrol uek = new UrunEkleKontrol(Urun.YENI_URUN,this);
             uek.urunEkle.cmbxKategoriId.setSelectedItem(anaEkran.listkategori.getSelectedValue().toString());
         }catch(Exception e){
             exceptionGoster("urunEkleEkraniGoster", e);
@@ -229,7 +225,7 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
     
     private void kategoriEkleEkraniGoster() {
         try{
-            KategoriKontrol kk = new KategoriKontrol(model.Kategori.YENI_KATEGORI);
+            KategoriKontrol kk = new KategoriKontrol(model.Kategori.YENI_KATEGORI,this);
         }catch(Exception e){
             exceptionGoster("kategoriEkleEkraniGoster", e);
         }
@@ -241,7 +237,7 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
              if(anaEkran.listkategori.getSelectedIndex() > 0){
                 String kategori = anaEkran.listkategori.getSelectedValue().toString();
                 int kategoriId = new Kategori().kategoriAdindanIdBul(kategori);
-                KategoriKontrol kk = new KategoriKontrol(kategoriId);
+                KategoriKontrol kk = new KategoriKontrol(kategoriId,this);
             }else{
                 uyariMesaji("Kategori Seçmediniz !","Lütfen Güncellemek istediğiniz kategorinin adını seçili hale getiriniz !");
             }
@@ -255,7 +251,7 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
             if(anaEkran.tblUrunOzellik.getSelectedRow()>=0){
                 //Seçili satirin id'sini al 
                 int urunId = (int) anaEkran.tblUrunOzellik.getValueAt(anaEkran.tblUrunOzellik.getSelectedRow(), 0);            
-                UrunSatisKontrol usk = new UrunSatisKontrol(urunId,alVeyaSat);
+                UrunSatisKontrol usk = new UrunSatisKontrol(urunId,alVeyaSat,this);
             }else{
                 uyariMesaji("Ürün Seçmediniz !","Lütfen "+alVeyaSat+"mak istediğiniz ürünü seçili hale getiriniz !");
             }
@@ -277,6 +273,7 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
             }else{
                 uyariMesaji("Ürün Seçmediniz !","Lütfen silmek istediğiniz ürünü seçili hale getiriniz !");
             }
+            kategorileriListele();
         }catch(Exception e){
             exceptionGoster("urunSil", e);
         }
@@ -287,7 +284,7 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent ae) {
         if(ae.getSource() == anaEkran.btnAra){
-            urunleriGoster();
+            urunleriAra();
         }else if(ae.getSource() == anaEkran.btnGuncelle){
             urunGuncelleEkraniAc();
         }else if(ae.getSource() == anaEkran.btnKategoriEkle){
@@ -306,4 +303,7 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
             urunEkleEkraniGoster();
         }
     }   
+
+    
+    
 }
