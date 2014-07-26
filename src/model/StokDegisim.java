@@ -61,6 +61,15 @@ public class StokDegisim extends StokObject implements DatabaseI<StokObject>{
         return (ArrayList<StokDegisim>) hbm.list(hql);
     }
     
+    public ArrayList<StokDegisim> tariheGoreListele(int urunID, Date baslangicTarih, Date bitisTarih){
+        String hql = "SELECT * FROM StokDegisim WHERE  tarih between '" + baslangicTarih + "' and '" + bitisTarih + "'";
+        
+        if(urunID != -1)
+            hql += " AND ID =" + urunID;
+        HbmIslemler hbm = new HbmIslemler();
+        return (ArrayList<StokDegisim>) hbm.list(hql);
+    }
+    
     @Override
     public StokDegisim getir(int stokID){
         HbmIslemler hbm = new HbmIslemler();
