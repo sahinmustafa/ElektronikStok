@@ -128,5 +128,9 @@ public class HbmIslemler {
             sesion.close();
         }
     }
+    
+    public String[] getColumnName(Class clas){
+        return SessionFactory.getSessionFactory().getClassMetadata(clas).getPropertyNames();
+    }
 }
 
