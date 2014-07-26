@@ -35,10 +35,7 @@ public class ExcelIslmeler {
     }
     
     public void init() throws IOException, BiffException{
-        JFileChooser chooser = new JFileChooser();
-        chooser.showOpenDialog(null);
-        dosyaYolu = chooser.getSelectedFile().getAbsolutePath();
-        System.out.println("Dosya Yolu : " + dosyaYolu);
+        setDosyaYolu();
         
         if(!dosyaVarmi(dosyaYolu))
             dosyaOlustur();
@@ -55,6 +52,13 @@ public class ExcelIslmeler {
     public boolean dosyaVarmi(String dosyaYolu){
         File file = new File(dosyaYolu);        
         return file.isFile();
+    }
+    
+    public void setDosyaYolu(){
+        JFileChooser chooser = new JFileChooser();
+        chooser.showOpenDialog(null);
+        dosyaYolu = chooser.getSelectedFile().getAbsolutePath();
+        System.out.println("Dosya Yolu : " + dosyaYolu);
     }
     
     public String getDosyaYolu(){
@@ -100,12 +104,48 @@ public class ExcelIslmeler {
         }
         
         yaz(calismaKitabiAdi, lbl, dataList.size()+1, columnName.length+1);
-
     }
     
     public void close() throws IOException, WriteException{
         workBook.write();
         workBook.close();
+    }
+    
+    public String[][] yedektenOku(Class clas) throws IOException, BiffException{
+        setDosyaYolu();
+        
+        Workbook work = Workbook.getWorkbook(new File(dosyaYolu));
+        Sheet shet = work.getSheet(clas.getName());
+        
+        String[][] array = new String[shet.getColumns()][shet.getRows()];
+        
+        for(int i = 0 ; i < shet.getColumns(); i ++)
+            for(int j = 0 ; j < shet.getRows(); j ++){
+                    array[i][j] = shet.getCell(i, j+1).getContents();
+            }
+        
+        return array;
+    }
+    
+    
+    public int getRows(String tabelName) throws IOException, BiffException{
+            Workbook work = Workbook.getWorkbook(new File(dosyaYolu));
+            Sheet shet = work.getSheet(tabelName);
+        
+            if(tabelName == null)
+                return -1;
+        
+            return shet.getRows();
+    }
+    
+    public int getCols(String tabelName) throws IOException, BiffException{
+            Workbook work = Workbook.getWorkbook(new File(dosyaYolu));
+            Sheet shet = work.getSheet(tabelName);
+        
+            if(tabelName == null)
+                return -1;
+        
+            return shet.getColumns();
     }
     
 }

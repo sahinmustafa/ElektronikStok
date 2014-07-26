@@ -120,6 +120,25 @@ public class Urun extends StokObject implements DatabaseI<StokObject>{
         return (ArrayList<Urun>) new HbmIslemler().list("FROM Urun");
     }
     
+    @Override
+    public void tumunuKaydet(String[][] array, int rows, int cols){
+        for(int i = 0; i < rows; i ++){
+                    this.setID(Integer.parseInt(array[i][0]));
+                    this.setAdi((array[i][1]));
+                    this.setOzellik(array[i][2]);
+                    this.setAlisFiyati(Integer.parseInt(array[i][3]));
+                    this.setSatisFiyati(Integer.parseInt(array[i][4]));
+                    this.setKritikStokMiktar(Integer.parseInt(array[i][5]));
+                    this.setAciklama(array[i][6]);
+                    this.setRaf(array[i][7]);
+                    this.setSilinmis(Integer.parseInt(array[i][8]));
+                    Kategori u = new Kategori();
+                    u.setID(Integer.parseInt(array[i][8]));
+                    this.setKategori(u);
+                    
+                    ekle();
+            } 
+    }
     
     public String getAdi() {
         return adi;

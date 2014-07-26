@@ -68,7 +68,18 @@ public class Kategori extends StokObject implements DatabaseI<StokObject>{
         
     }
     
-    
+        @Override
+    public void tumunuKaydet(String[][] array, int rows, int cols){
+            for(int i = 0; i < rows; i ++){
+                    this.setID(Integer.parseInt(array[i][0]));
+                    this.setSilinmis(Integer.parseInt(array[i][1]));
+                    this.setKategoriAdi(array[i][2]);
+                    this.setAciklama(array[i][3]);
+                    
+                    ekle();
+            } 
+    }
+
     public String getKategoriAdi() {
         return kategoriAdi;
     }

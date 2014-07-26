@@ -23,6 +23,7 @@ public abstract class StokObject {
     }
     
     public abstract ArrayList tumunuGetir();
+    public abstract void tumunuKaydet(String[][] array, int rows, int cols);
     
     public void kategoriYedekle() throws IOException, BiffException, WriteException{
         
@@ -33,6 +34,19 @@ public abstract class StokObject {
         for (StokObject o  : stokObjects){
             String[] columnName = new HbmIslemler().getColumnName(o.getClass());
             ex.yedekle(o.getClass().getName(), columnName, o.tumunuGetir());
+        }
+        ex.close();
+    }
+    
+    public void yedekleriKaydet() throws IOException, BiffException, WriteException{
+        StokObject[]  stokObjects = new StokObject[]{new Kategori(), new Urun(), new StokDegisim()};
+        
+        ExcelIslmeler ex = new ExcelIslmeler();
+        
+        for (StokObject o  : stokObjects){
+            String[][] array = ex.yedektenOku(o.getClass());
+            o.tumunuKaydet(array, ex.getRows(o.getClass().getName()), ex.getCols(o.getClass().getName()));
+            
         }
         ex.close();
     }

@@ -78,6 +78,26 @@ public class StokDegisim extends StokObject implements DatabaseI<StokObject>{
         return (ArrayList<StokDegisim>) new HbmIslemler().list("FROM StokDegisim");
     }
 
+        @Override
+    public void tumunuKaydet(String[][] array, int rows, int cols){
+            for(int i = 0; i < rows; i ++){
+                    this.setID(Integer.parseInt(array[i][0]));
+                    this.setEskiMiktar(Integer.parseInt(array[i][1]));
+                    this.setYeniMiktar(Integer.parseInt(array[i][2]));
+                    this.setTutar(Integer.parseInt(array[i][3]));
+                    this.setOdemeSekli(array[i][4]);
+                    this.setTarih(null);
+                    this.setAciklama(array[i][6]);
+                    this.setSilinmis(Integer.parseInt(array[i][7]));
+                    Urun u = new Urun();
+                    u.setID(Integer.parseInt(array[i][8]));
+                    this.setUrun(u);
+                    
+                    ekle();
+            } 
+    }
+
+    
     public Urun getUrun() {
         return urun;
     }
