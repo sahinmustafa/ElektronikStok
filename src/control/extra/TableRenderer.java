@@ -33,9 +33,11 @@ public class TableRenderer extends DefaultTableCellRenderer{
                 cell.setBackground( Color.lightGray );
             }
             
-            
-            if( Integer.parseInt(table.getModel().getValueAt(row,3).toString()) <= Integer.parseInt(table.getModel().getValueAt(row,6).toString())){
-                cell.setBackground( new Color(255, 50, 50) );
+            //9 columdan oluşan sadece anaEkranda bulunan tablo olması gerekir
+            if(table.getColumnCount() == 9){
+                if( Integer.parseInt(table.getModel().getValueAt(row,3).toString()) <= Integer.parseInt(table.getModel().getValueAt(row,6).toString())){
+                    cell.setBackground( new Color(255, 50, 50) );
+                }
             }
             
             
