@@ -41,9 +41,10 @@ public class AnaEkran extends javax.swing.JFrame {
         btnGuncelle = new javax.swing.JButton();
         btnSil = new javax.swing.JButton();
         btnUrunAl = new javax.swing.JButton();
-        btnUrunSat = new javax.swing.JButton();
+        btnAlimSatim = new javax.swing.JButton();
         txtAra = new javax.swing.JTextField();
         btnAra = new javax.swing.JButton();
+        btnUrunSat1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,16 +52,16 @@ public class AnaEkran extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(listkategori);
 
-        btnKategoriEkle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/elektronikstok/view/add (1).png"))); // NOI18N
+        btnKategoriEkle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/add (1).png"))); // NOI18N
 
-        btnKategoriGuncelle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/elektronikstok/view/refresh (1).png"))); // NOI18N
+        btnKategoriGuncelle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/refresh (1).png"))); // NOI18N
         btnKategoriGuncelle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnKategoriGuncelleActionPerformed(evt);
             }
         });
 
-        btnKategoriSil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/elektronikstok/view/edit_delete (2).png"))); // NOI18N
+        btnKategoriSil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/edit_delete (2).png"))); // NOI18N
 
         javax.swing.GroupLayout pnlKategoriListesiLayout = new javax.swing.GroupLayout(pnlKategoriListesi);
         pnlKategoriListesi.setLayout(pnlKategoriListesiLayout);
@@ -74,6 +75,9 @@ public class AnaEkran extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btnKategoriSil, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
+
+        pnlKategoriListesiLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnKategoriEkle, btnKategoriGuncelle, btnKategoriSil});
+
         pnlKategoriListesiLayout.setVerticalGroup(
             pnlKategoriListesiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlKategoriListesiLayout.createSequentialGroup()
@@ -110,23 +114,29 @@ public class AnaEkran extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tblUrunOzellik);
 
+        btnYeni.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnYeni.setForeground(new java.awt.Color(51, 153, 255));
         btnYeni.setText("Yeni");
 
+        btnGuncelle.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnGuncelle.setForeground(new java.awt.Color(51, 153, 255));
         btnGuncelle.setText("Güncelle");
 
+        btnSil.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnSil.setForeground(new java.awt.Color(51, 153, 255));
         btnSil.setText("Sil");
 
+        btnUrunAl.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnUrunAl.setForeground(new java.awt.Color(51, 153, 255));
         btnUrunAl.setText("Ürün Al");
 
-        btnUrunSat.setForeground(new java.awt.Color(51, 153, 255));
-        btnUrunSat.setText("Ürün Sat");
-        btnUrunSat.addActionListener(new java.awt.event.ActionListener() {
+        btnAlimSatim.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnAlimSatim.setForeground(new java.awt.Color(0, 204, 0));
+        btnAlimSatim.setText("AlımSatım ");
+        btnAlimSatim.setToolTipText("");
+        btnAlimSatim.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUrunSatActionPerformed(evt);
+                btnAlimSatimActionPerformed(evt);
             }
         });
 
@@ -136,6 +146,15 @@ public class AnaEkran extends javax.swing.JFrame {
         btnAra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAraActionPerformed(evt);
+            }
+        });
+
+        btnUrunSat1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnUrunSat1.setForeground(new java.awt.Color(51, 153, 255));
+        btnUrunSat1.setText("Ürün Sat");
+        btnUrunSat1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUrunSat1ActionPerformed(evt);
             }
         });
 
@@ -156,15 +175,17 @@ public class AnaEkran extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(btnUrunAl, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnUrunSat, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE)
+                        .addComponent(btnUrunSat1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnAlimSatim)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(txtAra, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnAra)))
                 .addContainerGap())
         );
 
-        pnlUrunBilgileriLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnGuncelle, btnSil, btnUrunAl, btnUrunSat, btnYeni});
+        pnlUrunBilgileriLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnGuncelle, btnSil, btnUrunAl, btnYeni});
 
         pnlUrunBilgileriLayout.setVerticalGroup(
             pnlUrunBilgileriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,13 +199,14 @@ public class AnaEkran extends javax.swing.JFrame {
                         .addComponent(btnGuncelle, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnSil, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnUrunAl, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnUrunSat, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnAlimSatim, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnUrunSat1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnAra, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(txtAra, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
-        pnlUrunBilgileriLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnGuncelle, btnSil, btnUrunAl, btnUrunSat, btnYeni});
+        pnlUrunBilgileriLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAlimSatim, btnGuncelle, btnSil, btnUrunAl, btnUrunSat1, btnYeni});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -214,13 +236,17 @@ public class AnaEkran extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnKategoriGuncelleActionPerformed
 
-    private void btnUrunSatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUrunSatActionPerformed
+    private void btnAlimSatimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlimSatimActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnUrunSatActionPerformed
+    }//GEN-LAST:event_btnAlimSatimActionPerformed
 
     private void btnAraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAraActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAraActionPerformed
+
+    private void btnUrunSat1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUrunSat1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnUrunSat1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -258,6 +284,7 @@ public class AnaEkran extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnAlimSatim;
     public javax.swing.JButton btnAra;
     public javax.swing.JButton btnGuncelle;
     public javax.swing.JButton btnKategoriEkle;
@@ -265,7 +292,7 @@ public class AnaEkran extends javax.swing.JFrame {
     public javax.swing.JButton btnKategoriSil;
     public javax.swing.JButton btnSil;
     public javax.swing.JButton btnUrunAl;
-    public javax.swing.JButton btnUrunSat;
+    public javax.swing.JButton btnUrunSat1;
     public javax.swing.JButton btnYeni;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

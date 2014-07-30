@@ -66,11 +66,11 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Component id="jScrollPane1" alignment="0" pref="0" max="32767" attributes="0"/>
               <Group type="102" alignment="1" attributes="0">
-                  <Component id="btnKategoriEkle" min="-2" pref="55" max="-2" attributes="0"/>
+                  <Component id="btnKategoriEkle" linkSize="6" min="-2" pref="55" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btnKategoriGuncelle" min="-2" pref="54" max="-2" attributes="0"/>
+                  <Component id="btnKategoriGuncelle" linkSize="6" min="-2" pref="54" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btnKategoriSil" min="-2" pref="52" max="-2" attributes="0"/>
+                  <Component id="btnKategoriSil" linkSize="6" min="-2" pref="52" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -113,7 +113,7 @@
         <Component class="javax.swing.JButton" name="btnKategoriEkle">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/elektronikstok/view/add (1).png"/>
+              <Image iconType="3" name="/view/add (1).png"/>
             </Property>
           </Properties>
           <AuxValues>
@@ -123,7 +123,7 @@
         <Component class="javax.swing.JButton" name="btnKategoriGuncelle">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/elektronikstok/view/refresh (1).png"/>
+              <Image iconType="3" name="/view/refresh (1).png"/>
             </Property>
           </Properties>
           <Events>
@@ -136,7 +136,7 @@
         <Component class="javax.swing.JButton" name="btnKategoriSil">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/elektronikstok/view/edit_delete (2).png"/>
+              <Image iconType="3" name="/view/edit_delete (2).png"/>
             </Property>
           </Properties>
           <AuxValues>
@@ -176,8 +176,10 @@
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="btnUrunAl" linkSize="3" min="-2" pref="85" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btnUrunSat" linkSize="3" min="-2" pref="93" max="-2" attributes="0"/>
-                          <EmptySpace pref="145" max="32767" attributes="0"/>
+                          <Component id="btnUrunSat1" min="-2" pref="93" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="btnAlimSatim" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="txtAra" min="-2" pref="237" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnAra" min="-2" max="-2" attributes="0"/>
@@ -199,7 +201,8 @@
                           <Component id="btnGuncelle" linkSize="5" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
                           <Component id="btnSil" linkSize="5" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                           <Component id="btnUrunAl" linkSize="5" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                          <Component id="btnUrunSat" linkSize="5" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                          <Component id="btnAlimSatim" linkSize="5" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                          <Component id="btnUrunSat1" linkSize="5" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                       </Group>
                       <Component id="btnAra" alignment="1" pref="0" max="32767" attributes="0"/>
                       <Component id="txtAra" alignment="1" min="-2" pref="31" max="-2" attributes="0"/>
@@ -243,6 +246,9 @@
         </Container>
         <Component class="javax.swing.JButton" name="btnYeni">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="11" style="1"/>
+            </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="33" type="rgb"/>
             </Property>
@@ -254,6 +260,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnGuncelle">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="11" style="1"/>
+            </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="33" type="rgb"/>
             </Property>
@@ -265,6 +274,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnSil">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="11" style="1"/>
+            </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="33" type="rgb"/>
             </Property>
@@ -276,6 +288,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnUrunAl">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="11" style="1"/>
+            </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="33" type="rgb"/>
             </Property>
@@ -285,15 +300,19 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="btnUrunSat">
+        <Component class="javax.swing.JButton" name="btnAlimSatim">
           <Properties>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="99" red="33" type="rgb"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="11" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="&#xdc;r&#xfc;n Sat"/>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="cc" red="0" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Al&#x131;mSat&#x131;m "/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUrunSatActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAlimSatimActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -315,6 +334,23 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAraActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnUrunSat1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="11" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="99" red="33" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="&#xdc;r&#xfc;n Sat"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUrunSat1ActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
