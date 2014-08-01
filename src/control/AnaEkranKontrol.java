@@ -297,7 +297,7 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
             urunSil();
         }else if(ae.getSource() == anaEkran.btnUrunAl){
             urunSatisEkraniGoster("Al");
-        }else if(ae.getSource() == anaEkran.btnUrunSat){
+        }else if(ae.getSource() == anaEkran.btnUrunSat
             urunSatisEkraniGoster("Sat");
         }else if(ae.getSource() == anaEkran.btnYeni){
             urunEkleEkraniGoster();
