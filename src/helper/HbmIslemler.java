@@ -27,7 +27,7 @@ public class HbmIslemler {
             tr.rollback();
             throw ex;
         }finally{
-            sesion.close();
+            //sesion.close();
         }    
     }
        
@@ -67,7 +67,7 @@ public class HbmIslemler {
             tr.rollback();
             throw ex;
         }finally{
-            sesion.close();
+            //sesion.close();
         }        
     }
     
