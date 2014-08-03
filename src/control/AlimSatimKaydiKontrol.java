@@ -2,6 +2,7 @@ package control;
 
 import control.extra.TableRenderer;
 import java.util.ArrayList;
+import java.util.Date;
 import javax.swing.table.DefaultTableModel;
 import model.StokDegisim;
 import view.AlimSatimKaydi;
@@ -19,7 +20,7 @@ public class AlimSatimKaydiKontrol {
     }
     
     public void alimSatimTablosuOlustur(){
-        ArrayList<StokDegisim> stokDegisim = new StokDegisim().listele(1);
+        ArrayList<StokDegisim> stokDegisim = new StokDegisim().tumunuGetir();
         
         DefaultTableModel tableModel = new DefaultTableModel();
 

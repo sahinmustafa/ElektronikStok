@@ -2,13 +2,10 @@ package control;
 
 import control.extra.TableRenderer;
 import view.AnaEkran;
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -25,6 +22,7 @@ import model.Urun;
 public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
     
     AnaEkran anaEkran;  
+    String aramaTextYazisi;
     
     public AnaEkranKontrol() {
         this.anaEkran = new AnaEkran();
@@ -33,6 +31,7 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
         kategorileriListele();
         urunleriGoster("");
         actionAta();
+        aramaTextYazisi = anaEkran.txtAra.getText();
         anaEkran.show();
     }
     
@@ -159,7 +158,8 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
                                   anaEkran.btnSil,
                                   anaEkran.btnUrunAl,
                                   anaEkran.btnUrunSat,
-                                  anaEkran.btnYeni
+                                  anaEkran.btnYeni,
+                                  anaEkran.btnAlimSatim
                                 };
 
             for (JButton buton : butonlar) {
@@ -169,7 +169,7 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
             ListSelectionListener listSelectionListener = new ListSelectionListener() {
                 @Override
                 public void valueChanged(ListSelectionEvent lse) {
-                    anaEkran.txtAra.setText("Ara");
+                    anaEkran.txtAra.setText(aramaTextYazisi);
                     urunleriGoster("");
                 }
              };
@@ -180,7 +180,7 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
 
                 @Override
                 public void focusGained(FocusEvent e) {
-                    if("Ara".equals(anaEkran.txtAra.getText())){
+                    if(aramaTextYazisi.equals(anaEkran.txtAra.getText())){
                         anaEkran.txtAra.setText("");
                         //anaEkran.txtAra.setForeground(Color.gray);
                     }
@@ -189,7 +189,7 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
                 @Override
                 public void focusLost(FocusEvent e) {
                     if("".equals(anaEkran.txtAra.getText())){
-                        anaEkran.txtAra.setText("Ara");
+                        anaEkran.txtAra.setText(aramaTextYazisi);
                         //anaEkran.txtAra.setForeground(Color.black);
                     }
                 }
@@ -231,6 +231,9 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
         }
     }
     
+    private void urunAlimSatimGecmisiGoster(){
+        AlimSatimKaydiKontrol askk = new AlimSatimKaydiKontrol();
+    }
     
     private void kategoriGuncelleEkraniGoster() {
         try{
@@ -297,8 +300,12 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
             urunSil();
         }else if(ae.getSource() == anaEkran.btnUrunAl){
             urunSatisEkraniGoster("Al");
-        }else if(ae.getSource() == anaEkran.btnUrunSat
+        }else if(ae.getSource() == anaEkran.btnAlimSatim){
+            //btnAlimSatim ile btnUrunSat butonu kariştiğindan işlevleri değişik !! Urun sat çağriliyor burda
             urunSatisEkraniGoster("Sat");
+        }else if(ae.getSource() == anaEkran.btnUrunSat){
+            //Ürün alim satim ekrani çağriliyor burda
+            urunAlimSatimGecmisiGoster();
         }else if(ae.getSource() == anaEkran.btnYeni){
             urunEkleEkraniGoster();
         }
