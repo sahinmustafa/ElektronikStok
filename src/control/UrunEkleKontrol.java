@@ -103,6 +103,9 @@ public class UrunEkleKontrol extends GenelKontrol implements ActionListener{
 
                 if(urunId == Urun.YENI_URUN){
                     u.ekle();
+                    /*  !!! new Urun().satinAl(urunId, miktar, odemeSekli, satisAciklama); -- 
+                        Eklendikten sonra yukardaki setStokMiktari silinmeli ancak
+                        yeni ürünün id sini bilemiyoruz. Aksi halde yeni eklenen ürün ve miktari gider olark gözükmüyor*/
                 }else{
                     u.guncelle(urunId, u);
                 }

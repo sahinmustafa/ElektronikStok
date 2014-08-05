@@ -270,13 +270,14 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
                 int urunId = (int) anaEkran.tblUrunOzellik.getValueAt(anaEkran.tblUrunOzellik.getSelectedRow(), 0);
 
                 //emin misin sorusu sor; eminse sil değilse bir şey yapma 
-                if(onayIstegi("Silme Onayı", urunId+" numaralı ürün kalıcı olarak silinecektir. Silmek istediğinize emin misiniz ?"))
+                if(onayIstegi("Silme Onayı", urunId+" numaralı ürün kalıcı olarak silinecektir. Silmek istediğinize emin misiniz ?")){
                     new Urun().sil(urunId);
-                
+                    kategorileriListele();
+                }
             }else{
                 uyariMesaji("Ürün Seçmediniz !","Lütfen silmek istediğiniz ürünü seçili hale getiriniz !");
             }
-            kategorileriListele();
+            
         }catch(Exception e){
             exceptionGoster("urunSil", e);
         }
