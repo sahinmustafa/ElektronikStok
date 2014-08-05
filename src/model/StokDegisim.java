@@ -1,6 +1,7 @@
 package model;
 
 import helper.HbmIslemler;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import org.hibernate.HibernateException;
@@ -30,7 +31,7 @@ public class StokDegisim extends StokObject implements DatabaseI<StokObject>{
         this.yeniMiktar = yeniMiktar;
         this.odemeSekli = odemeSekli;
         this.tutar = tutar;
-        //this.tarih = ;
+        this.tarih = new Date();
         this.aciklama = aciklama;
     }
 
@@ -51,16 +52,19 @@ public class StokDegisim extends StokObject implements DatabaseI<StokObject>{
     
     @Override
     public ArrayList<StokDegisim> listele(int stokID){
-        String hql = "SELECT * FROM StokDegisim WHERE ID ='" + stokID + "'";
+        String hql = "FROM StokDegisim WHERE ID ='" + stokID + "'";
         HbmIslemler hbm = new HbmIslemler();
         return (ArrayList<StokDegisim>) hbm.list(hql);
     }
     
     public ArrayList<StokDegisim> tariheGoreListele(int urunID, Date baslangicTarih, Date bitisTarih){
-        String hql = "SELECT * FROM StokDegisim WHERE  tarih between '" + baslangicTarih + "' and '" + bitisTarih + "'";
+        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
+        String hql = "FROM StokDegisim WHERE  tarih between '" + f.format(baslangicTarih) + 
+                "' and '" +  f.format(bitisTarih) + "'";
         
         if(urunID != -1)
-            hql += " AND ID =" + urunID;
+            hql += " AND urun =" + urunID;
+        hql += " ORDER BY id DESC";
         HbmIslemler hbm = new HbmIslemler();
         return (ArrayList<StokDegisim>) hbm.list(hql);
     }

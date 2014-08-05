@@ -99,10 +99,11 @@ public class AlimSatimKaydiKontrol implements ActionListener{
             alimSatimKaydiEkrani.cmbxUrunSec.addItem(urun.getAdi());
         }   
         
+        int ilkVarsayilanOncekiGunSayisi = 30;
         // get Calendar instance
         Calendar cal = Calendar.getInstance();
         // substract 7 days
-        cal.set(Calendar.DATE, -7);
+        cal.set(Calendar.DATE, -ilkVarsayilanOncekiGunSayisi+5);
         // convert to date
         Date ilkTarih = cal.getTime();
         alimSatimKaydiEkrani.dtİlkTarih.setDate(ilkTarih);
