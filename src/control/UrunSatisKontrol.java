@@ -1,11 +1,8 @@
 package control;
 
 import elektronikstok.view.UrunSatis;
-import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.BorderFactory;
-import javax.swing.border.TitledBorder;
 import model.Urun;
 
 public class UrunSatisKontrol extends GenelKontrol implements ActionListener{

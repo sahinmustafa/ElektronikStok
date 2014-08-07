@@ -3,11 +3,12 @@ package control;
 import control.extra.TableRenderer;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import javax.swing.table.DefaultTableModel;
-import model.Kategori;
 import model.StokDegisim;
 import model.Urun;
 import view.AlimSatimKaydi;
@@ -24,11 +25,12 @@ public class AlimSatimKaydiKontrol implements ActionListener{
     public AlimSatimKaydiKontrol() {
         this.alimSatimKaydiEkrani = new AlimSatimKaydi();
         txtDegerAta();
+        actionAta();
         ekraniGuncelle();
         this.alimSatimKaydiEkrani.show();
     }
     
-    public void ekraniGuncelle(){
+    private void ekraniGuncelle(){
         int urunId = -1;
        
         if(alimSatimKaydiEkrani.cmbxUrunSec.getSelectedIndex() > 0)
@@ -49,8 +51,9 @@ public class AlimSatimKaydiKontrol implements ActionListener{
 
         String kolonAdlari [] = {
             "ÜRÜN ADI",
-            "ALIŞ FİYATI",
-            "SATIŞ FİYATI",
+            "TARİH",
+            "ALIŞ",
+            "SATIŞ",
             "DEĞİŞİM MİKTARI",
             "TUTAR",
             "ÖDEME ŞEKLİ"                
@@ -65,11 +68,12 @@ public class AlimSatimKaydiKontrol implements ActionListener{
             int stokDegisimMiktari = stokDegisim.get(i).getYeniMiktar() - stokDegisim.get(i).getEskiMiktar();
             
             data[i][0] = stokDegisim.get(i).getUrun().getAdi();
-            data[i][1] = stokDegisim.get(i).getUrun().getAlisFiyati();
-            data[i][2] = stokDegisim.get(i).getUrun().getSatisFiyati();
-            data[i][3] = stokDegisimMiktari;
-            data[i][4] = stokDegisim.get(i).getTutar();
-            data[i][5] = stokDegisim.get(i).getOdemeSekli();
+            data[i][1] = stokDegisim.get(i).getTarih();
+            data[i][2] = stokDegisim.get(i).getUrun().getAlisFiyati();
+            data[i][3] = stokDegisim.get(i).getUrun().getSatisFiyati();
+            data[i][4] = stokDegisimMiktari;
+            data[i][5] = stokDegisim.get(i).getTutar();
+            data[i][6] = stokDegisim.get(i).getOdemeSekli();
             
             if(stokDegisimMiktari < 0){
                 toplamSatim += stokDegisimMiktari;
@@ -91,8 +95,8 @@ public class AlimSatimKaydiKontrol implements ActionListener{
 
     }
     
-    public void txtDegerAta(){
-        ArrayList <Urun> urunler = new Urun().tumunuGetir();
+    private void txtDegerAta(){
+        urunler = new Urun().tumunuGetir();
         //Kategori değerleri olutşuruluyor
         alimSatimKaydiEkrani.cmbxUrunSec.addItem("Tümü");
         for(Urun urun : urunler){
@@ -113,9 +117,22 @@ public class AlimSatimKaydiKontrol implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == alimSatimKaydiEkrani){
-            System.out.println("a");
-        }
+        //if(e.getSource() == alimSatimKaydiEkrani.cmbxUrunSec)
+            ekraniGuncelle();
+    }
+
+    private void actionAta() {
+        alimSatimKaydiEkrani.cmbxUrunSec.addActionListener (this);
+        PropertyChangeListener dtChangeListener = new PropertyChangeListener() {
+
+            @Override
+            public void propertyChange(PropertyChangeEvent evt) {
+                ekraniGuncelle();
+            }
+        };
+        
+        alimSatimKaydiEkrani.dtİlkTarih.addPropertyChangeListener(dtChangeListener);
+        alimSatimKaydiEkrani.dtSonTarih.addPropertyChangeListener(dtChangeListener);
     }
         
 }

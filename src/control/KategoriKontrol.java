@@ -3,8 +3,6 @@ package control;
 import elektronikstok.view.Kategori;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import javax.swing.JList;
 import javax.swing.ListModel;
 
 public class KategoriKontrol extends GenelKontrol implements ActionListener{
