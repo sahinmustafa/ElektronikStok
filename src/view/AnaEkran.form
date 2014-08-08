@@ -19,6 +19,9 @@
           <SubComponents>
             <Menu class="javax.swing.JMenu" name="MUrun">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/view/box.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="&#xdc;r&#xfc;n"/>
               </Properties>
               <AuxValues>
@@ -77,6 +80,9 @@
             </Menu>
             <Menu class="javax.swing.JMenu" name="MKategori">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/view/category.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Kategori"/>
               </Properties>
               <AuxValues>
@@ -111,6 +117,9 @@
             </Menu>
             <Menu class="javax.swing.JMenu" name="MYardim">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/view/question.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Yard&#x131;m"/>
               </Properties>
               <AuxValues>

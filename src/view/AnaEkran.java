@@ -236,6 +236,7 @@ public class AnaEkran extends javax.swing.JFrame {
 
         MDosya.setText("Dosya");
 
+        MUrun.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/box.png"))); // NOI18N
         MUrun.setText("Ürün");
 
         MItemYeni.setText("Yeni");
@@ -258,6 +259,7 @@ public class AnaEkran extends javax.swing.JFrame {
 
         MDosya.add(MUrun);
 
+        MKategori.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/category.png"))); // NOI18N
         MKategori.setText("Kategori");
 
         MItemKategoriEkle.setText("Kategori Ekle");
@@ -271,6 +273,7 @@ public class AnaEkran extends javax.swing.JFrame {
 
         MDosya.add(MKategori);
 
+        MYardim.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/question.png"))); // NOI18N
         MYardim.setText("Yardım");
 
         MItemHakkimizda.setText("Hakkımızda");
