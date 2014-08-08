@@ -1,10 +1,245 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.JMenuItem" name="jMenuItem17">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jMenuItem17"/>
+      </Properties>
+    </Component>
+    <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
+      <SubComponents>
+        <Menu class="javax.swing.JMenu" name="MDosya">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Dosya"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+          <SubComponents>
+            <Menu class="javax.swing.JMenu" name="MUrun">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="&#xdc;r&#xfc;n"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+              <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="MItemYeni">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Yeni"/>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="MItemUrunGuncelle">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#xdc;r&#xfc;n G&#xfc;ncelle"/>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="MItemUrunSil">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#xdc;r&#xfc;n Sil"/>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="MItemUrunAl">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#xdc;r&#xfc;n Al"/>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="MItemUrunSat">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#xdc;r&#xfc;n Sat"/>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="MItemAlimSatim">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Al&#x131;mSat&#x131;m Kayd&#x131;"/>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
+                </MenuItem>
+              </SubComponents>
+            </Menu>
+            <Menu class="javax.swing.JMenu" name="MKategori">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Kategori"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+              <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="MItemKategoriEkle">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Kategori Ekle"/>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="MItemKategoriSil">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Kategori Sil"/>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="MItemKategoriGuncelle">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Kategori G&#xfc;ncelle"/>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
+                </MenuItem>
+              </SubComponents>
+            </Menu>
+            <Menu class="javax.swing.JMenu" name="MYardim">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Yard&#x131;m"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+              <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="MItemHakkimizda">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Hakk&#x131;m&#x131;zda"/>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="MItemYedekleme">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Yedekleme"/>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="MItemYedektenOkuma">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Yedekten Okuma"/>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
+                </MenuItem>
+              </SubComponents>
+            </Menu>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="MDuzenle">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="D&#xfc;zenle"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="MItemGeriAl">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/view/undo.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Geri Al"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="MItemIleriAl">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/view/redo.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="&#x130;leri Al"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="MItemKes">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/view/cut.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Kes"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="MItemKopyala">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/view/copy.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Kopyala"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="MItemYapistir">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/view/paste.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Yap&#x131;&#x15f;t&#x131;r"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="MItemSil">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/view/delete.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Sil"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="MItemAra">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/view/find.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Ara"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+      </SubComponents>
+    </Menu>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
   <SyntheticProperties>
+    <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
@@ -35,7 +270,7 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="pnlKategoriListesi" max="32767" attributes="0"/>
                   <Component id="pnlUrunBilgileri" max="32767" attributes="0"/>
@@ -78,7 +313,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" pref="367" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" pref="326" max="32767" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="btnKategoriEkle" max="32767" attributes="0"/>
@@ -172,9 +407,9 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btnUrunAl" linkSize="3" min="-2" pref="85" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btnAlimSatim" linkSize="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnUrunSat" linkSize="3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="16" max="32767" attributes="0"/>
-                  <Component id="btnUrunSat" linkSize="3" min="-2" pref="93" max="-2" attributes="0"/>
+                  <Component id="btnAlimSatim" linkSize="3" min="-2" pref="93" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Component id="txtAra" min="-2" pref="237" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -188,7 +423,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                  <Component id="jScrollPane2" pref="359" max="32767" attributes="0"/>
+                  <Component id="jScrollPane2" pref="318" max="32767" attributes="0"/>
                   <EmptySpace type="separate" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="103" alignment="1" groupAlignment="3" attributes="0">
@@ -196,8 +431,8 @@
                           <Component id="btnGuncelle" linkSize="5" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
                           <Component id="btnSil" linkSize="5" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                           <Component id="btnUrunAl" linkSize="5" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                          <Component id="btnUrunSat" linkSize="5" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                           <Component id="btnAlimSatim" linkSize="5" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                          <Component id="btnUrunSat" linkSize="5" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
                           <Component id="btnAra" alignment="1" pref="0" max="32767" attributes="0"/>
@@ -297,7 +532,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="btnAlimSatim">
+        <Component class="javax.swing.JButton" name="btnUrunSat">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="11" style="1"/>
@@ -309,7 +544,7 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAlimSatimActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUrunSatActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -336,7 +571,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="btnUrunSat">
+        <Component class="javax.swing.JButton" name="btnAlimSatim">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="11" style="1"/>
@@ -347,7 +582,7 @@
             <Property name="text" type="java.lang.String" value="Al&#x131;mSat&#x131;m"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUrunSatActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAlimSatimActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
