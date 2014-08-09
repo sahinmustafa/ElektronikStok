@@ -1,7 +1,6 @@
 package control;
 
 import control.extra.TableRenderer;
-import view.AnaEkran;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
@@ -9,11 +8,13 @@ import java.awt.event.FocusListener;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
+import javax.swing.JMenuItem;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 import model.Kategori;
 import model.Urun;
+import view.AnaEkran;
 
 /**
  *
@@ -194,6 +195,18 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
                     }
                 }
             });
+             
+             
+            JMenuItem m[] = {anaEkran.MItemAlimSatim, anaEkran.MItemAra, anaEkran.MItemGeriAl, anaEkran.MItemHakkimizda,
+            anaEkran.MItemIleriAl, anaEkran.MItemKategoriEkle, anaEkran.MItemKategoriGuncelle, anaEkran.MItemKategoriSil,
+            anaEkran.MItemKes, anaEkran.MItemKopyala, anaEkran.MItemSil, anaEkran.MItemUrunAl, anaEkran.MItemUrunGuncelle,
+            anaEkran.MItemUrunSat, anaEkran.MItemUrunSil, anaEkran.MItemYapistir, anaEkran.MItemYedekleme, 
+            anaEkran.MItemYedektenOkuma, anaEkran.MItemYeni};
+
+            for(int i=0; i<m.length; i++) {
+                m[i].addActionListener(this);
+            }
+        
         }catch(Exception e){
             exceptionGoster("actionAta", e);
         }
@@ -291,7 +304,7 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
             urunleriAra();
         }else if(ae.getSource() == anaEkran.btnGuncelle){
             urunGuncelleEkraniAc();
-        }else if(ae.getSource() == anaEkran.btnKategoriEkle){
+        }else if(ae.getSource() == anaEkran.btnKategoriEkle || ae.getSource() == anaEkran.MItemKategoriEkle){
             kategoriEkleEkraniGoster();
         }else if(ae.getSource() == anaEkran.btnKategoriGuncelle){
             kategoriGuncelleEkraniGoster();
@@ -304,14 +317,11 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
         }else if(ae.getSource() == anaEkran.btnAlimSatim){
             //btnAlimSatim ile btnUrunSat butonu kariştiğindan işlevleri değişik !! Urun sat çağriliyor burda
             urunSatisEkraniGoster("Sat");
-        }else if(ae.getSource() == anaEkran.btnUrunSat){
+        }else if(ae.getSource() == anaEkran.btnUrunSat || ae.getSource() == anaEkran.MItemAlimSatim){
             //Ürün alim satim ekrani çağriliyor burda
             urunAlimSatimGecmisiGoster();
-        }else if(ae.getSource() == anaEkran.btnYeni){
+        }else if(ae.getSource() == anaEkran.btnYeni || ae.getSource() == anaEkran.MItemYeni){
             urunEkleEkraniGoster();
         }
     }   
-
-    
-    
 }
