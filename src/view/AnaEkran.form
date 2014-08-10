@@ -30,6 +30,9 @@
               <SubComponents>
                 <MenuItem class="javax.swing.JMenuItem" name="MItemYeni">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/view/box (1).png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Yeni"/>
                   </Properties>
                   <AuxValues>
@@ -38,6 +41,9 @@
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="MItemUrunGuncelle">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/view/box (1).png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="&#xdc;r&#xfc;n G&#xfc;ncelle"/>
                   </Properties>
                   <AuxValues>
@@ -46,6 +52,9 @@
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="MItemUrunSil">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/view/box (1).png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="&#xdc;r&#xfc;n Sil"/>
                   </Properties>
                   <AuxValues>
@@ -54,6 +63,9 @@
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="MItemUrunAl">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/view/box (1).png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="&#xdc;r&#xfc;n Al"/>
                   </Properties>
                   <AuxValues>
@@ -62,6 +74,9 @@
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="MItemUrunSat">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/view/box (1).png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="&#xdc;r&#xfc;n Sat"/>
                   </Properties>
                   <AuxValues>
@@ -70,6 +85,9 @@
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="MItemAlimSatim">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/view/box (1).png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Al&#x131;mSat&#x131;m Kayd&#x131;"/>
                   </Properties>
                   <AuxValues>
@@ -91,6 +109,9 @@
               <SubComponents>
                 <MenuItem class="javax.swing.JMenuItem" name="MItemKategoriEkle">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/view/category (1).png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Kategori Ekle"/>
                   </Properties>
                   <AuxValues>
@@ -99,6 +120,9 @@
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="MItemKategoriSil">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/view/category (1).png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Kategori Sil"/>
                   </Properties>
                   <AuxValues>
@@ -107,6 +131,9 @@
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="MItemKategoriGuncelle">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/view/category (1).png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Kategori G&#xfc;ncelle"/>
                   </Properties>
                   <AuxValues>
@@ -128,6 +155,9 @@
               <SubComponents>
                 <MenuItem class="javax.swing.JMenuItem" name="MItemHakkimizda">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/view/questionsmall.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Hakk&#x131;m&#x131;zda"/>
                   </Properties>
                   <AuxValues>
@@ -136,6 +166,9 @@
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="MItemYedekleme">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/view/questionsmall.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Yedekleme"/>
                   </Properties>
                   <AuxValues>
@@ -144,6 +177,9 @@
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="MItemYedektenOkuma">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/view/questionsmall.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Yedekten Okuma"/>
                   </Properties>
                   <AuxValues>
@@ -179,50 +215,6 @@
                   <Image iconType="3" name="/view/redo.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="&#x130;leri Al"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-              </AuxValues>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="MItemKes">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/view/cut.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Kes"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-              </AuxValues>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="MItemKopyala">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/view/copy.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Kopyala"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-              </AuxValues>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="MItemYapistir">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/view/paste.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Yap&#x131;&#x15f;t&#x131;r"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-              </AuxValues>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="MItemSil">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/view/delete.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Sil"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>

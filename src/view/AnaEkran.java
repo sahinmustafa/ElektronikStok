@@ -66,10 +66,6 @@ public class AnaEkran extends javax.swing.JFrame {
         MDuzenle = new javax.swing.JMenu();
         MItemGeriAl = new javax.swing.JMenuItem();
         MItemIleriAl = new javax.swing.JMenuItem();
-        MItemKes = new javax.swing.JMenuItem();
-        MItemKopyala = new javax.swing.JMenuItem();
-        MItemYapistir = new javax.swing.JMenuItem();
-        MItemSil = new javax.swing.JMenuItem();
         MItemAra = new javax.swing.JMenuItem();
 
         jMenuItem17.setText("jMenuItem17");
@@ -239,21 +235,27 @@ public class AnaEkran extends javax.swing.JFrame {
         MUrun.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/box.png"))); // NOI18N
         MUrun.setText("Ürün");
 
+        MItemYeni.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/box (1).png"))); // NOI18N
         MItemYeni.setText("Yeni");
         MUrun.add(MItemYeni);
 
+        MItemUrunGuncelle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/box (1).png"))); // NOI18N
         MItemUrunGuncelle.setText("Ürün Güncelle");
         MUrun.add(MItemUrunGuncelle);
 
+        MItemUrunSil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/box (1).png"))); // NOI18N
         MItemUrunSil.setText("Ürün Sil");
         MUrun.add(MItemUrunSil);
 
+        MItemUrunAl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/box (1).png"))); // NOI18N
         MItemUrunAl.setText("Ürün Al");
         MUrun.add(MItemUrunAl);
 
+        MItemUrunSat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/box (1).png"))); // NOI18N
         MItemUrunSat.setText("Ürün Sat");
         MUrun.add(MItemUrunSat);
 
+        MItemAlimSatim.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/box (1).png"))); // NOI18N
         MItemAlimSatim.setText("AlımSatım Kaydı");
         MUrun.add(MItemAlimSatim);
 
@@ -262,12 +264,15 @@ public class AnaEkran extends javax.swing.JFrame {
         MKategori.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/category.png"))); // NOI18N
         MKategori.setText("Kategori");
 
+        MItemKategoriEkle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/category (1).png"))); // NOI18N
         MItemKategoriEkle.setText("Kategori Ekle");
         MKategori.add(MItemKategoriEkle);
 
+        MItemKategoriSil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/category (1).png"))); // NOI18N
         MItemKategoriSil.setText("Kategori Sil");
         MKategori.add(MItemKategoriSil);
 
+        MItemKategoriGuncelle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/category (1).png"))); // NOI18N
         MItemKategoriGuncelle.setText("Kategori Güncelle");
         MKategori.add(MItemKategoriGuncelle);
 
@@ -276,12 +281,15 @@ public class AnaEkran extends javax.swing.JFrame {
         MYardim.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/question.png"))); // NOI18N
         MYardim.setText("Yardım");
 
+        MItemHakkimizda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/questionsmall.png"))); // NOI18N
         MItemHakkimizda.setText("Hakkımızda");
         MYardim.add(MItemHakkimizda);
 
+        MItemYedekleme.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/questionsmall.png"))); // NOI18N
         MItemYedekleme.setText("Yedekleme");
         MYardim.add(MItemYedekleme);
 
+        MItemYedektenOkuma.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/questionsmall.png"))); // NOI18N
         MItemYedektenOkuma.setText("Yedekten Okuma");
         MYardim.add(MItemYedektenOkuma);
 
@@ -298,22 +306,6 @@ public class AnaEkran extends javax.swing.JFrame {
         MItemIleriAl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/redo.png"))); // NOI18N
         MItemIleriAl.setText("İleri Al");
         MDuzenle.add(MItemIleriAl);
-
-        MItemKes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/cut.png"))); // NOI18N
-        MItemKes.setText("Kes");
-        MDuzenle.add(MItemKes);
-
-        MItemKopyala.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/copy.png"))); // NOI18N
-        MItemKopyala.setText("Kopyala");
-        MDuzenle.add(MItemKopyala);
-
-        MItemYapistir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/paste.png"))); // NOI18N
-        MItemYapistir.setText("Yapıştır");
-        MDuzenle.add(MItemYapistir);
-
-        MItemSil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/delete.png"))); // NOI18N
-        MItemSil.setText("Sil");
-        MDuzenle.add(MItemSil);
 
         MItemAra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/find.png"))); // NOI18N
         MItemAra.setText("Ara");
@@ -400,23 +392,19 @@ public class AnaEkran extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JMenu MDosya;
-    public javax.swing.JMenu MDuzenle;
+    private javax.swing.JMenu MDuzenle;
     public javax.swing.JMenuItem MItemAlimSatim;
-    public javax.swing.JMenuItem MItemAra;
-    public javax.swing.JMenuItem MItemGeriAl;
+    private javax.swing.JMenuItem MItemAra;
+    private javax.swing.JMenuItem MItemGeriAl;
     public javax.swing.JMenuItem MItemHakkimizda;
-    public javax.swing.JMenuItem MItemIleriAl;
+    private javax.swing.JMenuItem MItemIleriAl;
     public javax.swing.JMenuItem MItemKategoriEkle;
     public javax.swing.JMenuItem MItemKategoriGuncelle;
     public javax.swing.JMenuItem MItemKategoriSil;
-    public javax.swing.JMenuItem MItemKes;
-    public javax.swing.JMenuItem MItemKopyala;
-    public javax.swing.JMenuItem MItemSil;
     public javax.swing.JMenuItem MItemUrunAl;
     public javax.swing.JMenuItem MItemUrunGuncelle;
     public javax.swing.JMenuItem MItemUrunSat;
     public javax.swing.JMenuItem MItemUrunSil;
-    public javax.swing.JMenuItem MItemYapistir;
     public javax.swing.JMenuItem MItemYedekleme;
     public javax.swing.JMenuItem MItemYedektenOkuma;
     public javax.swing.JMenuItem MItemYeni;
