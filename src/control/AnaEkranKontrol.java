@@ -197,10 +197,10 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
             });
              
              
-            JMenuItem m[] = {anaEkran.MItemAlimSatim, anaEkran.MItemAra, anaEkran.MItemGeriAl, anaEkran.MItemHakkimizda,
-            anaEkran.MItemIleriAl, anaEkran.MItemKategoriEkle, anaEkran.MItemKategoriGuncelle, anaEkran.MItemKategoriSil,
-            anaEkran.MItemKes, anaEkran.MItemKopyala, anaEkran.MItemSil, anaEkran.MItemUrunAl, anaEkran.MItemUrunGuncelle,
-            anaEkran.MItemUrunSat, anaEkran.MItemUrunSil, anaEkran.MItemYapistir, anaEkran.MItemYedekleme, 
+            JMenuItem m[] = {anaEkran.MItemAlimSatim, anaEkran.MItemHakkimizda,
+            anaEkran.MItemKategoriEkle, anaEkran.MItemKategoriGuncelle, anaEkran.MItemKategoriSil,
+            anaEkran.MItemUrunAl, anaEkran.MItemUrunGuncelle,
+            anaEkran.MItemUrunSat, anaEkran.MItemUrunSil, anaEkran.MItemYedekleme, 
             anaEkran.MItemYedektenOkuma, anaEkran.MItemYeni};
 
             for(int i=0; i<m.length; i++) {
@@ -302,24 +302,22 @@ public class AnaEkranKontrol extends GenelKontrol implements ActionListener{
     public void actionPerformed(ActionEvent ae) {
         if(ae.getSource() == anaEkran.btnAra){
             urunleriAra();
-        }else if(ae.getSource() == anaEkran.btnGuncelle){
+        }else if(ae.getSource() == anaEkran.btnGuncelle || ae.getSource() == anaEkran.MItemUrunGuncelle){
             urunGuncelleEkraniAc();
         }else if(ae.getSource() == anaEkran.btnKategoriEkle || ae.getSource() == anaEkran.MItemKategoriEkle){
             kategoriEkleEkraniGoster();
-        }else if(ae.getSource() == anaEkran.btnKategoriGuncelle){
+        }else if(ae.getSource() == anaEkran.btnKategoriGuncelle  || ae.getSource() == anaEkran.MItemKategoriGuncelle){
             kategoriGuncelleEkraniGoster();
-        }else if(ae.getSource() == anaEkran.btnKategoriSil){
+        }else if(ae.getSource() == anaEkran.btnKategoriSil  || ae.getSource() == anaEkran.MItemKategoriSil){
             kategoriSil();
-        }else if(ae.getSource() == anaEkran.btnSil){
+        }else if(ae.getSource() == anaEkran.btnSil  || ae.getSource() == anaEkran.MItemUrunSil){
             urunSil();
-        }else if(ae.getSource() == anaEkran.btnUrunAl){
+        }else if(ae.getSource() == anaEkran.btnUrunAl  || ae.getSource() == anaEkran.MItemUrunAl){
             urunSatisEkraniGoster("Al");
-        }else if(ae.getSource() == anaEkran.btnAlimSatim){
-            //btnAlimSatim ile btnUrunSat butonu kariştiğindan işlevleri değişik !! Urun sat çağriliyor burda
-            urunSatisEkraniGoster("Sat");
-        }else if(ae.getSource() == anaEkran.btnUrunSat || ae.getSource() == anaEkran.MItemAlimSatim){
-            //Ürün alim satim ekrani çağriliyor burda
+        }else if(ae.getSource() == anaEkran.btnAlimSatim || ae.getSource() == anaEkran.MItemAlimSatim){
             urunAlimSatimGecmisiGoster();
+        }else if(ae.getSource() == anaEkran.btnUrunSat || ae.getSource() == anaEkran.MItemUrunSat){
+            urunSatisEkraniGoster("Sat");
         }else if(ae.getSource() == anaEkran.btnYeni || ae.getSource() == anaEkran.MItemYeni){
             urunEkleEkraniGoster();
         }
